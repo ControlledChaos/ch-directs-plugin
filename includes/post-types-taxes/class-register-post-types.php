@@ -35,13 +35,13 @@ final class Post_Types_Register {
 	 */
 	public function __construct() {
 
-        // Register custom post types.
+        // Register project types.
 		add_action( 'init', [ $this, 'register' ] );
 
 	}
 
     /**
-     * Register custom post types.
+     * Register project types.
      *
      * @since  1.0.0
 	 * @access public
@@ -50,56 +50,52 @@ final class Post_Types_Register {
     public function register() {
 
         /**
-         * Post Type: Sample custom post (Custom Posts).
+         * Post Type: Projects
          *
-         * Renaming:
-         * Search case "Custom Post" and replace with your post type capitalized name.
-         * Search case "custom post" and replace with your post type lowercase name.
-         * Search case "chp_post_type" and replace with your post type database name.
-         * Search case "custom-posts" and replace with your post type archive permalink slug.
+         * @since  1.0.0
          */
 
         $labels = [
-            'name'                  => __( 'Custom Posts', 'ch-directs-plugin' ),
-            'singular_name'         => __( 'Custom Post', 'ch-directs-plugin' ),
-            'menu_name'             => __( 'Custom Posts', 'ch-directs-plugin' ),
-            'all_items'             => __( 'All Custom Posts', 'ch-directs-plugin' ),
+            'name'                  => __( 'Projects', 'ch-directs-plugin' ),
+            'singular_name'         => __( 'Project', 'ch-directs-plugin' ),
+            'menu_name'             => __( 'Projects', 'ch-directs-plugin' ),
+            'all_items'             => __( 'All Projects', 'ch-directs-plugin' ),
             'add_new'               => __( 'Add New', 'ch-directs-plugin' ),
-            'add_new_item'          => __( 'Add New Custom Post', 'ch-directs-plugin' ),
-            'edit_item'             => __( 'Edit Custom Post', 'ch-directs-plugin' ),
-            'new_item'              => __( 'New Custom Post', 'ch-directs-plugin' ),
-            'view_item'             => __( 'View Custom Post', 'ch-directs-plugin' ),
-            'view_items'            => __( 'View Custom Posts', 'ch-directs-plugin' ),
-            'search_items'          => __( 'Search Custom Posts', 'ch-directs-plugin' ),
-            'not_found'             => __( 'No Custom Posts Found', 'ch-directs-plugin' ),
-            'not_found_in_trash'    => __( 'No Custom Posts Found in Trash', 'ch-directs-plugin' ),
-            'parent_item_colon'     => __( 'Parent Custom Post', 'ch-directs-plugin' ),
-            'featured_image'        => __( 'Featured image for this custom post', 'ch-directs-plugin' ),
-            'set_featured_image'    => __( 'Set featured image for this custom post', 'ch-directs-plugin' ),
-            'remove_featured_image' => __( 'Remove featured image for this custom post', 'ch-directs-plugin' ),
-            'use_featured_image'    => __( 'Use as featured image for this custom post', 'ch-directs-plugin' ),
-            'archives'              => __( 'Custom Post archives', 'ch-directs-plugin' ),
-            'insert_into_item'      => __( 'Insert into Custom Post', 'ch-directs-plugin' ),
-            'uploaded_to_this_item' => __( 'Uploaded to this Custom Post', 'ch-directs-plugin' ),
-            'filter_items_list'     => __( 'Filter Custom Posts', 'ch-directs-plugin' ),
-            'items_list_navigation' => __( 'Custom Posts list navigation', 'ch-directs-plugin' ),
-            'items_list'            => __( 'Custom Posts List', 'ch-directs-plugin' ),
-            'attributes'            => __( 'Custom Post Attributes', 'ch-directs-plugin' ),
-            'parent_item_colon'     => __( 'Parent Custom Post', 'ch-directs-plugin' ),
+            'add_new_item'          => __( 'Add New Project', 'ch-directs-plugin' ),
+            'edit_item'             => __( 'Edit Project', 'ch-directs-plugin' ),
+            'new_item'              => __( 'New Project', 'ch-directs-plugin' ),
+            'view_item'             => __( 'View Project', 'ch-directs-plugin' ),
+            'view_items'            => __( 'View Projects', 'ch-directs-plugin' ),
+            'search_items'          => __( 'Search Projects', 'ch-directs-plugin' ),
+            'not_found'             => __( 'No Projects Found', 'ch-directs-plugin' ),
+            'not_found_in_trash'    => __( 'No Projects Found in Trash', 'ch-directs-plugin' ),
+            'parent_item_colon'     => __( 'Parent Project', 'ch-directs-plugin' ),
+            'featured_image'        => __( 'Featured image for this project', 'ch-directs-plugin' ),
+            'set_featured_image'    => __( 'Set featured image for this project', 'ch-directs-plugin' ),
+            'remove_featured_image' => __( 'Remove featured image for this project', 'ch-directs-plugin' ),
+            'use_featured_image'    => __( 'Use as featured image for this project', 'ch-directs-plugin' ),
+            'archives'              => __( 'Project archives', 'ch-directs-plugin' ),
+            'insert_into_item'      => __( 'Insert into Project', 'ch-directs-plugin' ),
+            'uploaded_to_this_item' => __( 'Uploaded to this Project', 'ch-directs-plugin' ),
+            'filter_items_list'     => __( 'Filter Projects', 'ch-directs-plugin' ),
+            'items_list_navigation' => __( 'Projects list navigation', 'ch-directs-plugin' ),
+            'items_list'            => __( 'Projects List', 'ch-directs-plugin' ),
+            'attributes'            => __( 'Project Attributes', 'ch-directs-plugin' ),
+            'parent_item_colon'     => __( 'Parent Project', 'ch-directs-plugin' ),
         ];
 
         // Apply a filter to labels for customization.
-        $labels = apply_filters( 'chp_custom_posts_labels', $labels );
+        $labels = apply_filters( 'chp_project_labels', $labels );
 
         $options = [
-            'label'               => __( 'Custom Posts', 'ch-directs-plugin' ),
+            'label'               => __( 'Projects', 'ch-directs-plugin' ),
             'labels'              => $labels,
             'description'         => __( 'Custom post type description.', 'ch-directs-plugin' ),
             'public'              => true,
             'publicly_queryable'  => true,
             'show_ui'             => true,
             'show_in_rest'        => false,
-            'rest_base'           => 'chp_post_type_rest_api',
+            'rest_base'           => 'project_rest_api',
             'has_archive'         => true,
             'show_in_menu'        => true,
             'exclude_from_search' => false,
@@ -107,34 +103,23 @@ final class Post_Types_Register {
             'map_meta_cap'        => true,
             'hierarchical'        => false,
             'rewrite'             => [
-                'slug'       => 'custom-posts',
+                'slug'       => 'projects',
                 'with_front' => true
             ],
-            'query_var'           => 'chp_post_type',
+            'query_var'           => 'project',
             'menu_position'       => 5,
-            'menu_icon'           => 'dashicons-admin-post',
+            'menu_icon'           => 'dashicons-format-video',
             'supports'            => [
                 'title',
-                'editor',
-                'thumbnail',
-                'excerpt',
-                'trackbacks',
-                'custom-fields',
-                'comments',
-                'revisions',
-                'author',
-                'page-attributes',
-                'post-formats'
+                'thumbnail'
             ],
             'taxonomies'          => [
-                'category',
-                'post_tag',
-                'chp_taxonomy' // Change to your custom taxonomy name.
+                'project_types'
             ],
         ];
 
         // Apply a filter to arguments for customization.
-        $options = apply_filters( 'chp_custom_posts_args', $options );
+        $options = apply_filters( 'chp_project_args', $options );
 
         /**
          * Register the post type
@@ -142,7 +127,7 @@ final class Post_Types_Register {
          * Maximum 20 characters, cannot contain capital letters or spaces.
          */
         register_post_type(
-            'chp_post_type',
+            'project',
             $options
         );
 
@@ -151,4 +136,4 @@ final class Post_Types_Register {
 }
 
 // Run the class.
-$chp_post_types = new Post_Types_Register;
+$projects = new Post_Types_Register;

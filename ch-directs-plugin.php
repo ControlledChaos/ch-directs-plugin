@@ -433,14 +433,6 @@ function chp_settings_links( $links, $file ) {
 				esc_attr( 'Script Options', 'ch-directs-plugin' )
 			);
 
-			// Add a placeholder for an upgrade link.
-			$links[] = sprintf(
-				'<a href="%1s" title="%2s" class="' . CHP_ADMIN_SLUG . '-upgrade-link" style="color: #888; cursor: default;">%3s</a>',
-				''/* Add upgrade URL here */,
-				__( 'Upgrade not available', 'ch-directs-plugin' ),
-				esc_attr( 'Upgrade', 'ch-directs-plugin' )
-			);
-
 		}
 
 		// Return the full array of links.

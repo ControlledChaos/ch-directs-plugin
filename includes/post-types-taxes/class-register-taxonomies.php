@@ -1,6 +1,6 @@
 <?php
 /**
- * Register taxonomies.
+ * Register project types.
  *
  * @package    CH_Directs_Plugin
  * @subpackage Includes\Post_Types_Taxes
@@ -19,12 +19,12 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
- * Register taxonomies.
+ * Register project types.
  *
  * @since  1.0.0
  * @access public
  */
-final class Taxonomies_Register {
+final class Taxonomy_Register {
 
     /**
 	 * Constructor magic method.
@@ -35,13 +35,13 @@ final class Taxonomies_Register {
 	 */
 	public function __construct() {
 
-        // Register custom taxonomies.
+        // Register custom project types.
 		add_action( 'init', [ $this, 'register' ] );
 
 	}
 
     /**
-     * Register custom taxonomies.
+     * Register custom project types.
      *
      * @since  1.0.0
 	 * @access public
@@ -50,55 +50,49 @@ final class Taxonomies_Register {
     public function register() {
 
         /**
-         * Taxonomy: Sample taxonomy (Taxonomy).
-         *
-         * Renaming:
-         * Search case "Taxonomy" and replace with your post type singular name.
-         * Search case "Taxonomies" and replace with your post type plural name.
-         * Search case "chp_taxonomy" and replace with your taxonomy database name.
-         * Search case "taxonomies" and replace with your taxonomy permalink slug.
+         * Taxonomy: Project Type
          */
 
         $labels = [
-            'name'                       => __( 'Taxonomies', 'ch-directs-plugin' ),
-            'singular_name'              => __( 'Taxonomy', 'ch-directs-plugin' ),
-            'menu_name'                  => __( 'Taxonomy', 'ch-directs-plugin' ),
-            'all_items'                  => __( 'All Taxonomies', 'ch-directs-plugin' ),
-            'edit_item'                  => __( 'Edit Taxonomy', 'ch-directs-plugin' ),
-            'view_item'                  => __( 'View Taxonomy', 'ch-directs-plugin' ),
-            'update_item'                => __( 'Update Taxonomy', 'ch-directs-plugin' ),
-            'add_new_item'               => __( 'Add New Taxonomy', 'ch-directs-plugin' ),
-            'new_item_name'              => __( 'New Taxonomy', 'ch-directs-plugin' ),
-            'parent_item'                => __( 'Parent Taxonomy', 'ch-directs-plugin' ),
-            'parent_item_colon'          => __( 'Parent Taxonomy', 'ch-directs-plugin' ),
-            'popular_items'              => __( 'Popular Taxonomies', 'ch-directs-plugin' ),
-            'separate_items_with_commas' => __( 'Separate Taxonomies with commas', 'ch-directs-plugin' ),
-            'add_or_remove_items'        => __( 'Add or Remove Taxonomies', 'ch-directs-plugin' ),
-            'choose_from_most_used'      => __( 'Choose from the most used Taxonomies', 'ch-directs-plugin' ),
-            'not_found'                  => __( 'No Taxonomies Found', 'ch-directs-plugin' ),
-            'no_terms'                   => __( 'No Taxonomies', 'ch-directs-plugin' ),
-            'items_list_navigation'      => __( 'Taxonomies List Navigation', 'ch-directs-plugin' ),
-            'items_list'                 => __( 'Taxonomies List', 'ch-directs-plugin' )
+            'name'                       => __( 'Project Types', 'ch-directs-plugin' ),
+            'singular_name'              => __( 'Project Type', 'ch-directs-plugin' ),
+            'menu_name'                  => __( 'Project Types', 'ch-directs-plugin' ),
+            'all_items'                  => __( 'All Project Types', 'ch-directs-plugin' ),
+            'edit_item'                  => __( 'Edit Project Type', 'ch-directs-plugin' ),
+            'view_item'                  => __( 'View Project Type', 'ch-directs-plugin' ),
+            'update_item'                => __( 'Update Project Type', 'ch-directs-plugin' ),
+            'add_new_item'               => __( 'Add New Project Type', 'ch-directs-plugin' ),
+            'new_item_name'              => __( 'New Project Type', 'ch-directs-plugin' ),
+            'parent_item'                => __( 'Parent Project Type', 'ch-directs-plugin' ),
+            'parent_item_colon'          => __( 'Parent Project Type', 'ch-directs-plugin' ),
+            'popular_items'              => __( 'Popular Project Types', 'ch-directs-plugin' ),
+            'separate_items_with_commas' => __( 'Separate Project Types with commas', 'ch-directs-plugin' ),
+            'add_or_remove_items'        => __( 'Add or Remove Project Types', 'ch-directs-plugin' ),
+            'choose_from_most_used'      => __( 'Choose from the most used Project Types', 'ch-directs-plugin' ),
+            'not_found'                  => __( 'No Project Types Found', 'ch-directs-plugin' ),
+            'no_terms'                   => __( 'No Project Types', 'ch-directs-plugin' ),
+            'items_list_navigation'      => __( 'Project Types List Navigation', 'ch-directs-plugin' ),
+            'items_list'                 => __( 'Project Types List', 'ch-directs-plugin' )
         ];
 
         $options = [
-            'label'              => __( 'Taxonomies', 'ch-directs-plugin' ),
+            'label'              => __( 'Project Types', 'ch-directs-plugin' ),
             'labels'             => $labels,
             'public'             => true,
             'hierarchical'       => false,
-            'label'              => 'Taxonomies',
+            'label'              => 'Project Types',
             'show_ui'            => true,
             'show_in_menu'       => true,
             'show_in_nav_menus'  => true,
             'query_var'          => true,
             'rewrite'            => [
-                'slug'         => 'taxonomies',
+                'slug'         => 'project types',
                 'with_front'   => true,
                 'hierarchical' => false,
             ],
             'show_admin_column'  => true,
             'show_in_rest'       => true,
-            'rest_base'          => 'taxonomies',
+            'rest_base'          => 'project types',
             'show_in_quick_edit' => true
         ];
 
@@ -106,9 +100,9 @@ final class Taxonomies_Register {
          * Register the taxonomy
          */
         register_taxonomy(
-            'chp_taxonomy',
+            'project_types',
             [
-                'chp_post_type'
+                'project'
             ],
             $options
         );
@@ -118,4 +112,4 @@ final class Taxonomies_Register {
 }
 
 // Run the class.
-$chp_taxonomies = new Taxonomies_Register;
+$chp_project = new Taxonomy_Register;
