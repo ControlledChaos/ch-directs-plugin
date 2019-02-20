@@ -67,11 +67,11 @@ class Users_Callbacks {
 	 */
 	public function block_gravatar( $args ) {
 
-		$option = get_option( 'chp_block_gravatar' );
+		$option = get_option( 'chd_block_gravatar' );
 
-		$html = '<p><input type="checkbox" id="chp_block_gravatar" name="chp_block_gravatar" value="1" ' . checked( 1, $option, false ) . '/>';
+		$html = '<p><input type="checkbox" id="chd_block_gravatar" name="chd_block_gravatar" value="1" ' . checked( 1, $option, false ) . '/>';
 
-		$html .= '<label for="chp_block_gravatar"> ' . $args[0] . '</label></p>';
+		$html .= '<label for="chd_block_gravatar"> ' . $args[0] . '</label></p>';
 
 		echo $html;
 
@@ -86,11 +86,11 @@ class Users_Callbacks {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_users_callbacks() {
+function chd_users_callbacks() {
 
 	return Users_Callbacks::instance();
 
 }
 
 // Run an instance of the class.
-chp_users_callbacks();
+chd_users_callbacks();

@@ -27,16 +27,16 @@ if ( ! defined( 'WPINC' ) ) {
  */
 
 if ( ! defined( 'DOING_AJAX' ) && ! defined( 'DOING_AUTOSAVE' ) ) {
-    add_action( 'admin_init', 'chp_check_wp_debug_define' );
+    add_action( 'admin_init', 'chd_check_wp_debug_define' );
 }
 
-function chp_check_wp_debug_define() {
+function chd_check_wp_debug_define() {
 	if ( defined( 'WP_DEBUG' ) && ! WP_DEBUG ) {
-		$dev_mode = get_option( 'chp_site_development' );
+		$dev_mode = get_option( 'chd_site_development' );
 		if ( $dev_mode ) {
-			chp_set_wp_debug_define( true );
+			chd_set_wp_debug_define( true );
 		} elseif ( false == $dev_mode )  {
-			chp_set_wp_debug_define( false );
+			chd_set_wp_debug_define( false );
 		}
 	}
 }
@@ -49,14 +49,14 @@ function chp_check_wp_debug_define() {
  * @param  bool $turn_it_on The value of WP_DEBUG constant
  * @return void
  */
-function chp_set_wp_debug_define( $turn_it_on ) {
+function chd_set_wp_debug_define( $turn_it_on ) {
 	// If WP_DEBUG is already defined, no need to do anything
 	if( ( $turn_it_on && defined( 'WP_DEBUG' ) && WP_DEBUG ) ) {
 		return;
 	}
 
 	// Get path of the config file
-	$config_file_path = chp_find_wpconfig_path();
+	$config_file_path = chd_find_wpconfig_path();
     if ( ! $config_file_path ) {
 		return;
     }
@@ -74,7 +74,7 @@ function chp_set_wp_debug_define( $turn_it_on ) {
 	 * @access public
 	 * @param  string $turn_it_on The value of WP_DEBUG constant
 	*/
-	apply_filters( 'chp_set_wp_debug_define', $turn_it_on );
+	apply_filters( 'chd_set_wp_debug_define', $turn_it_on );
 
 	// Lets find out if the constant WP_DEBUG is defined or not
 	$is_wp_debug_exist = false;
@@ -120,7 +120,7 @@ function chp_set_wp_debug_define( $turn_it_on ) {
  * @access public
  * @return string|bool The path of wp-config.php file or false
  */
-function chp_find_wpconfig_path() {
+function chd_find_wpconfig_path() {
 	$config_file     = ABSPATH . 'wp-config.php';
 	$config_file_alt = dirname( ABSPATH ) . '/wp-config.php';
 
@@ -142,16 +142,16 @@ function chp_find_wpconfig_path() {
  * @access public
  * @return string|bool The path of wp-config.php file or false
  */
-register_deactivation_hook( __FILE__, 'chp_deactivation' );
+register_deactivation_hook( __FILE__, 'chd_deactivation' );
 
-function chp_deactivation() {
+function chd_deactivation() {
     // set WP_DEBUG back to false
-    set_chp_wp_debug_off( false );
+    set_chd_wp_debug_off( false );
 }
 
-function set_chp_wp_debug_off( $turn_it_off ) {
+function set_chd_wp_debug_off( $turn_it_off ) {
 	// Get path of the config file
-	$config_file_path = chp_find_wpconfig_path();
+	$config_file_path = chd_find_wpconfig_path();
     if ( ! $config_file_path ) {
 		return;
     }
@@ -168,7 +168,7 @@ function set_chp_wp_debug_off( $turn_it_off ) {
 	 *
 	 * @param string $turn_it_on The value of WP_DEBUG constant
 	*/
-	apply_filters( 'chp_set_wp_debug_define', $turn_it_off );
+	apply_filters( 'chd_set_wp_debug_define', $turn_it_off );
 
 	// Lets find out if the constant WP_DEBUG is defined or not
 	$is_wp_debug_exist = true;

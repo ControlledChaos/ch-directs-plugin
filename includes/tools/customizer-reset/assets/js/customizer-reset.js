@@ -4,7 +4,7 @@ jQuery(function ($) {
     var $container = $('#customize-header-actions');
 
 
-    var $button = $('<input type="submit" name="chp-reset" id="chp-reset" class="button-secondary button">')
+    var $button = $('<input type="submit" name="chd-reset" id="chd-reset" class="button-secondary button">')
         .attr('value', _CHPCustomizerReset.reset)
         .css({
             'float': 'right',

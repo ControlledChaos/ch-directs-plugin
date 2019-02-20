@@ -211,11 +211,11 @@ final class ACF_Tab_Icons {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_acf_icons() {
+function chd_acf_icons() {
 
 	return ACF_Tab_Icons::instance();
 
 }
 
 // Run an instance of the class.
-chp_acf_icons();
+chd_acf_icons();

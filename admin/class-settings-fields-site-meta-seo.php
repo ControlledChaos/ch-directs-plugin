@@ -99,25 +99,25 @@ class Settings_Fields_Site_Meta_SEO {
 
 		// Meta/SEO settings section.
 		add_settings_section(
-			'chp-site-meta-seo',
+			'chd-site-meta-seo',
 			__( 'Meta & SEO Settings', 'ch-directs-plugin' ),
 			[],
-			'chp-site-meta-seo'
+			'chd-site-meta-seo'
 		);
 
 		// Disable meta tags.
 		add_settings_field(
-			'chp_meta_disable',
+			'chd_meta_disable',
 			__( 'Meta Tags', 'ch-directs-plugin' ),
 			[ Partials\Field_Callbacks\Meta_SEO_Callbacks::instance(), 'disable_meta' ],
-			'chp-site-meta-seo',
-			'chp-site-meta-seo',
+			'chd-site-meta-seo',
+			'chd-site-meta-seo',
 			[ esc_html__( 'Disable if your theme includes SEO meta tags or if you plan on using an SEO plugin.', 'ch-directs-plugin' ) ]
 		);
 
 		register_setting(
-			'chp-site-meta-seo',
-			'chp_meta_disable'
+			'chd-site-meta-seo',
+			'chd_meta_disable'
 		);
 
 		// Organization Schema type.
@@ -125,13 +125,13 @@ class Settings_Fields_Site_Meta_SEO {
 			'schema_org_type',
 			__( 'Organization Type', 'ch-directs-plugin' ),
 			[ Partials\Field_Callbacks\Meta_SEO_Callbacks::instance(), 'schema_org_type' ],
-			'chp-site-meta-seo',
-			'chp-site-meta-seo',
+			'chd-site-meta-seo',
+			'chd-site-meta-seo',
 			[ esc_html__( 'Select a category that generally applies to this website.', 'ch-directs-plugin' ) ]
 		);
 
 		register_setting(
-			'chp-site-meta-seo',
+			'chd-site-meta-seo',
 			'schema_org_type'
 		);
 
@@ -145,11 +145,11 @@ class Settings_Fields_Site_Meta_SEO {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_settings_fields_site_meta_seo() {
+function chd_settings_fields_site_meta_seo() {
 
 	return Settings_Fields_Site_Meta_SEO::instance();
 
 }
 
 // Run an instance of the class.
-chp_settings_fields_site_meta_seo();
+chd_settings_fields_site_meta_seo();

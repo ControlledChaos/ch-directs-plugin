@@ -64,7 +64,7 @@ class SVG_Support {
 		global $wp_version;
 
 		// Add SVG upload support if option selected.
-		$add_svg = get_option( 'chp_add_svg_support' );
+		$add_svg = get_option( 'chd_add_svg_support' );
 		if ( $add_svg ) {
 			add_action( 'admin_init', [ $this, 'svg_support' ] );
 			add_filter( 'wp_check_filetype_and_ext', [ $this, 'svg_filetype' ], 100, 4 );

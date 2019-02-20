@@ -205,7 +205,7 @@ FLBuilder::register_module( 'CHP_Example_Module', [
                         'rows'          => 10
                     ],
                     'custom_field_example' => [
-                        'type'    => 'chp-custom-beaver-field',
+                        'type'    => 'chd-custom-beaver-field',
                         'label'   => __( 'Custom Field Example', 'ch-directs-plugin' ),
                         'default' => ''
                     ],

@@ -48,7 +48,7 @@ $tabs = [
 ];
 
 // Apply a filter to the tabs array for adding tabs.
-$page_tabs = apply_filters( 'chp_tabs_development', $tabs );
+$page_tabs = apply_filters( 'chd_tabs_development', $tabs );
 
 /**
  * Do settings section and fields by tab.
@@ -57,16 +57,16 @@ $page_tabs = apply_filters( 'chp_tabs_development', $tabs );
  * @return void
  */
 if ( 'general' == $active_tab ) {
-    $section = 'chp-site-development-general';
-    $fields  = 'chp-site-development-general';
+    $section = 'chd-site-development-general';
+    $fields  = 'chd-site-development-general';
 } else {
     $section = null;
     $fields  = null;
 }
 
 // Apply filters to the sections and fields for new tabs.
-$do_section = apply_filters( 'chp_section_development', $section );
-$do_fields  = apply_filters( 'chp_fields_development', $fields );
+$do_section = apply_filters( 'chd_section_development', $section );
+$do_fields  = apply_filters( 'chd_fields_development', $fields );
 
 /**
  * Conditional save button text by tab.
@@ -81,7 +81,7 @@ if ( 'general' == $active_tab  ) {
 }
 
 // Apply a filter for new tabs added by another plugin or from a theme.
-$button = apply_filters( 'chp_save_script_options', $save );
+$button = apply_filters( 'chd_save_script_options', $save );
 
 // Settings saved notice.
 if ( isset( $_GET['settings-updated'] ) ) { ?>

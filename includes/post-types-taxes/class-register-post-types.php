@@ -85,7 +85,7 @@ final class Post_Types_Register {
         ];
 
         // Apply a filter to labels for customization.
-        $labels = apply_filters( 'chp_project_labels', $labels );
+        $labels = apply_filters( 'chd_project_labels', $labels );
 
         $options = [
             'label'               => __( 'Projects', 'ch-directs-plugin' ),
@@ -119,7 +119,7 @@ final class Post_Types_Register {
         ];
 
         // Apply a filter to arguments for customization.
-        $options = apply_filters( 'chp_project_args', $options );
+        $options = apply_filters( 'chd_project_args', $options );
 
         /**
          * Register the post type

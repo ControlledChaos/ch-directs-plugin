@@ -83,12 +83,12 @@ class Admin_Toolbar_Menus {
 
 		register_nav_menus(
 			[
-			'chp_admin_toolbar_site'       => esc_html__( 'Admin Toolbar: Site Name', 'ch-directs-plugin' ),
-			'chp_admin_toolbar_main'       => esc_html__( 'Admin Toolbar: Main', 'ch-directs-plugin' ),
-			'chp_admin_toolbar_account'    => esc_html__( 'Admin Toolbar: My Account', 'ch-directs-plugin' ),
-			'chp_frontend_toolbar_site'    => esc_html__( 'Frontend Toolbar: Site Name', 'ch-directs-plugin' ),
-			'chp_frontend_toolbar_main'    => esc_html__( 'Frontend Toolbar: Main', 'ch-directs-plugin' ),
-			'chp_frontend_toolbar_account' => esc_html__( 'Frontend Toolbar: My Account', 'ch-directs-plugin' )
+			'chd_admin_toolbar_site'       => esc_html__( 'Admin Toolbar: Site Name', 'ch-directs-plugin' ),
+			'chd_admin_toolbar_main'       => esc_html__( 'Admin Toolbar: Main', 'ch-directs-plugin' ),
+			'chd_admin_toolbar_account'    => esc_html__( 'Admin Toolbar: My Account', 'ch-directs-plugin' ),
+			'chd_frontend_toolbar_site'    => esc_html__( 'Frontend Toolbar: Site Name', 'ch-directs-plugin' ),
+			'chd_frontend_toolbar_main'    => esc_html__( 'Frontend Toolbar: Main', 'ch-directs-plugin' ),
+			'chd_frontend_toolbar_account' => esc_html__( 'Frontend Toolbar: My Account', 'ch-directs-plugin' )
 			]
 		);
 
@@ -103,9 +103,9 @@ class Admin_Toolbar_Menus {
 	 */
 	public function admin_menu_main( $wp_admin_bar ) {
 
-		if ( is_admin() && is_user_logged_in() && ( $locations = get_nav_menu_locations() ) && isset( $locations[ 'chp_admin_toolbar_main' ] ) ) {
+		if ( is_admin() && is_user_logged_in() && ( $locations = get_nav_menu_locations() ) && isset( $locations[ 'chd_admin_toolbar_main' ] ) ) {
 
-			$menu = wp_get_nav_menu_object( $locations[ 'chp_admin_toolbar_main' ] );
+			$menu = wp_get_nav_menu_object( $locations[ 'chd_admin_toolbar_main' ] );
 
 			if ( false != $menu ) {
 
@@ -161,9 +161,9 @@ class Admin_Toolbar_Menus {
 	 */
 	public function admin_menu_site( $wp_admin_bar ) {
 
-		if ( is_admin() && is_user_logged_in() && ( $locations = get_nav_menu_locations() ) && isset( $locations[ 'chp_admin_toolbar_site' ] ) ) {
+		if ( is_admin() && is_user_logged_in() && ( $locations = get_nav_menu_locations() ) && isset( $locations[ 'chd_admin_toolbar_site' ] ) ) {
 
-			$menu = wp_get_nav_menu_object( $locations[ 'chp_admin_toolbar_site' ] );
+			$menu = wp_get_nav_menu_object( $locations[ 'chd_admin_toolbar_site' ] );
 
 			if ( false != $menu ) {
 
@@ -220,9 +220,9 @@ class Admin_Toolbar_Menus {
 	 */
 	public function admin_menu_account( $wp_admin_bar ) {
 
-		if ( is_admin() && is_user_logged_in() && ( $locations = get_nav_menu_locations() ) && isset( $locations[ 'chp_admin_toolbar_account' ] ) ) {
+		if ( is_admin() && is_user_logged_in() && ( $locations = get_nav_menu_locations() ) && isset( $locations[ 'chd_admin_toolbar_account' ] ) ) {
 
-			$menu = wp_get_nav_menu_object( $locations[ 'chp_admin_toolbar_account' ] );
+			$menu = wp_get_nav_menu_object( $locations[ 'chd_admin_toolbar_account' ] );
 
 			if ( false != $menu ) {
 
@@ -279,9 +279,9 @@ class Admin_Toolbar_Menus {
 	 */
 	public function frontend_menu_main( $wp_admin_bar ) {
 
-		if ( ! is_admin() && is_user_logged_in() && ( $locations = get_nav_menu_locations() ) && isset( $locations[ 'chp_frontend_toolbar_main' ] ) ) {
+		if ( ! is_admin() && is_user_logged_in() && ( $locations = get_nav_menu_locations() ) && isset( $locations[ 'chd_frontend_toolbar_main' ] ) ) {
 
-			$menu = wp_get_nav_menu_object( $locations[ 'chp_frontend_toolbar_main' ] );
+			$menu = wp_get_nav_menu_object( $locations[ 'chd_frontend_toolbar_main' ] );
 
 			if ( false != $menu ) {
 
@@ -338,9 +338,9 @@ class Admin_Toolbar_Menus {
 	 */
 	public function frontend_menu_site( $wp_admin_bar ) {
 
-		if ( ! is_admin() && is_user_logged_in() && ( $locations = get_nav_menu_locations() ) && isset( $locations[ 'chp_frontend_toolbar_site' ] ) ) {
+		if ( ! is_admin() && is_user_logged_in() && ( $locations = get_nav_menu_locations() ) && isset( $locations[ 'chd_frontend_toolbar_site' ] ) ) {
 
-			$menu = wp_get_nav_menu_object( $locations[ 'chp_frontend_toolbar_site' ] );
+			$menu = wp_get_nav_menu_object( $locations[ 'chd_frontend_toolbar_site' ] );
 
 			if ( false != $menu ) {
 
@@ -397,9 +397,9 @@ class Admin_Toolbar_Menus {
 	 */
 	public function frontend_menu_account( $wp_admin_bar ) {
 
-		if ( ! is_admin() && is_user_logged_in() && ( $locations = get_nav_menu_locations() ) && isset( $locations[ 'chp_frontend_toolbar_account' ] ) ) {
+		if ( ! is_admin() && is_user_logged_in() && ( $locations = get_nav_menu_locations() ) && isset( $locations[ 'chd_frontend_toolbar_account' ] ) ) {
 
-			$menu = wp_get_nav_menu_object( $locations[ 'chp_frontend_toolbar_account' ] );
+			$menu = wp_get_nav_menu_object( $locations[ 'chd_frontend_toolbar_account' ] );
 
 			if ( false != $menu ) {
 
@@ -456,11 +456,11 @@ class Admin_Toolbar_Menus {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_admin_toolbar_menus() {
+function chd_admin_toolbar_menus() {
 
 	return Admin_Toolbar_Menus::instance();
 
 }
 
 // Run an instance of the class.
-chp_admin_toolbar_menus();
+chd_admin_toolbar_menus();

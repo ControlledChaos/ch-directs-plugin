@@ -56,7 +56,7 @@ $tabs = [
 ];
 
 // Apply a filter to the tabs array for adding tabs.
-$page_tabs = apply_filters( 'chp_tabs_script_options', $tabs );
+$page_tabs = apply_filters( 'chd_tabs_script_options', $tabs );
 
 /**
  * Do settings section and fields by tab.
@@ -65,19 +65,19 @@ $page_tabs = apply_filters( 'chp_tabs_script_options', $tabs );
  * @return void
  */
 if ( 'general' == $active_tab ) {
-    $section = 'chp-scripts-general';
-    $fields  = 'chp-scripts-general';
+    $section = 'chd-scripts-general';
+    $fields  = 'chd-scripts-general';
 } elseif ( 'vendor' == $active_tab ) {
-    $section = 'chp-scripts-vendor';
-    $fields  = 'chp-scripts-vendor';
+    $section = 'chd-scripts-vendor';
+    $fields  = 'chd-scripts-vendor';
 } else {
     $section = null;
     $fields  = null;
 }
 
 // Apply filters to the sections and fields for new tabs.
-$do_section = apply_filters( 'chp_section_script_options', $section );
-$do_fields  = apply_filters( 'chp_fields_script_options', $fields );
+$do_section = apply_filters( 'chd_section_script_options', $section );
+$do_fields  = apply_filters( 'chd_fields_script_options', $fields );
 
 
 /**
@@ -95,7 +95,7 @@ if ( 'general' == $active_tab  ) {
 }
 
 // Apply a filter for new tabs added by another plugin or from a theme.
-$button = apply_filters( 'chp_save_script_options', $save );
+$button = apply_filters( 'chd_save_script_options', $save );
 
 ?>
 <div class="wrap">

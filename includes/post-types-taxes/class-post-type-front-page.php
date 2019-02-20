@@ -86,7 +86,7 @@ class Post_Types_Front_Page {
 
 		if ( $query->is_home() && $query->is_front_page() && $query->is_main_query() ) {
 
-			$post_type  = get_option( 'chp_front_page_post_type', '' );
+			$post_type  = get_option( 'chd_front_page_post_type', '' );
 			$post_types = get_post_types( [
 				'has_archive' => true,
 				'public'      => true,
@@ -119,13 +119,13 @@ class Post_Types_Front_Page {
 
 		$post_types['post'] = __( 'post' );
 
-		$wp_customize->add_setting( 'chp_front_page_post_type', [
+		$wp_customize->add_setting( 'chd_front_page_post_type', [
 			'type'       => 'option',
 			'capability' => 'manage_options',
 			'default'    => 'post',
 		]);
 
-		$wp_customize->add_control( 'chp_front_page_post_type', [
+		$wp_customize->add_control( 'chd_front_page_post_type', [
 			'label'           => __( 'Front Page Post Type', 'ch-directs-plugin' ),
 			'type'            => 'radio',
 			'choices'         => $post_types,
@@ -161,11 +161,11 @@ class Post_Types_Front_Page {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_types_front_page() {
+function chd_types_front_page() {
 
 	return Post_Types_Front_Page::instance();
 
 }
 
 // Run an instance of the class.
-chp_types_front_page();
+chd_types_front_page();

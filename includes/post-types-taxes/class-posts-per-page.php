@@ -6,7 +6,7 @@
  * @subpackage Includes\Post_Types_Taxes
  *
  * @since      1.0.0
- * @author     Greg Sweet <greg@chpzine.com>
+ * @author     Greg Sweet <greg@chdzine.com>
  * @author     Jeremy Felt <jeremy.felt@gmail.com>
  */
 
@@ -143,7 +143,7 @@ class Posts_Per_Page {
 	public function activate() {
 
 		$default_count     = get_option( 'posts_per_page' );
-		$current_options   = get_option( 'chp_ppp_options' );
+		$current_options   = get_option( 'chd_ppp_options' );
 		$default_options   = [];
 		$option_type_array = [ 'front', 'category', 'tag', 'author', 'archive', 'search', 'default' ];
 
@@ -155,7 +155,7 @@ class Posts_Per_Page {
 			 * is filled in with something appropriate. This looks for each option in order. */
 			if ( ! empty( $cppc_options[ $option_type . '_count_paged' ] ) ) {
 				$default_options[ $option_type . '_count_paged' ] = absint( $current_options[ $option_type . '_count_paged' ] );
-			} elseif ( ! empty( $chp_ppp_options[ $option_type . '_count' ] ) ) {
+			} elseif ( ! empty( $chd_ppp_options[ $option_type . '_count' ] ) ) {
 				$default_options[ $option_type . '_count_paged' ] = absint( $current_options[ $option_type . '_count' ] );
 			} else {
 				$default_options[ $option_type . '_count_paged' ] = absint( $default_count );
@@ -184,7 +184,7 @@ class Posts_Per_Page {
 			}
 		}
 
-		update_option( 'chp_ppp_options', $default_options );
+		update_option( 'chd_ppp_options', $default_options );
 
 	}
 
@@ -220,9 +220,9 @@ class Posts_Per_Page {
 			<p><?php _e( 'The initial value used on activation was pulled from the setting <em>Blog Pages show at most</em> found in the', 'ch-directs-plugin' ); ?> <a href="<?php echo site_url( '/wp-admin/options-reading.php' ); ?>" title="Reading Settings"><?php _e( 'Reading Settings', 'ch-directs-plugin' ); ?></a></p>
 			<form method="post" action="options.php">
 				<?php
-					settings_fields( 'chp_ppp_options' );
-					do_settings_sections( 'chp_ppp' );
-					do_settings_sections( 'chp_ppp_custom' );
+					settings_fields( 'chd_ppp_options' );
+					do_settings_sections( 'chd_ppp' );
+					do_settings_sections( 'chd_ppp_custom' );
 				?>
 			<p class="submit"><input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'ch-directs-plugin' ); ?>" /></p></form>
 		</div>
@@ -238,20 +238,20 @@ class Posts_Per_Page {
 	 */
 	public function register_settings() {
 
-		register_setting( 'chp_ppp_options', 'chp_ppp_options', [ $this, 'validate_options'] );
+		register_setting( 'chd_ppp_options', 'chd_ppp_options', [ $this, 'validate_options'] );
 
-		add_settings_section( 'chp_ppp_section_main', '', [ $this, 'output_main_section_text' ], 'chp_ppp' );
-		add_settings_section( 'chp_ppp_section_custom', '', [ $this, 'output_custom_section_text' ], 'chp_ppp_custom' );
+		add_settings_section( 'chd_ppp_section_main', '', [ $this, 'output_main_section_text' ], 'chd_ppp' );
+		add_settings_section( 'chd_ppp_section_custom', '', [ $this, 'output_custom_section_text' ], 'chd_ppp_custom' );
 
-		add_settings_field( 'chp_ppp_index_count',     __( 'Main Index posts per page', 'ch-directs-plugin' ), [ $this, 'output_index_count_text' ],    'chp_ppp', 'chp_ppp_section_main' );
-		add_settings_field( 'chp_ppp_category_count',  __( 'Category posts per page', 'ch-directs-plugin' ),   [ $this, 'output_category_count_text' ], 'chp_ppp', 'chp_ppp_section_main' );
-		add_settings_field( 'chp_ppp_archive_count',   __( 'Archive posts per page', 'ch-directs-plugin' ),    [ $this, 'output_archive_count_text' ],  'chp_ppp', 'chp_ppp_section_main' );
-		add_settings_field( 'chp_ppp_tag_count',       __( 'Tag posts per page', 'ch-directs-plugin' ),        [ $this, 'output_tag_count_text' ],      'chp_ppp', 'chp_ppp_section_main' );
-		add_settings_field( 'chp_ppp_author_count',    __( 'Author posts per page', 'ch-directs-plugin' ),     [ $this, 'output_author_count_text' ],   'chp_ppp', 'chp_ppp_section_main' );
-		add_settings_field( 'chp_ppp_search_count',    __( 'Search posts per page', 'ch-directs-plugin' ),     [ $this, 'output_search_count_text' ],   'chp_ppp', 'chp_ppp_section_main' );
-		add_settings_field( 'chp_ppp_default_count',   __( 'Default posts per page', 'ch-directs-plugin' ),    [ $this, 'output_default_count_text' ],  'chp_ppp', 'chp_ppp_section_main' );
+		add_settings_field( 'chd_ppp_index_count',     __( 'Main Index posts per page', 'ch-directs-plugin' ), [ $this, 'output_index_count_text' ],    'chd_ppp', 'chd_ppp_section_main' );
+		add_settings_field( 'chd_ppp_category_count',  __( 'Category posts per page', 'ch-directs-plugin' ),   [ $this, 'output_category_count_text' ], 'chd_ppp', 'chd_ppp_section_main' );
+		add_settings_field( 'chd_ppp_archive_count',   __( 'Archive posts per page', 'ch-directs-plugin' ),    [ $this, 'output_archive_count_text' ],  'chd_ppp', 'chd_ppp_section_main' );
+		add_settings_field( 'chd_ppp_tag_count',       __( 'Tag posts per page', 'ch-directs-plugin' ),        [ $this, 'output_tag_count_text' ],      'chd_ppp', 'chd_ppp_section_main' );
+		add_settings_field( 'chd_ppp_author_count',    __( 'Author posts per page', 'ch-directs-plugin' ),     [ $this, 'output_author_count_text' ],   'chd_ppp', 'chd_ppp_section_main' );
+		add_settings_field( 'chd_ppp_search_count',    __( 'Search posts per page', 'ch-directs-plugin' ),     [ $this, 'output_search_count_text' ],   'chd_ppp', 'chd_ppp_section_main' );
+		add_settings_field( 'chd_ppp_default_count',   __( 'Default posts per page', 'ch-directs-plugin' ),    [ $this, 'output_default_count_text' ],  'chd_ppp', 'chd_ppp_section_main' );
 
-		add_settings_field( 'chp_ppp_post_type_count', '', [ $this, 'output_post_type_count_text' ], 'chp_ppp_custom', 'chp_ppp_section_custom' );
+		add_settings_field( 'chd_ppp_post_type_count', '', [ $this, 'output_post_type_count_text' ], 'chd_ppp_custom', 'chd_ppp_section_custom' );
 
 	}
 
@@ -318,14 +318,14 @@ class Posts_Per_Page {
 	 */
 	public function output_post_type_count_text() {
 
-		$chp_ppp_options = get_option( 'chp_ppp_options' );
+		$chd_ppp_options = get_option( 'chd_ppp_options' );
 
 		// Arguments for post types displayed on the settings page.
 		$args = [
 			'public'   => true,
 			'_builtin' => false
 		];
-		$args            = apply_filters( 'chp_output_post_type_count_text', $args );
+		$args            = apply_filters( 'chd_output_post_type_count_text', $args );
 		$all_post_types  = get_post_types( $args );
 
 		/* Quirky little workaround for displaying the settings in our table */
@@ -337,12 +337,12 @@ class Posts_Per_Page {
 			 *  to us when our plugin is registered. If a custom post type becomes
 			 *  available after our plugin is installed, we'll want to catch it and
 			 *  assign a good value. */
-			if ( empty( $chp_ppp_options[ $p . '_count' ] ) ) {
-				$chp_ppp_options[ $p . '_count' ] = 0;
+			if ( empty( $chd_ppp_options[ $p . '_count' ] ) ) {
+				$chd_ppp_options[ $p . '_count' ] = 0;
 			}
 
-			if ( empty( $chp_ppp_options[ $p . '_count_paged' ] ) ) {
-				$chp_ppp_options[ $p . '_count_paged' ] = 0;
+			if ( empty( $chd_ppp_options[ $p . '_count_paged' ] ) ) {
+				$chd_ppp_options[ $p . '_count_paged' ] = 0;
 			}
 
 			$this_post_data = get_post_type_object( $p );
@@ -351,9 +351,9 @@ class Posts_Per_Page {
 			<tr>
 				<th><?php echo $this_post_data->labels->name; ?></th>
 				<td>
-					<label for="chp_ppp_post_type_count[<?php echo esc_attr( $p ); ?>]"><?php _e( 'First Page:', 'tims' ); ?> </label> <input id="chp_ppp_post_type_count[<?php echo esc_attr( $p ); ?>]" name="chp_ppp_options[<?php echo esc_attr( $p ); ?>_count]" size="3" type="text" value="<?php echo esc_attr( $chp_ppp_options[ $p . '_count' ] ); ?>" />
+					<label for="chd_ppp_post_type_count[<?php echo esc_attr( $p ); ?>]"><?php _e( 'First Page:', 'tims' ); ?> </label> <input id="chd_ppp_post_type_count[<?php echo esc_attr( $p ); ?>]" name="chd_ppp_options[<?php echo esc_attr( $p ); ?>_count]" size="3" type="text" value="<?php echo esc_attr( $chd_ppp_options[ $p . '_count' ] ); ?>" />
 					&nbsp;
-					<label for="chp_ppp_post_type_count[<?php echo esc_attr( $p ); ?>]"><?php _e( 'Subsequent Pages:', 'tims' ); ?></label> <input id="chp_ppp_post_type_count[<?php echo esc_attr( $p ); ?>]" name="chp_ppp_options[<?php echo esc_attr( $p ); ?>_count_paged]" size="3" type="text" value="<?php echo esc_attr( $chp_ppp_options[ $p . '_count_paged' ] ); ?>" />
+					<label for="chd_ppp_post_type_count[<?php echo esc_attr( $p ); ?>]"><?php _e( 'Subsequent Pages:', 'tims' ); ?></label> <input id="chd_ppp_post_type_count[<?php echo esc_attr( $p ); ?>]" name="chd_ppp_options[<?php echo esc_attr( $p ); ?>_count_paged]" size="3" type="text" value="<?php echo esc_attr( $chd_ppp_options[ $p . '_count_paged' ] ); ?>" />
 				</td>
 			</tr>
 			<?php
@@ -370,12 +370,12 @@ class Posts_Per_Page {
 	 */
 	public function output_index_count_text() {
 
-		$chp_ppp_options = get_option( 'chp_ppp_options', [ 'front_count' => 0, 'front_count_paged' => 0 ] );
+		$chd_ppp_options = get_option( 'chd_ppp_options', [ 'front_count' => 0, 'front_count_paged' => 0 ] );
 
 		?>
-		<label for="chp_ppp_index_count[0]"><?php _e( 'First Page:', 'tims' ); ?> </label> <input id="chp_ppp_index_count[0]" name="chp_ppp_options[front_count]" size="3" type="text" value="<?php echo esc_attr( $chp_ppp_options[ 'front_count' ] ); ?>" />
+		<label for="chd_ppp_index_count[0]"><?php _e( 'First Page:', 'tims' ); ?> </label> <input id="chd_ppp_index_count[0]" name="chd_ppp_options[front_count]" size="3" type="text" value="<?php echo esc_attr( $chd_ppp_options[ 'front_count' ] ); ?>" />
 		&nbsp;
-		<label for="chp_ppp_index_count[1]"><?php _e( 'Subsequent Pages:', 'tims' ); ?> </label> <input id="chp_ppp_index_count[1]" name="chp_ppp_options[front_count_paged]" size="3" type="text" value="<?php echo esc_attr( $chp_ppp_options[ 'front_count_paged' ] ); ?>" />
+		<label for="chd_ppp_index_count[1]"><?php _e( 'Subsequent Pages:', 'tims' ); ?> </label> <input id="chd_ppp_index_count[1]" name="chd_ppp_options[front_count_paged]" size="3" type="text" value="<?php echo esc_attr( $chd_ppp_options[ 'front_count_paged' ] ); ?>" />
 		<?php
 	}
 
@@ -388,12 +388,12 @@ class Posts_Per_Page {
 	 */
 	public function output_category_count_text() {
 
-		$chp_ppp_options = get_option( 'chp_ppp_options', [ 'category_count' => 0, 'category_count_paged' => 0 ] );
+		$chd_ppp_options = get_option( 'chd_ppp_options', [ 'category_count' => 0, 'category_count_paged' => 0 ] );
 
 		?>
-		<label for="chp_ppp_category_count[0]"><?php _e( 'First Page:', 'tims' ); ?> </label> <input id="chp_ppp_category_count[0]" name="chp_ppp_options[category_count]" size="3" type="text" value="<?php echo esc_attr( $chp_ppp_options[ 'category_count' ] ); ?>" />
+		<label for="chd_ppp_category_count[0]"><?php _e( 'First Page:', 'tims' ); ?> </label> <input id="chd_ppp_category_count[0]" name="chd_ppp_options[category_count]" size="3" type="text" value="<?php echo esc_attr( $chd_ppp_options[ 'category_count' ] ); ?>" />
 		&nbsp;
-		<label for="chp_ppp_category_count[1]"><?php _e( 'Subsequent Pages:', 'tims' ); ?> </label> <input id="chp_ppp_category_count[1]" name="chp_ppp_options[category_count_paged]" size="3" type="text" value="<?php echo esc_attr( $chp_ppp_options[ 'category_count_paged' ] ); ?>" />
+		<label for="chd_ppp_category_count[1]"><?php _e( 'Subsequent Pages:', 'tims' ); ?> </label> <input id="chd_ppp_category_count[1]" name="chd_ppp_options[category_count_paged]" size="3" type="text" value="<?php echo esc_attr( $chd_ppp_options[ 'category_count_paged' ] ); ?>" />
 		<?php
 	}
 
@@ -406,12 +406,12 @@ class Posts_Per_Page {
 	 */
 	public function output_archive_count_text() {
 
-		$chp_ppp_options = get_option( 'chp_ppp_options', [ 'archive_count' => 0, 'archive_count_paged' => 0 ] );
+		$chd_ppp_options = get_option( 'chd_ppp_options', [ 'archive_count' => 0, 'archive_count_paged' => 0 ] );
 
 		?>
-		<label for="chp_ppp_archive_count[0]"><?php _e( 'First Page:', 'tims' ); ?> </label> <input id="chp_ppp_archive_count[0]" name="chp_ppp_options[archive_count]" size="3" type="text" value="<?php echo esc_attr( $chp_ppp_options[ 'archive_count' ] ); ?>" />
+		<label for="chd_ppp_archive_count[0]"><?php _e( 'First Page:', 'tims' ); ?> </label> <input id="chd_ppp_archive_count[0]" name="chd_ppp_options[archive_count]" size="3" type="text" value="<?php echo esc_attr( $chd_ppp_options[ 'archive_count' ] ); ?>" />
 		&nbsp;
-		<label for="chp_ppp_archive_count[1]"><?php _e( 'Subsequent Pages:', 'tims' ); ?> </label> <input id="chp_ppp_archive_count[1]" name="chp_ppp_options[archive_count_paged]" size="3" type="text" value="<?php echo esc_attr( $chp_ppp_options[ 'archive_count_paged' ] ); ?>" />
+		<label for="chd_ppp_archive_count[1]"><?php _e( 'Subsequent Pages:', 'tims' ); ?> </label> <input id="chd_ppp_archive_count[1]" name="chd_ppp_options[archive_count_paged]" size="3" type="text" value="<?php echo esc_attr( $chd_ppp_options[ 'archive_count_paged' ] ); ?>" />
 		<?php
 	}
 
@@ -424,12 +424,12 @@ class Posts_Per_Page {
 	 */
 	public function output_tag_count_text() {
 
-		$chp_ppp_options = get_option( 'chp_ppp_options', [ 'tag_count' => 0, 'tag_count_paged' => 0 ] );
+		$chd_ppp_options = get_option( 'chd_ppp_options', [ 'tag_count' => 0, 'tag_count_paged' => 0 ] );
 
 		?>
-		<label for="chp_ppp_tag_count[0]"><?php _e( 'First Page:', 'tims' ); ?> </label> <input id="chp_ppp_tag_count[0]" name="chp_ppp_options[tag_count]" size="3" type="text" value="<?php echo esc_attr( $chp_ppp_options[ 'tag_count' ] ); ?>" />
+		<label for="chd_ppp_tag_count[0]"><?php _e( 'First Page:', 'tims' ); ?> </label> <input id="chd_ppp_tag_count[0]" name="chd_ppp_options[tag_count]" size="3" type="text" value="<?php echo esc_attr( $chd_ppp_options[ 'tag_count' ] ); ?>" />
 		&nbsp;
-		<label for="chp_ppp_tag_count[1]"><?php _e( 'Subsequent Pages:', 'tims' ); ?> </label> <input id="chp_ppp_tag_count[1]" name="chp_ppp_options[tag_count_paged]" size="3" type="text" value="<?php echo esc_attr( $chp_ppp_options[ 'tag_count_paged' ] ); ?>" />
+		<label for="chd_ppp_tag_count[1]"><?php _e( 'Subsequent Pages:', 'tims' ); ?> </label> <input id="chd_ppp_tag_count[1]" name="chd_ppp_options[tag_count_paged]" size="3" type="text" value="<?php echo esc_attr( $chd_ppp_options[ 'tag_count_paged' ] ); ?>" />
 		<?php
 	}
 
@@ -442,12 +442,12 @@ class Posts_Per_Page {
 	 */
 	public function output_author_count_text() {
 
-		$chp_ppp_options = get_option( 'chp_ppp_options', [ 'author_count' => 0, 'author_count_paged' => 0 ] );
+		$chd_ppp_options = get_option( 'chd_ppp_options', [ 'author_count' => 0, 'author_count_paged' => 0 ] );
 
 		?>
-		<label for="chp_ppp_author_count[0]"><?php _e( 'First Page:', 'tims' ); ?> </label> <input id="chp_ppp_author_count[0]" name="chp_ppp_options[author_count]" size="3" type="text" value="<?php echo esc_attr( $chp_ppp_options[ 'author_count' ] ); ?>" />
+		<label for="chd_ppp_author_count[0]"><?php _e( 'First Page:', 'tims' ); ?> </label> <input id="chd_ppp_author_count[0]" name="chd_ppp_options[author_count]" size="3" type="text" value="<?php echo esc_attr( $chd_ppp_options[ 'author_count' ] ); ?>" />
 		&nbsp;
-		<label for="chp_ppp_author_count[1]"><?php _e( 'Subsequent Pages:', 'tims' ); ?> </label> <input id="chp_ppp_author_count[1]" name="chp_ppp_options[author_count_paged]" size="3" type="text" value="<?php echo esc_attr( $chp_ppp_options[ 'author_count_paged' ] ); ?>" />
+		<label for="chd_ppp_author_count[1]"><?php _e( 'Subsequent Pages:', 'tims' ); ?> </label> <input id="chd_ppp_author_count[1]" name="chd_ppp_options[author_count_paged]" size="3" type="text" value="<?php echo esc_attr( $chd_ppp_options[ 'author_count_paged' ] ); ?>" />
 		<?php
 	}
 
@@ -460,12 +460,12 @@ class Posts_Per_Page {
 	 */
 	public function output_search_count_text() {
 
-		$chp_ppp_options = get_option( 'chp_ppp_options', [ 'search_count' => 0, 'search_count_paged' => 0 ] );
+		$chd_ppp_options = get_option( 'chd_ppp_options', [ 'search_count' => 0, 'search_count_paged' => 0 ] );
 
 		?>
-		<label for="chp_ppp_search_count[0]"><?php _e( 'First Page:', 'tims' ); ?> </label> <input id="chp_ppp_search_count[0]" name="chp_ppp_options[search_count]" size="3" type="text" value="<?php echo esc_attr( $chp_ppp_options[ 'search_count' ] ); ?>" />
+		<label for="chd_ppp_search_count[0]"><?php _e( 'First Page:', 'tims' ); ?> </label> <input id="chd_ppp_search_count[0]" name="chd_ppp_options[search_count]" size="3" type="text" value="<?php echo esc_attr( $chd_ppp_options[ 'search_count' ] ); ?>" />
 		&nbsp;
-		<label for="chp_ppp_search_count[1]"><?php _e( 'Subsequent Pages:', 'tims' ); ?> </label> <input id="chp_ppp_search_count[1]" name="chp_ppp_options[search_count_paged]" size="3" type="text" value="<?php echo esc_attr( $chp_ppp_options[ 'search_count_paged' ] ); ?>" />
+		<label for="chd_ppp_search_count[1]"><?php _e( 'Subsequent Pages:', 'tims' ); ?> </label> <input id="chd_ppp_search_count[1]" name="chd_ppp_options[search_count_paged]" size="3" type="text" value="<?php echo esc_attr( $chd_ppp_options[ 'search_count_paged' ] ); ?>" />
 		<?php
 	}
 
@@ -478,12 +478,12 @@ class Posts_Per_Page {
 	 */
 	public function output_default_count_text() {
 
-		$chp_ppp_options = get_option( 'chp_ppp_options', [ 'default_count' => 0, 'default_count_paged' => 0 ] );
+		$chd_ppp_options = get_option( 'chd_ppp_options', [ 'default_count' => 0, 'default_count_paged' => 0 ] );
 
 		?>
-		<label for="chp_ppp_default_count[0]"><?php _e( 'First Page:', 'tims' ); ?> </label> <input id="chp_ppp_default_count[0]" name="chp_ppp_options[default_count]" size="3" type="text" value="<?php echo esc_attr( $chp_ppp_options[ 'default_count' ] ); ?>" />
+		<label for="chd_ppp_default_count[0]"><?php _e( 'First Page:', 'tims' ); ?> </label> <input id="chd_ppp_default_count[0]" name="chd_ppp_options[default_count]" size="3" type="text" value="<?php echo esc_attr( $chd_ppp_options[ 'default_count' ] ); ?>" />
 		&nbsp;
-		<label for="chp_ppp_default_count[1]"><?php _e( 'Subsequent Pages:', 'tims' ); ?> </label> <input id="chp_ppp_default_count[1]" name="chp_ppp_options[default_count_paged]" size="3" type="text" value="<?php echo esc_attr( $chp_ppp_options[ 'default_count_paged' ] ); ?>" />
+		<label for="chd_ppp_default_count[1]"><?php _e( 'Subsequent Pages:', 'tims' ); ?> </label> <input id="chd_ppp_default_count[1]" name="chd_ppp_options[default_count_paged]" size="3" type="text" value="<?php echo esc_attr( $chd_ppp_options[ 'default_count_paged' ] ); ?>" />
 		<?php
 	}
 
@@ -503,7 +503,7 @@ class Posts_Per_Page {
 			return;
 		}
 
-		$chp_ppp_options = get_option( 'chp_ppp_options' );
+		$chd_ppp_options = get_option( 'chd_ppp_options' );
 		$all_post_types  = get_post_types( [ '_builtin' => false ] );
 		$post_type_array = [];
 
@@ -515,24 +515,24 @@ class Posts_Per_Page {
 		$this->page_number = $query->get( 'paged' );
 
 		if ( $query->is_home() ) {
-			$this->process_options( 'front', $chp_ppp_options );
+			$this->process_options( 'front', $chd_ppp_options );
 		} elseif ( $query->is_post_type_archive( $post_type_array ) ) {
 			$current_post_type_object = $query->get_queried_object();
-			$this->process_options( $current_post_type_object->name, $chp_ppp_options );
+			$this->process_options( $current_post_type_object->name, $chd_ppp_options );
 		} elseif ( $query->is_category() ) {
-			$this->process_options( 'category', $chp_ppp_options );
+			$this->process_options( 'category', $chd_ppp_options );
 		} elseif ( $query->is_tag() ) {
-			$this->process_options( 'tag', $chp_ppp_options );
+			$this->process_options( 'tag', $chd_ppp_options );
 		} elseif ( $query->is_author() ) {
-			$this->process_options( 'author', $chp_ppp_options );
+			$this->process_options( 'author', $chd_ppp_options );
 		} elseif ( $query->is_search() ) {
-			$this->process_options( 'search', $chp_ppp_options );
+			$this->process_options( 'search', $chd_ppp_options );
 		} elseif ( $query->is_archive() ) {
 			/*  Note that the check for is_archive needs to be below anything else that WordPress may consider an
 			 *  archive. This includes is_tag, is_category, is_author and probably some others.	*/
-			$this->process_options( 'archive', $chp_ppp_options );
+			$this->process_options( 'archive', $chd_ppp_options );
 		} else {
-			$this->process_options( 'default', $chp_ppp_options );
+			$this->process_options( 'default', $chd_ppp_options );
 		}
 
 		if ( isset( $this->final_options['posts'] ) ) {
@@ -594,25 +594,25 @@ class Posts_Per_Page {
 	 * @since  1.0.0
 	 * @access public
 	 * @param  $option_prefix string prefix of the count and count_paged options in the database.
-	 * @param  $chp_ppp_options array of options from the database for custom posts per page.
+	 * @param  $chd_ppp_options array of options from the database for custom posts per page.
 	 * @return void
 	 */
-	public function process_options( $option_prefix, $chp_ppp_options ) {
+	public function process_options( $option_prefix, $chd_ppp_options ) {
 
-		if ( ! $this->paged_view && ! empty( $chp_ppp_options[ $option_prefix . '_count' ] ) ) {
+		if ( ! $this->paged_view && ! empty( $chd_ppp_options[ $option_prefix . '_count' ] ) ) {
 
-			$this->final_options['posts']  = $chp_ppp_options[ $option_prefix . '_count' ];
+			$this->final_options['posts']  = $chd_ppp_options[ $option_prefix . '_count' ];
 			$this->final_options['offset'] = 0;
-			$this->final_options['set_count'] = $chp_ppp_options[ $option_prefix . '_count' ];
-			$this->final_options['set_count_paged'] = $chp_ppp_options[ $option_prefix . '_count_paged' ];
+			$this->final_options['set_count'] = $chd_ppp_options[ $option_prefix . '_count' ];
+			$this->final_options['set_count_paged'] = $chd_ppp_options[ $option_prefix . '_count_paged' ];
 
-		} elseif ( $this->paged_view & ! empty( $chp_ppp_options[ $option_prefix . '_count_paged' ] ) ) {
+		} elseif ( $this->paged_view & ! empty( $chd_ppp_options[ $option_prefix . '_count_paged' ] ) ) {
 
-			$this->page_count_offset = ( $chp_ppp_options[ $option_prefix . '_count_paged' ] - $chp_ppp_options[ $option_prefix . '_count' ] );
-			$this->final_options['offset']  = ( ( $this->page_number - 2 ) * $chp_ppp_options[ $option_prefix . '_count_paged' ] + $chp_ppp_options[ $option_prefix . '_count' ] );
-			$this->final_options['posts']   = $chp_ppp_options[ $option_prefix . '_count_paged' ];
-			$this->final_options['set_count'] = $chp_ppp_options[ $option_prefix . '_count' ];
-			$this->final_options['set_count_paged'] = $chp_ppp_options[ $option_prefix . '_count_paged' ];
+			$this->page_count_offset = ( $chd_ppp_options[ $option_prefix . '_count_paged' ] - $chd_ppp_options[ $option_prefix . '_count' ] );
+			$this->final_options['offset']  = ( ( $this->page_number - 2 ) * $chd_ppp_options[ $option_prefix . '_count_paged' ] + $chd_ppp_options[ $option_prefix . '_count' ] );
+			$this->final_options['posts']   = $chd_ppp_options[ $option_prefix . '_count_paged' ];
+			$this->final_options['set_count'] = $chd_ppp_options[ $option_prefix . '_count' ];
+			$this->final_options['set_count_paged'] = $chd_ppp_options[ $option_prefix . '_count_paged' ];
 
 		}
 	}
@@ -625,11 +625,11 @@ class Posts_Per_Page {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_posts_per_page() {
+function chd_posts_per_page() {
 
 	return Posts_Per_Page::instance();
 
 }
 
 // Run an instance of the class.
-chp_posts_per_page();
+chd_posts_per_page();

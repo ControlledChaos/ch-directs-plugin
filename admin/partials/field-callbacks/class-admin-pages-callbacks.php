@@ -67,11 +67,11 @@ class Admin_Pages_Callbacks {
 	 */
 	public function classic_editor( $args ) {
 
-		$option = get_option( 'chp_classic_editor' );
+		$option = get_option( 'chd_classic_editor' );
 
-		$html = '<p><input type="checkbox" id="chp_classic_editor" name="chp_classic_editor" value="1" ' . checked( 1, $option, false ) . '/>';
+		$html = '<p><input type="checkbox" id="chd_classic_editor" name="chd_classic_editor" value="1" ' . checked( 1, $option, false ) . '/>';
 
-		$html .= '<label for="chp_classic_editor"> '  . $args[0] . '</label></p>';
+		$html .= '<label for="chd_classic_editor"> '  . $args[0] . '</label></p>';
 
 		echo $html;
 
@@ -87,11 +87,11 @@ class Admin_Pages_Callbacks {
 	 */
 	public function admin_header( $args ) {
 
-		$option = get_option( 'chp_use_admin_header' );
+		$option = get_option( 'chd_use_admin_header' );
 
-		$html = '<p><input type="checkbox" id="chp_use_admin_header" name="chp_use_admin_header" value="1" ' . checked( 1, $option, false ) . '/>';
+		$html = '<p><input type="checkbox" id="chd_use_admin_header" name="chd_use_admin_header" value="1" ' . checked( 1, $option, false ) . '/>';
 
-		$html .= '<label for="chp_use_admin_header"> '  . $args[0] . '</label></p>';
+		$html .= '<label for="chd_use_admin_header"> '  . $args[0] . '</label></p>';
 
 		echo $html;
 
@@ -107,11 +107,11 @@ class Admin_Pages_Callbacks {
 	 */
 	public function custom_sort_order( $args ) {
 
-		$option = get_option( 'chp_use_custom_sort_order' );
+		$option = get_option( 'chd_use_custom_sort_order' );
 
-		$html = '<p><input type="checkbox" id="chp_use_custom_sort_order" name="chp_use_custom_sort_order" value="1" ' . checked( 1, $option, false ) . '/>';
+		$html = '<p><input type="checkbox" id="chd_use_custom_sort_order" name="chd_use_custom_sort_order" value="1" ' . checked( 1, $option, false ) . '/>';
 
-		$html .= '<label for="chp_use_custom_sort_order"> '  . $args[0] . '</label></p>';
+		$html .= '<label for="chd_use_custom_sort_order"> '  . $args[0] . '</label></p>';
 
 		echo $html;
 
@@ -127,11 +127,11 @@ class Admin_Pages_Callbacks {
 	 */
 	public function footer_credit( $args ) {
 
-		$option = get_option( 'chp_footer_credit' );
+		$option = get_option( 'chd_footer_credit' );
 
-		$html = '<p><input type="text" size="50" id="chp_footer_credit" name="chp_footer_credit" value="' . esc_attr( $option ) . '" placeholder="' . esc_attr( __( 'Your name/agency', 'ch-directs-plugin' ) ) . '" /><br />';
+		$html = '<p><input type="text" size="50" id="chd_footer_credit" name="chd_footer_credit" value="' . esc_attr( $option ) . '" placeholder="' . esc_attr( __( 'Your name/agency', 'ch-directs-plugin' ) ) . '" /><br />';
 
-		$html .= '<label for="chp_footer_credit"> ' . $args[0] . '</label></p>';
+		$html .= '<label for="chd_footer_credit"> ' . $args[0] . '</label></p>';
 
 		echo $html;
 
@@ -147,11 +147,11 @@ class Admin_Pages_Callbacks {
 	 */
 	public function footer_link( $args ) {
 
-		$option = get_option( 'chp_footer_link' );
+		$option = get_option( 'chd_footer_link' );
 
-		$html = '<p><input type="text" size="50" id="chp_footer_link" name="chp_footer_link" value="' . esc_attr( $option ) . '" placeholder="' . esc_attr( 'http://example.com/' ) . '" /><br />';
+		$html = '<p><input type="text" size="50" id="chd_footer_link" name="chd_footer_link" value="' . esc_attr( $option ) . '" placeholder="' . esc_attr( 'http://example.com/' ) . '" /><br />';
 
-		$html .= '<label for="chp_footer_link"> ' . $args[0] . '</label></p>';
+		$html .= '<label for="chd_footer_link"> ' . $args[0] . '</label></p>';
 
 		echo $html;
 
@@ -166,11 +166,11 @@ class Admin_Pages_Callbacks {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_admin_pages_callbacks() {
+function chd_admin_pages_callbacks() {
 
 	return Admin_Pages_Callbacks::instance();
 
 }
 
 // Run an instance of the class.
-chp_admin_pages_callbacks();
+chd_admin_pages_callbacks();

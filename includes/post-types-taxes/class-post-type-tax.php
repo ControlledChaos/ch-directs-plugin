@@ -101,11 +101,11 @@ class Post_Types_Taxes {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_types_taxes() {
+function chd_types_taxes() {
 
 	return Post_Types_Taxes::instance();
 
 }
 
 // Run an instance of the class.
-chp_types_taxes();
+chd_types_taxes();

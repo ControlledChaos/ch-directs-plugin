@@ -86,7 +86,7 @@ class CHP_Beaver_Builder {
 	 */
 	static public function register_fields( $fields ) {
 
-		$fields['chp-custom-beaver-field'] = CHP_PATH . 'includes/beaver/fields/custom-fields.php';
+		$fields['chd-custom-beaver-field'] = CHP_PATH . 'includes/beaver/fields/custom-fields.php';
 		return $fields;
 
 	}
@@ -104,12 +104,12 @@ class CHP_Beaver_Builder {
 			return;
 		}
 
-		wp_enqueue_style( 'chp-beaver-fields', CHP_URL . 'includes/beaver/assets/css/fields.css', [], '' );
-		wp_enqueue_script( 'chp-beaver-fields', CHP_URL . 'includes/beaver/assets/js/fields.js', [], '', true );
+		wp_enqueue_style( 'chd-beaver-fields', CHP_URL . 'includes/beaver/assets/css/fields.css', [], '' );
+		wp_enqueue_script( 'chd-beaver-fields', CHP_URL . 'includes/beaver/assets/js/fields.js', [], '', true );
 
 	}
 
 }
 
 // Run the class.
-$chp_beaver_builder = new CHP_Beaver_Builder;
+$chd_beaver_builder = new CHP_Beaver_Builder;

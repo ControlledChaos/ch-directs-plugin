@@ -71,7 +71,7 @@ class Dashboard_Widget {
 
 		register_sidebar( [
 			'name'          => __( 'Dashboard Widget Area', 'ch-directs-plugin' ),
-			'id'            => 'chp_dashboard_widget',
+			'id'            => 'chd_dashboard_widget',
 			'description'   => __( 'Widgetize the Dasboard for users.', 'ch-directs-plugin' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
@@ -90,9 +90,9 @@ class Dashboard_Widget {
 	 */
 	public function dashboard_widget() {
 
-		$heading = apply_filters( 'chp_dashboard_widget_heading', __( 'Sample Widget', 'ch-directs-plugin' ) );
+		$heading = apply_filters( 'chd_dashboard_widget_heading', __( 'Sample Widget', 'ch-directs-plugin' ) );
 
-		wp_add_dashboard_widget( 'chp_dashboard_widget', $heading, [ $this, 'output' ] );
+		wp_add_dashboard_widget( 'chd_dashboard_widget', $heading, [ $this, 'output' ] );
 
 	}
 
@@ -105,9 +105,9 @@ class Dashboard_Widget {
 	 */
 	public function output() {
 
-		if ( is_active_sidebar( 'chp_dashboard_widget' ) ) {
+		if ( is_active_sidebar( 'chd_dashboard_widget' ) ) {
 
-			dynamic_sidebar( 'chp_dashboard_widget' );
+			dynamic_sidebar( 'chd_dashboard_widget' );
 
 		} else {
 
@@ -133,11 +133,11 @@ class Dashboard_Widget {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_dashboard_widget() {
+function chd_dashboard_widget() {
 
 	return Dashboard_Widget::instance();
 
 }
 
 // Run an instance of the class.
-chp_dashboard_widget();
+chd_dashboard_widget();

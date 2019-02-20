@@ -165,11 +165,11 @@ final class Fields_Import {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_fields_import() {
+function chd_fields_import() {
 
 	return Fields_Import::instance();
 
 }
 
 // Run an instance of the class.
-chp_fields_import();
+chd_fields_import();

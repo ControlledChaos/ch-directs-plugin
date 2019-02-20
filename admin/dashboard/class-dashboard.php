@@ -171,10 +171,10 @@ class Dashboard {
         global $wp_meta_boxes;
 
         // If Advanced Custom Fields Pro is active.
-        if ( chp_acf_options() ) {
+        if ( chd_acf_options() ) {
 
             // Get the multiple checkbox field.
-            $hide = get_field( 'chp_dashboard_hide_widgets', 'option' );
+            $hide = get_field( 'chd_dashboard_hide_widgets', 'option' );
 
             // Hide the Welcome panel.
             if ( $hide && in_array( 'welcome', $hide ) ) {
@@ -182,7 +182,7 @@ class Dashboard {
             }
 
             // Hide the try Gutenberg panel.
-            $editor = get_field( 'chp_classic_editor', 'option' );
+            $editor = get_field( 'chd_classic_editor', 'option' );
             if ( ( $hide && in_array( 'gutenberg', $hide ) ) || $editor ) {
                 remove_action( 'try_gutenberg_panel', 'wp_try_gutenberg_panel' );
             }
@@ -215,13 +215,13 @@ class Dashboard {
              */
 
             // Get options.
-            $welcome    = get_option( 'chp_hide_welcome' );
-            $gutenberg  = get_option( 'chp_hide_try_gutenberg' );
-            $editor     = get_option( 'chp_classic_editor' );
-            $wp_news    = get_option( 'chp_hide_wp_news' );
-            $quickpress = get_option( 'chp_hide_quickpress' );
-            $at_glance  = get_option( 'chp_hide_at_glance' );
-            $activity   = get_option( 'chp_hide_activity' );
+            $welcome    = get_option( 'chd_hide_welcome' );
+            $gutenberg  = get_option( 'chd_hide_try_gutenberg' );
+            $editor     = get_option( 'chd_classic_editor' );
+            $wp_news    = get_option( 'chd_hide_wp_news' );
+            $quickpress = get_option( 'chd_hide_quickpress' );
+            $at_glance  = get_option( 'chd_hide_at_glance' );
+            $activity   = get_option( 'chd_hide_activity' );
 
             // Hide the Welcome panel.
             if ( $welcome ) {
@@ -409,11 +409,11 @@ class Dashboard {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_dashboard() {
+function chd_dashboard() {
 
 	return Dashboard::instance();
 
 }
 
 // Run an instance of the class.
-chp_dashboard();
+chd_dashboard();

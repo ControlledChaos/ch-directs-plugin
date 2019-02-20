@@ -36,7 +36,7 @@ if ( ! defined( 'WPINC' ) ) {
  */
 
 // Get the settings page menu icon option from Site Settings.
-$settings_icon = sanitize_text_field( get_option( 'chp_site_settings_link_icon' ) );
+$settings_icon = sanitize_text_field( get_option( 'chd_site_settings_link_icon' ) );
 
 // If it's not empty, use the icon class from the option.
 if ( $settings_icon ) {
@@ -95,7 +95,7 @@ $tabs = [
 ];
 
 // Apply a filter to the tabs array for adding tabs.
-$page_tabs = apply_filters( 'chp_tabs_page_about', $tabs );
+$page_tabs = apply_filters( 'chd_tabs_page_about', $tabs );
 
 ?>
 <!-- Default WordPress page wrapper -->
@@ -110,7 +110,7 @@ $page_tabs = apply_filters( 'chp_tabs_page_about', $tabs );
 			<?php echo implode( $page_tabs ); ?>
 		</ul>
 		<?php // Hook for adding tabbed content.
-		do_action( 'chp_content_page_about_before' ); ?>
+		do_action( 'chd_content_page_about_before' ); ?>
 		<!-- Begin content -->
 		<div id="intro"><!-- Introduction content -->
 			<?php include_once CHP_PATH . 'admin/partials/plugin-page-intro.php'; ?>
@@ -128,6 +128,6 @@ $page_tabs = apply_filters( 'chp_tabs_page_about', $tabs );
 			<?php include_once CHP_PATH . 'admin/partials/plugin-page-dev-tools.php'; ?>
 		</div>
 		<?php // Hook for adding tabbed content.
-		do_action( 'chp_content_page_about_after' ); ?>
+		do_action( 'chd_content_page_about_after' ); ?>
 	</div><!-- End jQuery tabbed content -->
 </div><!-- End WordPress page wrapper -->

@@ -99,7 +99,7 @@ final class Settings_Fields_ACF {
 					[
 						'key'               => 'field_5b4807983ccaf',
 						'label'             => __( 'Custom Welcome', 'ch-directs-plugin' ),
-						'name'              => 'chp_custom_welcome',
+						'name'              => 'chd_custom_welcome',
 						'type'              => 'true_false',
 						'instructions'      => __( '', 'ch-directs-plugin' ),
 						'required'          => 0,
@@ -118,7 +118,7 @@ final class Settings_Fields_ACF {
 					[
 						'key'               => 'field_5b48081b3ccb0',
 						'label'             => __( 'Remove Welcome Dismiss', 'ch-directs-plugin' ),
-						'name'              => 'chp_remove_welcome_dismiss',
+						'name'              => 'chd_remove_welcome_dismiss',
 						'type'              => 'true_false',
 						'instructions'      => __( '', 'ch-directs-plugin' ),
 						'required'          => 0,
@@ -137,7 +137,7 @@ final class Settings_Fields_ACF {
 					[
 						'key'               => 'field_5a0c8f393edd6',
 						'label'             => __( 'Hide Widgets', 'ch-directs-plugin' ),
-						'name'              => 'chp_dashboard_hide_widgets',
+						'name'              => 'chd_dashboard_hide_widgets',
 						'type'              => 'checkbox',
 						'instructions'      => __( 'Select the Dashboard widgets to hide.', 'ch-directs-plugin' ),
 						'required'          => 0,
@@ -188,7 +188,7 @@ final class Settings_Fields_ACF {
 					[
 						'key'               => 'field_5a0c80ab57d59',
 						'label'             => __( 'Settings Page', 'ch-directs-plugin' ),
-						'name'              => 'chp_settings_link_position',
+						'name'              => 'chd_settings_link_position',
 						'type'              => 'button_group',
 						'instructions'      => __( 'Select the position of this Settings page link, and whether to show or hide the other settings links.', 'ch-directs-plugin' ),
 						'required'          => 0,
@@ -210,7 +210,7 @@ final class Settings_Fields_ACF {
 					[
 						'key'               => 'field_5aad41ffad3e6',
 						'label'             => __( 'Site Settings Label', 'ch-directs-plugin' ),
-						'name'              => 'chp_site_settings_link_label',
+						'name'              => 'chd_site_settings_link_label',
 						'type'              => 'text',
 						'instructions'      => __( 'Change the label of the link to this page.', 'ch-directs-plugin' ),
 						'required'          => 0,
@@ -229,7 +229,7 @@ final class Settings_Fields_ACF {
 					[
 						'key'               => 'field_5b4809a3f4f0b',
 						'label'             => __( 'Site Settings Icon', 'ch-directs-plugin' ),
-						'name'              => 'chp_site_settings_link_icon',
+						'name'              => 'chd_site_settings_link_icon',
 						'type'              => 'text',
 						'instructions'      => __( 'Enter a Dashicons CSS class for the icon of the link to this page.', 'ch-directs-plugin' ),
 						'required'          => 0,
@@ -248,7 +248,7 @@ final class Settings_Fields_ACF {
 					[
 						'key'               => 'field_5b480aa335a20',
 						'label'             => __( 'Site Plugin Position', 'ch-directs-plugin' ),
-						'name'              => 'chp_site_plugin_link_position',
+						'name'              => 'chd_site_plugin_link_position',
 						'type'              => 'button_group',
 						'instructions'      => __( 'Make the site-specific plugin admin page a top-level link.', 'ch-directs-plugin' ),
 						'required'          => 0,
@@ -270,7 +270,7 @@ final class Settings_Fields_ACF {
 					[
 						'key'               => 'field_5b480b0d35a21',
 						'label'             => __( 'Site Plugin Label', 'ch-directs-plugin' ),
-						'name'              => 'chp_site_plugin_link_label',
+						'name'              => 'chd_site_plugin_link_label',
 						'type'              => 'text',
 						'instructions'      => __( 'Change the label of the link to this page.', 'ch-directs-plugin' ),
 						'required'          => 0,
@@ -289,7 +289,7 @@ final class Settings_Fields_ACF {
 					[
 						'key'               => 'field_5b480b4f35a22',
 						'label'             => __( 'Site Plugin Icon', 'ch-directs-plugin' ),
-						'name'              => 'chp_site_plugin_link_icon',
+						'name'              => 'chd_site_plugin_link_icon',
 						'type'              => 'text',
 						'instructions'      => __( 'Enter a Dashicons CSS class for the icon of the link to this page.', 'ch-directs-plugin' ),
 						'required'          => 0,
@@ -308,7 +308,7 @@ final class Settings_Fields_ACF {
 					[
 						'key'               => 'field_5a0c802257d57',
 						'label'             => __( 'Menus Link', 'ch-directs-plugin' ),
-						'name'              => 'chp_menus_position',
+						'name'              => 'chd_menus_position',
 						'type'              => 'button_group',
 						'instructions'      => __( 'Select the position of the Menus page link.', 'ch-directs-plugin' ),
 						'required'          => 0,
@@ -330,7 +330,7 @@ final class Settings_Fields_ACF {
 					[
 						'key'               => 'field_5a0c808757d58',
 						'label'             => __( 'Widgets Link', 'ch-directs-plugin' ),
-						'name'              => 'chp_widgets_position',
+						'name'              => 'chd_widgets_position',
 						'type'              => 'button_group',
 						'instructions'      => __( 'Select the position of the Widgets page link.', 'ch-directs-plugin' ),
 						'required'          => 0,
@@ -352,7 +352,7 @@ final class Settings_Fields_ACF {
 					[
 						'key'               => 'field_5a0c8d8a32b95',
 						'label'             => __( 'Hide Links', 'ch-directs-plugin' ),
-						'name'              => 'chp_admin_hide_links',
+						'name'              => 'chd_admin_hide_links',
 						'type'              => 'checkbox',
 						'instructions'      => __( 'Select which menu items to hide.', 'ch-directs-plugin' ),
 						'required'          => 0,
@@ -379,7 +379,7 @@ final class Settings_Fields_ACF {
 					[
 						'key'               => 'field_5aaa73e38deb3',
 						'label'             => __( 'Restore Links Manager', 'ch-directs-plugin' ),
-						'name'              => 'chp_links_manager',
+						'name'              => 'chd_links_manager',
 						'type'              => 'true_false',
 						'instructions'      => __( 'The old Links Manager is hidden by default in newer WordPress installations.', 'ch-directs-plugin' ),
 						'required'          => 0,
@@ -421,7 +421,7 @@ final class Settings_Fields_ACF {
 					[
 						'key'               => 'field_5bef0eeeacdc1',
 						'label'             => __( 'Classic Editor', 'ch-directs-plugin' ),
-						'name'              => 'chp_classic_editor',
+						'name'              => 'chd_classic_editor',
 						'type'              => 'true_false',
 						'instructions'      => __( 'Disables the block editor (a.k.a. Gutenberg) and restores the TinyMCE editor.', 'ch-directs-plugin' ),
 						'required'          => 0,
@@ -440,7 +440,7 @@ final class Settings_Fields_ACF {
 					[
 						'key'               => 'field_5bd8abd79a46d',
 						'label'             => __( 'Admin Header', 'ch-directs-plugin' ),
-						'name'              => 'chp_use_admin_header',
+						'name'              => 'chd_use_admin_header',
 						'type'              => 'true_false',
 						'instructions'      => __( 'Add the site title, site tagline, and a nav menu to the top of admin pages.', 'ch-directs-plugin' ),
 						'required'          => 0,
@@ -459,7 +459,7 @@ final class Settings_Fields_ACF {
 					[
 						'key'               => 'field_5b834989e850c',
 						'label'             => __( 'Drag & Drop Sort Order', 'ch-directs-plugin' ),
-						'name'              => 'chp_use_custom_sort_order',
+						'name'              => 'chd_use_custom_sort_order',
 						'type'              => 'true_false',
 						'instructions'      => __( 'When posts and taxonomies are selected for custom sort order functionality, the table rows on their respective admin management screen can be dragged up or down.
 
@@ -480,7 +480,7 @@ final class Settings_Fields_ACF {
 					[
 						'key'               => 'field_5a0cbb5e73e56',
 						'label'             => __( 'Admin Footer Credit', 'ch-directs-plugin' ),
-						'name'              => 'chp_admin_footer_credit',
+						'name'              => 'chd_admin_footer_credit',
 						'type'              => 'text',
 						'instructions'      => __( 'The "developed by" credit.', 'ch-directs-plugin' ),
 						'required'          => 0,
@@ -499,7 +499,7 @@ final class Settings_Fields_ACF {
 					[
 						'key'               => 'field_5a0cbba573e57',
 						'label'             => __( 'Admin Footer Link', 'ch-directs-plugin' ),
-						'name'              => 'chp_admin_footer_link',
+						'name'              => 'chd_admin_footer_link',
 						'type'              => 'url',
 						'instructions'      => __( 'Link to the website devoloper.', 'ch-directs-plugin' ),
 						'required'          => 0,
@@ -538,7 +538,7 @@ final class Settings_Fields_ACF {
 					[
 						'key'               => 'field_5a237090744c4',
 						'label'             => __( 'Meta Tags', 'ch-directs-plugin' ),
-						'name'              => 'chp_meta_disable_tags',
+						'name'              => 'chd_meta_disable_tags',
 						'type'              => 'true_false',
 						'instructions'      => __( 'Disable if you plan on using Yoast SEO or a similarly awful plugin.', 'ch-directs-plugin' ),
 						'required'          => 0,
@@ -557,7 +557,7 @@ final class Settings_Fields_ACF {
 					[
 						'key'               => 'field_5a198d601b523',
 						'label'             => __( 'Blog Pages Title', 'ch-directs-plugin' ),
-						'name'              => 'chp_meta_blog_title',
+						'name'              => 'chd_meta_blog_title',
 						'type'              => 'text',
 						'instructions'      => __( 'Will use the site title if left empty.', 'ch-directs-plugin' ),
 						'required'          => 0,
@@ -584,7 +584,7 @@ final class Settings_Fields_ACF {
 					[
 						'key'               => 'field_5a198bd736068',
 						'label'             => __( 'Blog Pages Description', 'ch-directs-plugin' ),
-						'name'              => 'chp_meta_blog_description',
+						'name'              => 'chd_meta_blog_description',
 						'type'              => 'textarea',
 						'instructions'      => __( 'Will use the site tagline if left empty and if a tagline is set.', 'ch-directs-plugin' ),
 						'required'          => 0,
@@ -611,7 +611,7 @@ final class Settings_Fields_ACF {
 					[
 						'key'               => 'field_5a198c1836069',
 						'label'             => __( 'Blog Pages Image', 'ch-directs-plugin' ),
-						'name'              => 'chp_meta_blog_image',
+						'name'              => 'chd_meta_blog_image',
 						'type'              => 'image',
 						'instructions'      => __( 'A minimum of 1230px by 600px is recommended for retina display devices.', 'ch-directs-plugin' ),
 						'required'          => 0,
@@ -643,7 +643,7 @@ final class Settings_Fields_ACF {
 					[
 						'key'               => 'field_5b2fd67604455',
 						'label'             => __( 'Default Meta Image', 'ch-directs-plugin' ),
-						'name'              => 'chp_meta_default_image',
+						'name'              => 'chd_meta_default_image',
 						'type'              => 'image',
 						'instructions'      => __( 'Will be used as a fallback for posts without a featured image and used for archive pages. A minimum of 1230px by 600px is recommended for retina display devices.', 'ch-directs-plugin' ),
 						'required'          => 0,
@@ -705,11 +705,11 @@ final class Settings_Fields_ACF {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_settings_fields_acf() {
+function chd_settings_fields_acf() {
 
 	return Settings_Fields_ACF::instance();
 
 }
 
 // Run an instance of the class.
-chp_settings_fields_acf();
+chd_settings_fields_acf();

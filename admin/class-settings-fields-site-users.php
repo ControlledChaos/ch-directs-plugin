@@ -92,25 +92,25 @@ class Settings_Fields_Users {
 
         // User settings section.
         add_settings_section(
-            'chp-site-users',
+            'chd-site-users',
             __( 'User Settings', 'ch-directs-plugin' ),
             [],
-            'chp-site-users'
+            'chd-site-users'
         );
 
         // Local avatars only (no Gravatars).
 		add_settings_field(
-			'chp_block_gravatar',
+			'chd_block_gravatar',
 			__( 'Block Gravatars', 'ch-directs-plugin' ),
 			[ Callbacks::instance(), 'block_gravatar' ],
-			'chp-site-users',
-			'chp-site-users',
+			'chd-site-users',
+			'chd-site-users',
 			[ esc_html__( 'Prevent avatar requests from Gravatar.com', 'ch-directs-plugin' ) ]
 		);
 
 		register_setting(
-			'chp-site-users',
-			'chp_block_gravatar'
+			'chd-site-users',
+			'chd_block_gravatar'
 		);
 
     }
@@ -124,11 +124,11 @@ class Settings_Fields_Users {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_settings_fields_users() {
+function chd_settings_fields_users() {
 
 	return Settings_Fields_Users::instance();
 
 }
 
 // Run an instance of the class.
-chp_settings_fields_users();
+chd_settings_fields_users();

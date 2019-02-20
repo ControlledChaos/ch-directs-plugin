@@ -84,11 +84,11 @@ class Users {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_users() {
+function chd_users() {
 
 	return Users::instance();
 
 }
 
 // Run an instance of the class.
-chp_users();
+chd_users();

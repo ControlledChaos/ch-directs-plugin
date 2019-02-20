@@ -58,7 +58,7 @@ class Meta_Author {
 	public function __construct() {
 
 		// Add author to the meta tag.
-		add_action( 'chp_meta_author_tag', [ $this, 'author' ] );
+		add_action( 'chd_meta_author_tag', [ $this, 'author' ] );
 
 	}
 
@@ -93,7 +93,7 @@ class Meta_Author {
 		}
 
 		// Apply a filter for conditional modification.
-		$author_tag = apply_filters( 'chp_author_name', $author );
+		$author_tag = apply_filters( 'chd_author_name', $author );
 
 		// Echo the author display name in the meta tag.
 		echo $author_tag;
@@ -109,11 +109,11 @@ class Meta_Author {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_meta_author() {
+function chd_meta_author() {
 
 	return Meta_Author::instance();
 
 }
 
 // Run an instance of the class.
-chp_meta_author();
+chd_meta_author();

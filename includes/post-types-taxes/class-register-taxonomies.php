@@ -112,4 +112,4 @@ final class Taxonomy_Register {
 }
 
 // Run the class.
-$chp_project = new Taxonomy_Register;
+$chd_project = new Taxonomy_Register;

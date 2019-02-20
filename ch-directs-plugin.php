@@ -233,20 +233,20 @@ if ( ! class_exists( 'CH_Directs_Plugin' ) ) :
 	 * @access public
 	 * @return object Returns the instance of the `CH_Directs_Plugin` class.
 	 */
-	function chp_plugin() {
+	function chd_plugin() {
 
 		return CH_Directs_Plugin::instance();
 
 	}
 
 	// Begin plugin functionality.
-	chp_plugin();
+	chd_plugin();
 
 // End the check for the plugin class.
 endif;
 
 // Bail out now if the core class was not run.
-if ( ! function_exists( 'chp_plugin' ) ) {
+if ( ! function_exists( 'chd_plugin' ) ) {
 	return;
 }
 
@@ -257,8 +257,8 @@ if ( ! function_exists( 'chp_plugin' ) ) {
  * @access public
  * @return void
  */
-register_activation_hook( __FILE__, '\chp_activate_plugin' );
-register_deactivation_hook( __FILE__, '\chp_deactivate_plugin' );
+register_activation_hook( __FILE__, '\chd_activate_plugin' );
+register_deactivation_hook( __FILE__, '\chd_deactivate_plugin' );
 
 /**
  * The code that runs during plugin activation.
@@ -267,10 +267,10 @@ register_deactivation_hook( __FILE__, '\chp_deactivate_plugin' );
  * @access public
  * @return void
  */
-function chp_activate_plugin() {
+function chd_activate_plugin() {
 
 	// Run the activation class.
-	chp_activate();
+	chd_activate();
 
 }
 
@@ -281,10 +281,10 @@ function chp_activate_plugin() {
  * @access public
  * @return void
  */
-function chp_deactivate_plugin() {
+function chd_deactivate_plugin() {
 
 	// Run the deactivation class.
-	chp_deactivate();
+	chd_deactivate();
 
 }
 
@@ -308,7 +308,7 @@ function chp_deactivate_plugin() {
  *                 Returns an array of the about link with the default plugin links.
  * @link   https://codex.wordpress.org/Plugin_API/Filter_Reference/plugin_action_links_(plugin_file_name)
  */
-function chp_about_link( $links ) {
+function chd_about_link( $links ) {
 
 	/**
 	 * Site about page link depends on the admin menu setting.
@@ -320,10 +320,10 @@ function chp_about_link( $links ) {
 	if ( is_admin() ) {
 
 		// If Advanced Custom Fields is active.
-		if ( chp_acf_options() ) {
+		if ( chd_acf_options() ) {
 
 			// Get the field.
-			$acf_position = get_field( 'chp_site_plugin_link_position', 'option' );
+			$acf_position = get_field( 'chd_site_plugin_link_position', 'option' );
 
 			// Return true if the field is set to `top`.
 			if ( 'top' == $acf_position ) {
@@ -338,7 +338,7 @@ function chp_about_link( $links ) {
 		} else {
 
 			// Get the field.
-			$position = get_option( 'chp_site_plugin_link_position' );
+			$position = get_option( 'chd_site_plugin_link_position' );
 		}
 
 		if ( true == $position ) {
@@ -363,7 +363,7 @@ function chp_about_link( $links ) {
 
 }
 // Filter the default settings links with new array.
-add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'chp_about_link' );
+add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'chd_about_link' );
 
 /**
  * Add links to the plugin settings pages on the plugins page.
@@ -380,7 +380,7 @@ add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'chp_about_lin
  *                 Returns an array of custom links with the default plugin links.
  * @link   https://codex.wordpress.org/Plugin_API/Filter_Reference/plugin_action_links_(plugin_file_name)
  */
-function chp_settings_links( $links, $file ) {
+function chd_settings_links( $links, $file ) {
 
 	if ( is_admin() ) {
 
@@ -392,10 +392,10 @@ function chp_settings_links( $links, $file ) {
 		 */
 
 		// If Advanced Custom Fields is active.
-		if ( chp_acf_options() ) {
+		if ( chd_acf_options() ) {
 
 			// Get the field.
-			$acf_position = get_field( 'chp_settings_link_position', 'option' );
+			$acf_position = get_field( 'chd_settings_link_position', 'option' );
 
 			// Return true if the field is set to `top`.
 			if ( 'top' == $acf_position ) {
@@ -410,7 +410,7 @@ function chp_settings_links( $links, $file ) {
 		} else {
 
 			// Get the field.
-			$position = get_option( 'chp_site_settings_position' );
+			$position = get_option( 'chd_site_settings_position' );
 		}
 
 		if ( $position || true == $position ) {
@@ -441,7 +441,7 @@ function chp_settings_links( $links, $file ) {
 	}
 
 }
-add_filter( 'plugin_row_meta', 'chp_settings_links', 10, 2 );
+add_filter( 'plugin_row_meta', 'chd_settings_links', 10, 2 );
 
 /**
  * Check if WordPress is 5.0 or greater.
@@ -450,7 +450,7 @@ add_filter( 'plugin_row_meta', 'chp_settings_links', 10, 2 );
  * @access public
  * @return bool Returns true if the WordPress version is 5.0 or greater.
  */
-function chp_new_cms() {
+function chd_new_cms() {
 
 	// Get the WordPress version.
 	$version = get_bloginfo( 'version' );
@@ -470,7 +470,7 @@ function chp_new_cms() {
  * @access public
  * @return bool Returns true if ClassicPress is running.
  */
-function chp_classicpress() {
+function chd_classicpress() {
 
 	if ( function_exists( 'classicpress_version' ) ) {
 		return true;
@@ -487,7 +487,7 @@ function chp_classicpress() {
  * @access public
  * @return bool Returns true if the ACF free or Pro plugin is active.
  */
-function chp_acf() {
+function chd_acf() {
 
 	if ( class_exists( 'acf' ) ) {
 		return true;
@@ -504,7 +504,7 @@ function chp_acf() {
  * @access public
  * @return bool Returns true if the ACF Pro plugin is active.
  */
-function chp_acf_pro() {
+function chd_acf_pro() {
 
 	if ( class_exists( 'acf_pro' ) ) {
 		return true;
@@ -522,7 +522,7 @@ function chp_acf_pro() {
  * @return bool Returns true if the ACF free plus the
  *              Options Page addon or Pro plugin is active.
  */
-function chp_acf_options() {
+function chd_acf_options() {
 
 	if ( class_exists( 'acf_pro' ) ) {
 		return true;

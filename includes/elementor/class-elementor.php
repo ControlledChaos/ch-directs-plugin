@@ -138,4 +138,4 @@ class CHP_Elementor extends \Elementor\Widget_Base {
 }
 
 // Run the class.
-$chp_elementor = new CHP_Elementor;
+$chd_elementor = new CHP_Elementor;

@@ -98,12 +98,12 @@ final class Init {
 		 *
 		 * @todo Remove conditional statement when Gutenberg is in core?
 		 */
-		if ( chp_acf_pro() ) {
-			$editor = get_field( 'chp_classic_editor', 'option' );
+		if ( chd_acf_pro() ) {
+			$editor = get_field( 'chd_classic_editor', 'option' );
 		} else {
-			$editor = get_option( 'chp_classic_editor' );
+			$editor = get_option( 'chd_classic_editor' );
 		}
-		if ( ( chp_classicpress() || chp_new_cms() ) && ! $editor || is_plugin_active( 'gutenberg/gutenberg.php' ) ) {
+		if ( ( chd_classicpress() || chd_new_cms() ) && ! $editor || is_plugin_active( 'gutenberg/gutenberg.php' ) ) {
 			require_once CHP_PATH . 'includes/editor-blocks/class-register-block-types.php';
 		}
 
@@ -148,11 +148,11 @@ final class Init {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_init() {
+function chd_init() {
 
 	return Init::instance();
 
 }
 
 // Run an instance of the class.
-chp_init();
+chd_init();

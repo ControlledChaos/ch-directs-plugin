@@ -77,7 +77,7 @@ class Enqueue_Frontend_Styles {
 		wp_enqueue_style( CHP_ADMIN_SLUG, CHP_URL . 'assets/css/frontend.css', [], CHP_VERSION, 'all' );
 
 		// Fancybox 3.
-		if ( get_option( 'chp_enqueue_fancybox_styles' ) ) {
+		if ( get_option( 'chd_enqueue_fancybox_styles' ) ) {
 
 			/**
 			 * Bail if the current theme supports ccd-fancybox by
@@ -91,17 +91,17 @@ class Enqueue_Frontend_Styles {
 		}
 
 		// Slick.
-		if ( get_option( 'chp_enqueue_slick' ) ) {
+		if ( get_option( 'chd_enqueue_slick' ) ) {
 			wp_enqueue_style( CHP_ADMIN_SLUG . '-slick', CHP_URL . 'assets/css/slick.min.css', [], CHP_VERSION, 'all' );
 		}
 
 		// Slick theme.
-		if ( get_option( 'chp_enqueue_slick' ) ) {
+		if ( get_option( 'chd_enqueue_slick' ) ) {
 			wp_enqueue_style( CHP_ADMIN_SLUG . '-slick-theme', CHP_URL . 'assets/css/slick-theme.css', [], CHP_VERSION, 'all' );
 		}
 
 		// Tooltipster.
-		if ( get_option( 'chp_enqueue_tooltipster' ) ) {
+		if ( get_option( 'chd_enqueue_tooltipster' ) ) {
 			wp_enqueue_style( CHP_ADMIN_SLUG . '-tooltipster', CHP_URL . 'assets/css/tooltipster.bundle.min.css', [], CHP_VERSION, 'all' );
 		}
 
@@ -116,11 +116,11 @@ class Enqueue_Frontend_Styles {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_enqueue_frontend_styles() {
+function chd_enqueue_frontend_styles() {
 
 	return Enqueue_Frontend_Styles::instance();
 
 }
 
 // Run an instance of the class.
-chp_enqueue_frontend_styles();
+chd_enqueue_frontend_styles();

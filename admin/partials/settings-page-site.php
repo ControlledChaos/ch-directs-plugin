@@ -80,7 +80,7 @@ $tabs = [
 ];
 
 // Apply a filter to the tabs array for adding tabs.
-$page_tabs = apply_filters( 'chp_tabs_site_settings', $tabs );
+$page_tabs = apply_filters( 'chd_tabs_site_settings', $tabs );
 
 /**
  * Do settings section and fields by tab.
@@ -89,28 +89,28 @@ $page_tabs = apply_filters( 'chp_tabs_site_settings', $tabs );
  * @return void
  */
 if ( 'dashboard' == $active_tab  ) {
-    $section = 'chp-site-dashboard';
-    $fields  = 'chp-site-dashboard';
+    $section = 'chd-site-dashboard';
+    $fields  = 'chd-site-dashboard';
 } elseif ( 'admin-menu' == $active_tab ) {
-    $section = 'chp-site-admin-menu';
-    $fields  = 'chp-site-admin-menu';
+    $section = 'chd-site-admin-menu';
+    $fields  = 'chd-site-admin-menu';
 } elseif ( 'admin-pages' == $active_tab ) {
-    $section = 'chp-site-admin-pages';
-    $fields  = 'chp-site-admin-pages';
+    $section = 'chd-site-admin-pages';
+    $fields  = 'chd-site-admin-pages';
 } elseif ( 'users' == $active_tab ) {
-    $section = 'chp-site-users';
-    $fields  = 'chp-site-users';
+    $section = 'chd-site-users';
+    $fields  = 'chd-site-users';
 } elseif ( 'meta-seo' == $active_tab ) {
-    $section = 'chp-site-meta-seo';
-    $fields  = 'chp-site-meta-seo';
+    $section = 'chd-site-meta-seo';
+    $fields  = 'chd-site-meta-seo';
 } else {
     $section = null;
     $fields  = null;
 }
 
 // Apply filters to the sections and fields for new tabs.
-$do_section = apply_filters( 'chp_section_site_settings', $section );
-$do_fields  = apply_filters( 'chp_fields_site_settings', $fields );
+$do_section = apply_filters( 'chd_section_site_settings', $section );
+$do_fields  = apply_filters( 'chd_fields_site_settings', $fields );
 
 /**
  * Conditional save button text by tab.
@@ -133,7 +133,7 @@ if ( 'dashboard' == $active_tab  ) {
 }
 
 // Apply a filter for new tabs added by another plugin or from a theme.
-$button = apply_filters( 'chp_save_site_settings', $save );
+$button = apply_filters( 'chd_save_site_settings', $save );
 
 ?>
 <div class="wrap">

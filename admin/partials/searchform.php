@@ -16,9 +16,9 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-$label       = apply_filters( 'chp_search_label', esc_html__( 'Search for:', 'ch-directs-plugin' ) );
-$placeholder = apply_filters( 'chp_search_placeholder', esc_attr( esc_html__( 'Search ', 'ch-directs-plugin' ) . get_bloginfo( 'name' ) ) );
-$submit      = apply_filters( 'chp_search_submit', esc_html__( 'Submit', 'ch-directs-plugin' ) );
+$label       = apply_filters( 'chd_search_label', esc_html__( 'Search for:', 'ch-directs-plugin' ) );
+$placeholder = apply_filters( 'chd_search_placeholder', esc_attr( esc_html__( 'Search ', 'ch-directs-plugin' ) . get_bloginfo( 'name' ) ) );
+$submit      = apply_filters( 'chd_search_submit', esc_html__( 'Submit', 'ch-directs-plugin' ) );
 ?>
 <form class="search-form" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
     <label class="search-label">

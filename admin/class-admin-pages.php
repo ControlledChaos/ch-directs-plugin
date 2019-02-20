@@ -61,14 +61,14 @@ class Admin_Pages {
         add_action( 'admin_menu', [ $this, 'about_plugin' ] );
 
         // Add admin header.
-        if ( chp_acf_options() ) {
+        if ( chd_acf_options() ) {
 
             // If the ACF free plus the Options Page addon or Pro plugin is active.
-            $admin_header = get_field( 'chp_use_admin_header', 'option' );
+            $admin_header = get_field( 'chd_use_admin_header', 'option' );
         } else {
 
             // Otherwise look for the WP API setting.
-            $admin_header = get_option( 'chp_use_admin_header' );
+            $admin_header = get_option( 'chd_use_admin_header' );
         }
 
         // If admin header option s selected.
@@ -135,10 +135,10 @@ class Admin_Pages {
          */
 
         // If ACF is active, get the field from the ACF options page.
-        if ( chp_acf_options() ) {
+        if ( chd_acf_options() ) {
 
             // Get the field.
-            $acf_position = get_field( 'chp_site_plugin_link_position', 'option' );
+            $acf_position = get_field( 'chd_site_plugin_link_position', 'option' );
 
             // Return true if the field is set to `top`.
             if ( 'top' == $acf_position ) {
@@ -153,7 +153,7 @@ class Admin_Pages {
         } else {
 
             // Get the field.
-            $position = get_option( 'chp_site_plugin_link_position' );
+            $position = get_option( 'chd_site_plugin_link_position' );
         }
 
         /**
@@ -164,16 +164,16 @@ class Admin_Pages {
          */
 
         // If ACF is active, get the field from the ACF options page.
-        if ( chp_acf_options() ) {
+        if ( chd_acf_options() ) {
 
             // Get the field.
-            $link_label = get_field( 'chp_site_plugin_link_label', 'option' );
+            $link_label = get_field( 'chd_site_plugin_link_label', 'option' );
 
         // If ACF is not active, get the field from the WordPress options page.
         } else {
 
             // Get the field.
-            $link_label = sanitize_text_field( get_option( 'chp_site_plugin_link_label' ) );
+            $link_label = sanitize_text_field( get_option( 'chd_site_plugin_link_label' ) );
         }
 
         // If one of the label fields above is not empty the use that label.
@@ -195,16 +195,16 @@ class Admin_Pages {
          */
 
         // If ACF is active, get the field from the ACF options page.
-        if ( chp_acf_options() ) {
+        if ( chd_acf_options() ) {
 
             // Get the field.
-            $link_icon  = get_field( 'chp_site_plugin_link_icon', 'option' );
+            $link_icon  = get_field( 'chd_site_plugin_link_icon', 'option' );
 
         // If ACF is not active, get the field from the WordPress options page.
         } else {
 
             // Get the field.
-            $link_icon  = sanitize_text_field( get_option( 'chp_site_plugin_link_icon' ) );
+            $link_icon  = sanitize_text_field( get_option( 'chd_site_plugin_link_icon' ) );
         }
 
         // If one of the icon fields above is not empty the use that CSS class.
@@ -422,14 +422,14 @@ class Admin_Pages {
         // $style .= '.edit-post-header { position: sticky }';
         // $style .= '.edit-post-layout { padding-top: 0; }';
         // $style .= '.edit-post-sidebar { top: 32px; }';
-        $style .= '.gutenberg-editor-page .chp-admin-header { padding-left: 20px; }';
-        $style .= '.gutenberg-editor-page .chp-admin-header:before { content: ""; display: block; width: 100%; height: 56px; }';
+        $style .= '.gutenberg-editor-page .chd-admin-header { padding-left: 20px; }';
+        $style .= '.gutenberg-editor-page .chd-admin-header:before { content: ""; display: block; width: 100%; height: 56px; }';
 
         // End the style block.
         $style .= '</style>';
 
         // Apply a filter for custom admin themeing.
-        $style = apply_filters( 'chp_admin_header_layout', $style );
+        $style = apply_filters( 'chd_admin_header_layout', $style );
 
         // Render all styles.
         echo $style;
@@ -472,7 +472,7 @@ class Admin_Pages {
         }
 
         // Apply a filter conditional modification.
-        $title = apply_filters( 'chp_post_title_placeholders', $post_title );
+        $title = apply_filters( 'chd_post_title_placeholders', $post_title );
 
         // Return the new placeholder.
         return $title;
@@ -581,7 +581,7 @@ class Admin_Pages {
         $size  = 'Column Thumbnail';
 
         // Apply a filter for conditional modification.
-        $thumb = apply_filters( 'chp_column_thumbnail_size', $size );
+        $thumb = apply_filters( 'chd_column_thumbnail_size', $size );
 
         // If there is an ID (if the post has a featured image).
         if ( $post_thumbnail_id ) {
@@ -610,7 +610,7 @@ class Admin_Pages {
         $name    = __( 'Featured Image', 'ch-directs-plugin' );
 
         // Apply a filter for conditional modification.
-        $heading = apply_filters( 'chp_image_column_head', $name );
+        $heading = apply_filters( 'chd_image_column_head', $name );
 
         // The column heading name to new `featured_image` column.
         $defaults['featured_image'] = esc_html__( $heading );
@@ -667,11 +667,11 @@ class Admin_Pages {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_admin_pages() {
+function chd_admin_pages() {
 
 	return Admin_Pages::instance();
 
 }
 
 // Run an instance of the class.
-chp_admin_pages();
+chd_admin_pages();

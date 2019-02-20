@@ -441,11 +441,11 @@ class Gallery_Shortcode {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_gallery_shortcode() {
+function chd_gallery_shortcode() {
 
 	return Gallery_Shortcode::instance();
 
 }
 
 // Run an instance of the class.
-chp_gallery_shortcode();
+chd_gallery_shortcode();

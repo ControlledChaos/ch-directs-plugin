@@ -67,11 +67,11 @@ class Dashboard_Callbacks {
 	 */
 	public function hide_try_gutenberg( $args ) {
 
-		$option = get_option( 'chp_hide_try_gutenberg' );
+		$option = get_option( 'chd_hide_try_gutenberg' );
 
-		$html = '<p><input type="checkbox" id="chp_hide_try_gutenberg" name="chp_hide_try_gutenberg" value="1" ' . checked( 1, $option, false ) . '/>';
+		$html = '<p><input type="checkbox" id="chd_hide_try_gutenberg" name="chd_hide_try_gutenberg" value="1" ' . checked( 1, $option, false ) . '/>';
 
-		$html .= '<label for="chp_hide_try_gutenberg"> '  . $args[0] . '</label></p>';
+		$html .= '<label for="chd_hide_try_gutenberg"> '  . $args[0] . '</label></p>';
 
 		echo $html;
 
@@ -87,11 +87,11 @@ class Dashboard_Callbacks {
 	 */
 	public function custom_welcome( $args ) {
 
-		$option = get_option( 'chp_custom_welcome' );
+		$option = get_option( 'chd_custom_welcome' );
 
-		$html = '<p><input type="checkbox" id="chp_custom_welcome" name="chp_custom_welcome" value="1" ' . checked( 1, $option, false ) . '/>';
+		$html = '<p><input type="checkbox" id="chd_custom_welcome" name="chd_custom_welcome" value="1" ' . checked( 1, $option, false ) . '/>';
 
-		$html .= '<label for="chp_custom_welcome"> ' . $args[0] . '</label></p>';
+		$html .= '<label for="chd_custom_welcome"> ' . $args[0] . '</label></p>';
 
 		echo $html;
 
@@ -107,11 +107,11 @@ class Dashboard_Callbacks {
 	 */
 	public function hide_welcome( $args ) {
 
-		$option = get_option( 'chp_hide_welcome' );
+		$option = get_option( 'chd_hide_welcome' );
 
-		$html = '<p><input type="checkbox" id="chp_hide_welcome" name="chp_hide_welcome" value="1" ' . checked( 1, $option, false ) . '/>';
+		$html = '<p><input type="checkbox" id="chd_hide_welcome" name="chd_hide_welcome" value="1" ' . checked( 1, $option, false ) . '/>';
 
-		$html .= '<label for="chp_hide_welcome"> '  . $args[0] . '</label></p>';
+		$html .= '<label for="chd_hide_welcome"> '  . $args[0] . '</label></p>';
 
 		echo $html;
 
@@ -127,11 +127,11 @@ class Dashboard_Callbacks {
 	 */
 	public function remove_welcome_dismiss( $args ) {
 
-		$option = get_option( 'chp_remove_welcome_dismiss' );
+		$option = get_option( 'chd_remove_welcome_dismiss' );
 
-		$html = '<p><input type="checkbox" id="chp_remove_welcome_dismiss" name="chp_remove_welcome_dismiss" value="1" ' . checked( 1, $option, false ) . '/>';
+		$html = '<p><input type="checkbox" id="chd_remove_welcome_dismiss" name="chd_remove_welcome_dismiss" value="1" ' . checked( 1, $option, false ) . '/>';
 
-		$html .= '<label for="chp_remove_welcome_dismiss"> '  . $args[0] . '</label></p>';
+		$html .= '<label for="chd_remove_welcome_dismiss"> '  . $args[0] . '</label></p>';
 
 		echo $html;
 
@@ -147,11 +147,11 @@ class Dashboard_Callbacks {
 	 */
 	public function hide_wp_news( $args ) {
 
-		$option = get_option( 'chp_hide_wp_news' );
+		$option = get_option( 'chd_hide_wp_news' );
 
-		$html = '<p><input type="checkbox" id="chp_hide_wp_news" name="chp_hide_wp_news" value="1" ' . checked( 1, $option, false ) . '/>';
+		$html = '<p><input type="checkbox" id="chd_hide_wp_news" name="chd_hide_wp_news" value="1" ' . checked( 1, $option, false ) . '/>';
 
-		$html .= '<label for="chp_hide_wp_news"> '  . $args[0] . '</label></p>';
+		$html .= '<label for="chd_hide_wp_news"> '  . $args[0] . '</label></p>';
 
 		echo $html;
 
@@ -167,11 +167,11 @@ class Dashboard_Callbacks {
 	 */
 	public function hide_quickpress( $args ) {
 
-		$option = get_option( 'chp_hide_quickpress' );
+		$option = get_option( 'chd_hide_quickpress' );
 
-		$html = '<p><input type="checkbox" id="chp_hide_quickpress" name="chp_hide_quickpress" value="1" ' . checked( 1, $option, false ) . '/>';
+		$html = '<p><input type="checkbox" id="chd_hide_quickpress" name="chd_hide_quickpress" value="1" ' . checked( 1, $option, false ) . '/>';
 
-		$html .= '<label for="chp_hide_quickpress"> '  . $args[0] . '</label></p>';
+		$html .= '<label for="chd_hide_quickpress"> '  . $args[0] . '</label></p>';
 
 		echo $html;
 
@@ -187,11 +187,11 @@ class Dashboard_Callbacks {
 	 */
 	public function hide_at_glance( $args ) {
 
-		$option = get_option( 'chp_hide_at_glance' );
+		$option = get_option( 'chd_hide_at_glance' );
 
-		$html = '<p><input type="checkbox" id="chp_hide_at_glance" name="chp_hide_at_glance" value="1" ' . checked( 1, $option, false ) . '/>';
+		$html = '<p><input type="checkbox" id="chd_hide_at_glance" name="chd_hide_at_glance" value="1" ' . checked( 1, $option, false ) . '/>';
 
-		$html .= '<label for="chp_hide_at_glance"> '  . $args[0] . '</label></p>';
+		$html .= '<label for="chd_hide_at_glance"> '  . $args[0] . '</label></p>';
 
 		echo $html;
 
@@ -207,11 +207,11 @@ class Dashboard_Callbacks {
 	 */
 	public function hide_activity( $args ) {
 
-		$option = get_option( 'chp_hide_activity' );
+		$option = get_option( 'chd_hide_activity' );
 
-		$html = '<p><input type="checkbox" id="chp_hide_activity" name="chp_hide_activity" value="1" ' . checked( 1, $option, false ) . '/>';
+		$html = '<p><input type="checkbox" id="chd_hide_activity" name="chd_hide_activity" value="1" ' . checked( 1, $option, false ) . '/>';
 
-		$html .= '<label for="chp_hide_activity"> '  . $args[0] . '</label></p>';
+		$html .= '<label for="chd_hide_activity"> '  . $args[0] . '</label></p>';
 
 		echo $html;
 
@@ -226,11 +226,11 @@ class Dashboard_Callbacks {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_dashboard_callbacks() {
+function chd_dashboard_callbacks() {
 
 	return Dashboard_Callbacks::instance();
 
 }
 
 // Run an instance of the class.
-chp_dashboard_callbacks();
+chd_dashboard_callbacks();

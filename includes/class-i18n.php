@@ -89,11 +89,11 @@ class i18n {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_i18n() {
+function chd_i18n() {
 
 	return i18n::instance();
 
 }
 
 // Run an instance of the class.
-chp_i18n();
+chd_i18n();

@@ -64,12 +64,12 @@ class Welcome {
 		 */
 
 		// If ACF is active, get the field from the ACF options page.
-		if ( chp_acf_options() ) {
-			$dismiss = get_field( 'chp_remove_welcome_dismiss', 'option' );
+		if ( chd_acf_options() ) {
+			$dismiss = get_field( 'chd_remove_welcome_dismiss', 'option' );
 
 		// If ACF is not active, get the field from the WordPress options page.
 		} else {
-			$dismiss = get_option( 'chp_remove_welcome_dismiss' );
+			$dismiss = get_option( 'chd_remove_welcome_dismiss' );
 		}
 
 		if ( $dismiss ) {
@@ -81,10 +81,10 @@ class Welcome {
 		 */
 
 		// If ACF is active, get the field from the ACF options page.
-		if ( chp_acf_options() ) {
-			$welcome = get_field( 'chp_custom_welcome', 'option' );
+		if ( chd_acf_options() ) {
+			$welcome = get_field( 'chd_custom_welcome', 'option' );
 		} else {
-			$welcome = get_option( 'chp_custom_welcome' );
+			$welcome = get_option( 'chd_custom_welcome' );
 		}
 
 		if ( $welcome ) {
@@ -136,7 +136,7 @@ class Welcome {
 
 		register_sidebar( [
 			'name'          => __( 'Welcome Panel - First Area', 'ch-directs-plugin' ),
-			'id'            => 'chp_welcome_widget_first',
+			'id'            => 'chd_welcome_widget_first',
 			'description'   => __( '', 'ch-directs-plugin' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
@@ -146,7 +146,7 @@ class Welcome {
 
 		register_sidebar( [
 			'name'          => __( 'Welcome Panel - Second Area', 'ch-directs-plugin' ),
-			'id'            => 'chp_welcome_widget_second',
+			'id'            => 'chd_welcome_widget_second',
 			'description'   => __( '', 'ch-directs-plugin' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
@@ -156,7 +156,7 @@ class Welcome {
 
 		register_sidebar( [
 			'name'          => __( 'Welcome Panel - Third Area', 'ch-directs-plugin' ),
-			'id'            => 'chp_welcome_widget_last',
+			'id'            => 'chd_welcome_widget_last',
 			'description'   => __( '', 'ch-directs-plugin' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
@@ -213,11 +213,11 @@ class Welcome {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_welcome() {
+function chd_welcome() {
 
 	return Welcome::instance();
 
 }
 
 // Run an instance of the class.
-chp_welcome();
+chd_welcome();

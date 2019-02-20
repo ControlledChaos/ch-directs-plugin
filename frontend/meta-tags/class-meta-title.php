@@ -58,7 +58,7 @@ class Meta_Title {
 	public function __construct() {
 
 		// Add the title to meta tag.
-		add_action( 'chp_meta_title_tag', [ $this, 'title' ] );
+		add_action( 'chd_meta_title_tag', [ $this, 'title' ] );
 
 	}
 
@@ -86,7 +86,7 @@ class Meta_Title {
 		);
 
 		// Apply a filter to author archive title.
-		$author_meta = apply_filters( 'chp_author_meta_title', $author_title );
+		$author_meta = apply_filters( 'chd_author_meta_title', $author_title );
 
 		// Custom search title.
 		$search_title = sprintf(
@@ -96,7 +96,7 @@ class Meta_Title {
 		);
 
 		// Apply a filter to search title.
-		$search_meta = apply_filters( 'chp_search_meta_title', $search_title );
+		$search_meta = apply_filters( 'chd_search_meta_title', $search_title );
 
 		// Use the website name on the front page and 404 error page.
 		if ( is_front_page() || is_404() ) {
@@ -137,11 +137,11 @@ class Meta_Title {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_meta_title() {
+function chd_meta_title() {
 
 	return Meta_Title::instance();
 
 }
 
 // Run an instance of the class.
-chp_meta_title();
+chd_meta_title();

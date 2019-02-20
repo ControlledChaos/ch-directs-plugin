@@ -58,7 +58,7 @@ class Meta_Date_Published {
 	public function __construct() {
 
 		// Add published date to the meta tag.
-		add_action( 'chp_meta_date_pub_tag', [ $this, 'date' ] );
+		add_action( 'chd_meta_date_pub_tag', [ $this, 'date' ] );
 
 	}
 
@@ -96,11 +96,11 @@ class Meta_Date_Published {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_meta_date_pub() {
+function chd_meta_date_pub() {
 
 	return Meta_Date_Published::instance();
 
 }
 
 // Run an instance of the class.
-chp_meta_date_pub();
+chd_meta_date_pub();

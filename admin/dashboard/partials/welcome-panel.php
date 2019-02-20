@@ -31,15 +31,15 @@ $subheading = sprintf(
 	get_bloginfo( 'name' ),
 	esc_html__( 'welcome panel', 'ch-directs-plugin' )
 );
-$subheading = apply_filters( 'chp_welcome_subheading', $subheading );
+$subheading = apply_filters( 'chd_welcome_subheading', $subheading );
 
 // Add a filterable description.
-$about_desc = apply_filters( 'chp_welcome_about', __( 'Put your welcome message here.', 'ch-directs-plugin' ) );
+$about_desc = apply_filters( 'chd_welcome_about', __( 'Put your welcome message here.', 'ch-directs-plugin' ) );
 
 ?>
-<?php do_action( 'chp_before_welcome_panel_content' ); ?>
+<?php do_action( 'chd_before_welcome_panel_content' ); ?>
 <div class="welcome-panel-content custom">
-	<?php do_action( 'chp_welcome_panel_content_before' ); ?>
+	<?php do_action( 'chd_welcome_panel_content_before' ); ?>
 
 	<?php echo sprintf(
 		'<h2>%1s %2s.</h2>',
@@ -52,14 +52,14 @@ $about_desc = apply_filters( 'chp_welcome_about', __( 'Put your welcome message 
 	<p><?php _e( 'No CSS has been applied to this welcome panel. Add styles as necessary for your project.' ); ?></p>
 
 	<div class="welcome-panel-column-container">
-		<?php do_action( 'chp_welcome_panel_column_container_before' ); ?>
+		<?php do_action( 'chd_welcome_panel_column_container_before' ); ?>
 
 		<div class="welcome-panel-column">
-			<?php do_action( 'chp_welcome_panel_column_first_before' ); ?>
+			<?php do_action( 'chd_welcome_panel_column_first_before' ); ?>
 
-				<?php if ( is_active_sidebar( 'chp_welcome_widget_first' ) ) {
+				<?php if ( is_active_sidebar( 'chd_welcome_widget_first' ) ) {
 
-					dynamic_sidebar( 'chp_welcome_widget_first' );
+					dynamic_sidebar( 'chd_welcome_widget_first' );
 
 				} else {
 
@@ -78,14 +78,14 @@ $about_desc = apply_filters( 'chp_welcome_about', __( 'Put your welcome message 
 
 				} ?>
 
-			<?php do_action( 'chp_welcome_panel_column_first_after' ); ?>
+			<?php do_action( 'chd_welcome_panel_column_first_after' ); ?>
 		</div>
 		<div class="welcome-panel-column">
-			<?php do_action( 'chp_welcome_panel_column_second_before' ); ?>
+			<?php do_action( 'chd_welcome_panel_column_second_before' ); ?>
 
-			<?php if ( is_active_sidebar( 'chp_welcome_widget_second' ) ) {
+			<?php if ( is_active_sidebar( 'chd_welcome_widget_second' ) ) {
 
-					dynamic_sidebar( 'chp_welcome_widget_second' );
+					dynamic_sidebar( 'chd_welcome_widget_second' );
 
 				} else {
 
@@ -104,14 +104,14 @@ $about_desc = apply_filters( 'chp_welcome_about', __( 'Put your welcome message 
 
 				} ?>
 
-			<?php do_action( 'chp_welcome_panel_column_second_after' ); ?>
+			<?php do_action( 'chd_welcome_panel_column_second_after' ); ?>
 		</div>
 		<div class="welcome-panel-column welcome-panel-last">
-			<?php do_action( 'chp_welcome_panel_column_last_before' ); ?>
+			<?php do_action( 'chd_welcome_panel_column_last_before' ); ?>
 
-			<?php if ( is_active_sidebar( 'chp_welcome_widget_last' ) ) {
+			<?php if ( is_active_sidebar( 'chd_welcome_widget_last' ) ) {
 
-					dynamic_sidebar( 'chp_welcome_widget_last' );
+					dynamic_sidebar( 'chd_welcome_widget_last' );
 
 				} else {
 
@@ -130,12 +130,12 @@ $about_desc = apply_filters( 'chp_welcome_about', __( 'Put your welcome message 
 
 				} ?>
 
-			<?php do_action( 'chp_welcome_panel_column_last_after' ); ?>
+			<?php do_action( 'chd_welcome_panel_column_last_after' ); ?>
 		</div>
 
-		<?php do_action( 'chp_welcome_panel_column_container_after' ); ?>
+		<?php do_action( 'chd_welcome_panel_column_container_after' ); ?>
 	</div>
 
-	<?php do_action( 'chp_welcome_panel_content_after' ); ?>
+	<?php do_action( 'chd_welcome_panel_content_after' ); ?>
 </div>
-<?php do_action( 'chp_after_welcome_panel_content' ); ?>
+<?php do_action( 'chd_after_welcome_panel_content' ); ?>

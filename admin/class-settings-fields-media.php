@@ -77,52 +77,52 @@ class Settings_Fields_Media {
         /**
          * Image crop settings.
          */
-        add_settings_field( 'chp_hard_crop_medium', __( 'Medium size crop', 'ch-directs-plugin' ), [ $this, 'medium_crop' ], 'media', 'default', [ __( 'Crop thumbnail to exact dimensions (normally thumbnails are proportional)', 'ch-directs-plugin' ) ] );
+        add_settings_field( 'chd_hard_crop_medium', __( 'Medium size crop', 'ch-directs-plugin' ), [ $this, 'medium_crop' ], 'media', 'default', [ __( 'Crop thumbnail to exact dimensions (normally thumbnails are proportional)', 'ch-directs-plugin' ) ] );
 
-        add_settings_field( 'chp_hard_crop_large', __( 'Large size crop', 'ch-directs-plugin' ), [ $this, 'large_crop' ], 'media', 'default', [ __( 'Crop thumbnail to exact dimensions (normally thumbnails are proportional)', 'ch-directs-plugin' ) ] );
+        add_settings_field( 'chd_hard_crop_large', __( 'Large size crop', 'ch-directs-plugin' ), [ $this, 'large_crop' ], 'media', 'default', [ __( 'Crop thumbnail to exact dimensions (normally thumbnails are proportional)', 'ch-directs-plugin' ) ] );
 
         register_setting(
             'media',
-            'chp_hard_crop_medium'
+            'chd_hard_crop_medium'
         );
 
         register_setting(
             'media',
-            'chp_hard_crop_large'
+            'chd_hard_crop_large'
         );
 
         /**
          * SVG options.
          */
-        add_settings_section( 'chp-svg-settings', __( 'SVG Images', 'ch-directs-plugin' ), [ $this, 'svg_notice' ], 'media' );
+        add_settings_section( 'chd-svg-settings', __( 'SVG Images', 'ch-directs-plugin' ), [ $this, 'svg_notice' ], 'media' );
 
-        add_settings_field( 'chp_add_svg_support', __( 'SVG Support', 'ch-directs-plugin' ), [ $this, 'svg_support' ], 'media', 'chp-svg-settings', [ __( 'Add ability to upload SVG images to the media library.', 'ch-directs-plugin' ) ] );
+        add_settings_field( 'chd_add_svg_support', __( 'SVG Support', 'ch-directs-plugin' ), [ $this, 'svg_support' ], 'media', 'chd-svg-settings', [ __( 'Add ability to upload SVG images to the media library.', 'ch-directs-plugin' ) ] );
 
         register_setting(
             'media',
-            'chp_add_svg_support'
+            'chd_add_svg_support'
         );
 
         /**
          * Fancybox settings.
          */
-        add_settings_section( 'chp-media-settings', __( 'Fancybox', 'ch-directs-plugin' ), [ $this, 'fancybox_description' ], 'media' );
+        add_settings_section( 'chd-media-settings', __( 'Fancybox', 'ch-directs-plugin' ), [ $this, 'fancybox_description' ], 'media' );
 
-        add_settings_field( 'chp_enqueue_fancybox_script', __( 'Enqueue Fancybox script', 'ch-directs-plugin' ), [ $this, 'fancybox_script' ], 'media', 'chp-media-settings', [ __( 'Needed for lightbox functionality.', 'ch-directs-plugin' ) ] );
+        add_settings_field( 'chd_enqueue_fancybox_script', __( 'Enqueue Fancybox script', 'ch-directs-plugin' ), [ $this, 'fancybox_script' ], 'media', 'chd-media-settings', [ __( 'Needed for lightbox functionality.', 'ch-directs-plugin' ) ] );
 
         if ( ! current_theme_supports( 'ccd-fancybox' ) ) {
-            add_settings_field( 'chp_enqueue_fancybox_styles', __( 'Enqueue Fancybox styles', 'ch-directs-plugin' ), [ $this, 'fancybox_styles' ], 'media', 'chp-media-settings', [ __( 'Leave unchecked to use a custom stylesheet in a theme.', 'ch-directs-plugin' ) ] );
+            add_settings_field( 'chd_enqueue_fancybox_styles', __( 'Enqueue Fancybox styles', 'ch-directs-plugin' ), [ $this, 'fancybox_styles' ], 'media', 'chd-media-settings', [ __( 'Leave unchecked to use a custom stylesheet in a theme.', 'ch-directs-plugin' ) ] );
         }
 
         register_setting(
             'media',
-            'chp_enqueue_fancybox_script'
+            'chd_enqueue_fancybox_script'
         );
 
         if ( ! current_theme_supports( 'ccd-fancybox' ) ) {
             register_setting(
                 'media',
-                'chp_enqueue_fancybox_styles'
+                'chd_enqueue_fancybox_styles'
             );
         }
 
@@ -137,9 +137,9 @@ class Settings_Fields_Media {
      */
     public function medium_crop( $args ) {
 
-        $html = '<p><input type="checkbox" id="chp_hard_crop_medium" name="chp_hard_crop_medium" value="1" ' . checked( 1, get_option( 'chp_hard_crop_medium' ), false ) . '/>';
+        $html = '<p><input type="checkbox" id="chd_hard_crop_medium" name="chd_hard_crop_medium" value="1" ' . checked( 1, get_option( 'chd_hard_crop_medium' ), false ) . '/>';
 
-        $html .= '<label for="chp_hard_crop_medium"> '  . $args[0] . '</label></p>';
+        $html .= '<label for="chd_hard_crop_medium"> '  . $args[0] . '</label></p>';
 
         echo $html;
 
@@ -154,9 +154,9 @@ class Settings_Fields_Media {
      */
     public function large_crop( $args ) {
 
-        $html = '<p><input type="checkbox" id="chp_hard_crop_large" name="chp_hard_crop_large" value="1" ' . checked( 1, get_option( 'chp_hard_crop_large' ), false ) . '/>';
+        $html = '<p><input type="checkbox" id="chd_hard_crop_large" name="chd_hard_crop_large" value="1" ' . checked( 1, get_option( 'chd_hard_crop_large' ), false ) . '/>';
 
-        $html .= '<label for="chp_hard_crop_large"> '  . $args[0] . '</label></p>';
+        $html .= '<label for="chd_hard_crop_large"> '  . $args[0] . '</label></p>';
 
         echo $html;
 
@@ -171,13 +171,13 @@ class Settings_Fields_Media {
      */
     public function crop() {
 
-        if ( get_option( 'chp_hard_crop_medium' ) ) {
+        if ( get_option( 'chd_hard_crop_medium' ) ) {
             update_option( 'medium_crop', 1 );
         } else {
             update_option( 'medium_crop', 0 );
         }
 
-        if ( get_option( 'chp_hard_crop_large' ) ) {
+        if ( get_option( 'chd_hard_crop_large' ) ) {
             update_option( 'large_crop', 1 );
         } else {
             update_option( 'large_crop', 0 );
@@ -211,9 +211,9 @@ class Settings_Fields_Media {
      */
     public function svg_support( $args ) {
 
-        $html = '<p><input type="checkbox" id="chp_add_svg_support" name="chp_add_svg_support" value="1" ' . checked( 1, get_option( 'chp_add_svg_support' ), false ) . '/>';
+        $html = '<p><input type="checkbox" id="chd_add_svg_support" name="chd_add_svg_support" value="1" ' . checked( 1, get_option( 'chd_add_svg_support' ), false ) . '/>';
 
-        $html .= '<label for="chp_add_svg_support"> '  . $args[0] . '</label></p>';
+        $html .= '<label for="chd_add_svg_support"> '  . $args[0] . '</label></p>';
 
         echo $html;
 
@@ -244,9 +244,9 @@ class Settings_Fields_Media {
      */
     public function fancybox_script( $args ) {
 
-        $html = '<p><input type="checkbox" id="chp_enqueue_fancybox_script" name="chp_enqueue_fancybox_script" value="1" ' . checked( 1, get_option( 'chp_enqueue_fancybox_script' ), false ) . '/>';
+        $html = '<p><input type="checkbox" id="chd_enqueue_fancybox_script" name="chd_enqueue_fancybox_script" value="1" ' . checked( 1, get_option( 'chd_enqueue_fancybox_script' ), false ) . '/>';
 
-        $html .= '<label for="chp_enqueue_fancybox_script"> '  . $args[0] . '</label></p>';
+        $html .= '<label for="chd_enqueue_fancybox_script"> '  . $args[0] . '</label></p>';
 
         echo $html;
 
@@ -261,9 +261,9 @@ class Settings_Fields_Media {
      */
     public function fancybox_styles( $args ) {
 
-        $html = '<p><input type="checkbox" id="chp_enqueue_fancybox_styles" name="chp_enqueue_fancybox_styles" value="1" ' . checked( 1, get_option( 'chp_enqueue_fancybox_styles' ), false ) . '/>';
+        $html = '<p><input type="checkbox" id="chd_enqueue_fancybox_styles" name="chd_enqueue_fancybox_styles" value="1" ' . checked( 1, get_option( 'chd_enqueue_fancybox_styles' ), false ) . '/>';
 
-        $html .= '<label for="chp_enqueue_fancybox_styles"> '  . $args[0] . '</label></p>';
+        $html .= '<label for="chd_enqueue_fancybox_styles"> '  . $args[0] . '</label></p>';
 
         echo $html;
 
@@ -278,11 +278,11 @@ class Settings_Fields_Media {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_settings_fields_media() {
+function chd_settings_fields_media() {
 
 	return Settings_Fields_Media::instance();
 
 }
 
 // Run an instance of the class.
-chp_settings_fields_media();
+chd_settings_fields_media();

@@ -76,7 +76,7 @@ class Inline_Frontend_Styles {
 		$tooltipster = file_get_contents( esc_html( CHP_PATH . 'assets/css/tooltipster.bundle.min.css' ) );
 
 		// Fancybox 3.
-		if ( get_option( 'chp_enqueue_fancybox_styles' ) ) {
+		if ( get_option( 'chd_enqueue_fancybox_styles' ) ) {
 
 			/**
 			 * Bail if the current theme supports ccd-fancybox by
@@ -90,17 +90,17 @@ class Inline_Frontend_Styles {
 		}
 
 		// Slick.
-		if ( get_option( 'chp_enqueue_slick' ) ) {
+		if ( get_option( 'chd_enqueue_slick' ) ) {
 			echo '<!-- Slick Scripts --><style>' . $slick . '</style>';
 		}
 
 		// Slick theme.
-		if ( get_option( 'chp_enqueue_slick' ) ) {
+		if ( get_option( 'chd_enqueue_slick' ) ) {
 			echo '<!-- Tabslet Scripts --><style>' . $slick_theme . '</style>';
 		}
 
 		// Tooltipster.
-		if ( get_option( 'chp_enqueue_tooltipster' ) ) {
+		if ( get_option( 'chd_enqueue_tooltipster' ) ) {
 			echo '<!-- Tooltipster Scripts --><style>' . $tooltipster . '</style>';
 		}
 
@@ -115,11 +115,11 @@ class Inline_Frontend_Styles {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_inline_frontend_styles() {
+function chd_inline_frontend_styles() {
 
 	return Inline_Frontend_Styles::instance();
 
 }
 
 // Run an instance of the class.
-chp_inline_frontend_styles();
+chd_inline_frontend_styles();

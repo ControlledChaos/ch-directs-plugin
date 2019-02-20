@@ -37,17 +37,17 @@
 	* Block icon from Dashicons.
 	* Block category common, formatting, layout, widgets, embed.
 	*/
-	registerBlockType( 'chp/sample-block', {
+	registerBlockType( 'chd/sample-block', {
 		title    : __( 'Sample Block', 'ch-directs-plugin' ),
 		icon     : 'lightbulb',
 		category : 'common',
 
 		// The "edit" property must be a valid function.
 		edit: function(props) {
-			// Creates a <p class='wp-block-chp-sample-block"'></p>.
+			// Creates a <p class='wp-block-chd-sample-block"'></p>.
 			return el(
 				'p', // Tag type.
-				{ className: props.className }, // The class="wp-block-chp-sample-block" : The class name is generated using the block's name prefixed with wp-block-, replacing the / namespace separator with a single -.
+				{ className: props.className }, // The class="wp-block-chd-sample-block" : The class name is generated using the block's name prefixed with wp-block-, replacing the / namespace separator with a single -.
 				'Sample Block' // Content inside the tag.
 			);
 		},
@@ -56,7 +56,7 @@
 		save: function(props) {
 			return el(
 				'p', // Tag type.
-				{ className: props.className }, // The class="wp-block-chp-sample-block" : The class name is generated using the block's name prefixed with wp-block-, replacing the / namespace separator with a single -.
+				{ className: props.className }, // The class="wp-block-chd-sample-block" : The class name is generated using the block's name prefixed with wp-block-, replacing the / namespace separator with a single -.
 				'Sample Block' // Content inside the tag.
 			);
 		}

@@ -70,7 +70,7 @@ class Frontend {
 		add_action( 'wp_enqueue_scripts', [ $this, 'deregister_dashicons' ] );
 
 		// Get inline options.
-		$jquery  = get_option( 'chp_inline_jquery' );
+		$jquery  = get_option( 'chd_inline_jquery' );
 
 		// Inline jQuery.
 		if ( $jquery ) {
@@ -93,8 +93,8 @@ class Frontend {
 	public function dependencies() {
 
 		// Get inline options.
-		$scripts = get_option( 'chp_inline_scripts' );
-		$styles  = get_option( 'chp_inline_styles' );
+		$scripts = get_option( 'chd_inline_scripts' );
+		$styles  = get_option( 'chd_inline_styles' );
 
 		// Add styles inline if option selected.
 		if ( $styles ) {
@@ -184,7 +184,7 @@ class Frontend {
 	 */
 	public function attachment_fancybox() {
 
-		if ( is_attachment() && get_option( 'chp_enqueue_fancybox_script' ) ) { ?>
+		if ( is_attachment() && get_option( 'chd_enqueue_fancybox_script' ) ) { ?>
 
 			<script>
 			jQuery(document).ready(function() {
@@ -205,11 +205,11 @@ class Frontend {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_frontend() {
+function chd_frontend() {
 
 	return Frontend::instance();
 
 }
 
 // Run an instance of the class.
-chp_frontend();
+chd_frontend();

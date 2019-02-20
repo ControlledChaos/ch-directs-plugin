@@ -129,7 +129,7 @@ class Settings_Fields_Site {
 			'links'               => false
 		];
 
-		return apply_filters ( 'chp_site_settings', $defaults );
+		return apply_filters ( 'chd_site_settings', $defaults );
 
 	}
 
@@ -142,11 +142,11 @@ class Settings_Fields_Site {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_settings_fields_site() {
+function chd_settings_fields_site() {
 
 	return Settings_Fields_Site::instance();
 
 }
 
 // Run an instance of the class.
-chp_settings_fields_site();
+chd_settings_fields_site();

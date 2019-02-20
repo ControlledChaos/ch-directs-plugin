@@ -173,11 +173,11 @@ class Settings_Page_Dev_Tools {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_settings_page_dev_tools() {
+function chd_settings_page_dev_tools() {
 
 	return Settings_Page_Dev_Tools::instance();
 
 }
 
 // Run an instance of the class.
-chp_settings_page_dev_tools();
+chd_settings_page_dev_tools();

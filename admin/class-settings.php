@@ -113,11 +113,11 @@ class Settings {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_settings() {
+function chd_settings() {
 
 	return Settings::instance();
 
 }
 
 // Run an instance of the class.
-chp_settings();
+chd_settings();

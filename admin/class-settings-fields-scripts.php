@@ -61,7 +61,7 @@ class Settings_Fields_Scripts {
 		add_action( 'admin_init', [ $this, 'settings' ] );
 
 		// Include jQuery Migrate.
-		$migrate = get_option( 'chp_jquery_migrate' );
+		$migrate = get_option( 'chd_jquery_migrate' );
 		if ( ! $migrate ) {
 			add_action( 'wp_default_scripts', [ $this, 'include_jquery_migrate' ] );
 		}
@@ -80,91 +80,91 @@ class Settings_Fields_Scripts {
 		/**
 		 * Generl script options.
 		 */
-		add_settings_section( 'chp-scripts-general', __( 'General Options', 'ch-directs-plugin' ), [ $this, 'scripts_general_section_callback' ], 'chp-scripts-general' );
+		add_settings_section( 'chd-scripts-general', __( 'General Options', 'ch-directs-plugin' ), [ $this, 'scripts_general_section_callback' ], 'chd-scripts-general' );
 
 		// Inline scripts.
-		add_settings_field( 'chp_inline_scripts', __( 'Inline Scripts', 'ch-directs-plugin' ), [ $this, 'chp_inline_scripts_callback' ], 'chp-scripts-general', 'chp-scripts-general', [ esc_html__( 'Add script contents to footer', 'ch-directs-plugin' ) ] );
+		add_settings_field( 'chd_inline_scripts', __( 'Inline Scripts', 'ch-directs-plugin' ), [ $this, 'chd_inline_scripts_callback' ], 'chd-scripts-general', 'chd-scripts-general', [ esc_html__( 'Add script contents to footer', 'ch-directs-plugin' ) ] );
 
 		register_setting(
-			'chp-scripts-general',
-			'chp_inline_scripts'
+			'chd-scripts-general',
+			'chd_inline_scripts'
 		);
 
 		// Inline styles.
-		add_settings_field( 'chp_inline_styles', __( 'Inline Styles', 'ch-directs-plugin' ), [ $this, 'chp_inline_styles_callback' ], 'chp-scripts-general', 'chp-scripts-general', [ esc_html__( 'Add script-related CSS contents to head', 'ch-directs-plugin' ) ] );
+		add_settings_field( 'chd_inline_styles', __( 'Inline Styles', 'ch-directs-plugin' ), [ $this, 'chd_inline_styles_callback' ], 'chd-scripts-general', 'chd-scripts-general', [ esc_html__( 'Add script-related CSS contents to head', 'ch-directs-plugin' ) ] );
 
 		register_setting(
-			'chp-scripts-general',
-			'chp_inline_styles'
+			'chd-scripts-general',
+			'chd_inline_styles'
 		);
 
 		// Inline jQuery.
-		add_settings_field( 'chp_inline_jquery', __( 'Inline jQuery', 'ch-directs-plugin' ), [ $this, 'chp_inline_jquery_callback' ], 'chp-scripts-general', 'chp-scripts-general', [ esc_html__( 'Deregister jQuery and add its contents to footer', 'ch-directs-plugin' ) ] );
+		add_settings_field( 'chd_inline_jquery', __( 'Inline jQuery', 'ch-directs-plugin' ), [ $this, 'chd_inline_jquery_callback' ], 'chd-scripts-general', 'chd-scripts-general', [ esc_html__( 'Deregister jQuery and add its contents to footer', 'ch-directs-plugin' ) ] );
 
 		register_setting(
-			'chp-scripts-general',
-			'chp_inline_jquery'
+			'chd-scripts-general',
+			'chd_inline_jquery'
 		);
 
 		// Include jQuery Migrate.
-		add_settings_field( 'chp_jquery_migrate', __( 'jQuery Migrate', 'ch-directs-plugin' ), [ $this, 'chp_jquery_migrate_callback' ], 'chp-scripts-general', 'chp-scripts-general', [ esc_html__( 'Use jQuery Migrate for backwards compatibility', 'ch-directs-plugin' ) ] );
+		add_settings_field( 'chd_jquery_migrate', __( 'jQuery Migrate', 'ch-directs-plugin' ), [ $this, 'chd_jquery_migrate_callback' ], 'chd-scripts-general', 'chd-scripts-general', [ esc_html__( 'Use jQuery Migrate for backwards compatibility', 'ch-directs-plugin' ) ] );
 
 		register_setting(
-			'chp-scripts-general',
-			'chp_jquery_migrate'
+			'chd-scripts-general',
+			'chd_jquery_migrate'
 		);
 
 		// Remove emoji script.
-		add_settings_field( 'chp_remove_emoji_script', __( 'Emoji Script', 'ch-directs-plugin' ), [ $this, 'remove_emoji_script_callback' ], 'chp-scripts-general', 'chp-scripts-general', [ esc_html__( 'Remove emoji script from <head>', 'ch-directs-plugin' ) ] );
+		add_settings_field( 'chd_remove_emoji_script', __( 'Emoji Script', 'ch-directs-plugin' ), [ $this, 'remove_emoji_script_callback' ], 'chd-scripts-general', 'chd-scripts-general', [ esc_html__( 'Remove emoji script from <head>', 'ch-directs-plugin' ) ] );
 
 		register_setting(
-			'chp-scripts-general',
-			'chp_remove_emoji_script'
+			'chd-scripts-general',
+			'chd_remove_emoji_script'
 		);
 
 		// Remove WordPress version appended to script links.
-		add_settings_field( 'chp_remove_script_version', __( 'Script Versions', 'ch-directs-plugin' ), [ $this, 'remove_script_version_callback' ], 'chp-scripts-general', 'chp-scripts-general', [ esc_html__( 'Remove WordPress version from script and stylesheet links in <head>', 'ch-directs-plugin' ) ] );
+		add_settings_field( 'chd_remove_script_version', __( 'Script Versions', 'ch-directs-plugin' ), [ $this, 'remove_script_version_callback' ], 'chd-scripts-general', 'chd-scripts-general', [ esc_html__( 'Remove WordPress version from script and stylesheet links in <head>', 'ch-directs-plugin' ) ] );
 
 		register_setting(
-			'chp-scripts-general',
-			'chp_remove_script_version'
+			'chd-scripts-general',
+			'chd_remove_script_version'
 		);
 
 		// Minify HTML.
-		add_settings_field( 'chp_html_minify', __( 'Minify HTML', 'ch-directs-plugin' ), [ $this, 'html_minify_callback' ], 'chp-scripts-general', 'chp-scripts-general', [ esc_html__( 'Minify HTML source code to increase load speed', 'ch-directs-plugin' ) ] );
+		add_settings_field( 'chd_html_minify', __( 'Minify HTML', 'ch-directs-plugin' ), [ $this, 'html_minify_callback' ], 'chd-scripts-general', 'chd-scripts-general', [ esc_html__( 'Minify HTML source code to increase load speed', 'ch-directs-plugin' ) ] );
 
 		register_setting(
-			'chp-scripts-general',
-			'chp_html_minify'
+			'chd-scripts-general',
+			'chd_html_minify'
 		);
 
 		/**
 		 * Use included vendor scripts & options.
 		 */
-		add_settings_section( 'chp-scripts-vendor', __( 'Included Vendor Scripts', 'ch-directs-plugin' ), [ $this, 'scripts_vendor_section_callback' ], 'chp-scripts-vendor' );
+		add_settings_section( 'chd-scripts-vendor', __( 'Included Vendor Scripts', 'ch-directs-plugin' ), [ $this, 'scripts_vendor_section_callback' ], 'chd-scripts-vendor' );
 
 		// Use Slick.
-		add_settings_field( 'chp_enqueue_slick', __( 'Slick', 'ch-directs-plugin' ), [ $this, 'enqueue_slick_callback' ], 'chp-scripts-vendor', 'chp-scripts-vendor', [ esc_html__( 'Use Slick script and stylesheets', 'ch-directs-plugin' ) ] );
+		add_settings_field( 'chd_enqueue_slick', __( 'Slick', 'ch-directs-plugin' ), [ $this, 'enqueue_slick_callback' ], 'chd-scripts-vendor', 'chd-scripts-vendor', [ esc_html__( 'Use Slick script and stylesheets', 'ch-directs-plugin' ) ] );
 
 		register_setting(
-			'chp-scripts-vendor',
-			'chp_enqueue_slick'
+			'chd-scripts-vendor',
+			'chd_enqueue_slick'
 		);
 
 		// Use Tabslet.
-		add_settings_field( 'chp_enqueue_tabslet', __( 'Tabslet', 'ch-directs-plugin' ), [ $this, 'enqueue_tabslet_callback' ], 'chp-scripts-vendor', 'chp-scripts-vendor', [ esc_html__( 'Use Tabslet script', 'ch-directs-plugin' ) ] );
+		add_settings_field( 'chd_enqueue_tabslet', __( 'Tabslet', 'ch-directs-plugin' ), [ $this, 'enqueue_tabslet_callback' ], 'chd-scripts-vendor', 'chd-scripts-vendor', [ esc_html__( 'Use Tabslet script', 'ch-directs-plugin' ) ] );
 
 		register_setting(
-			'chp-scripts-vendor',
-			'chp_enqueue_tabslet'
+			'chd-scripts-vendor',
+			'chd_enqueue_tabslet'
 		);
 
 		// Use Sticky-kit.
-		add_settings_field( 'chp_enqueue_stickykit', __( 'Sticky-kit', 'ch-directs-plugin' ), [ $this, 'enqueue_stickykit_callback' ], 'chp-scripts-vendor', 'chp-scripts-vendor', [ esc_html__( 'Use Sticky-kit script', 'ch-directs-plugin' ) ] );
+		add_settings_field( 'chd_enqueue_stickykit', __( 'Sticky-kit', 'ch-directs-plugin' ), [ $this, 'enqueue_stickykit_callback' ], 'chd-scripts-vendor', 'chd-scripts-vendor', [ esc_html__( 'Use Sticky-kit script', 'ch-directs-plugin' ) ] );
 
 		register_setting(
-			'chp-scripts-vendor',
-			'chp_enqueue_stickykit'
+			'chd-scripts-vendor',
+			'chd_enqueue_stickykit'
 		);
 
 		/**
@@ -172,23 +172,23 @@ class Settings_Fields_Scripts {
 		 *
 		 * @todo Add option to enqueue on the backend.
 		 */
-		add_settings_field( 'chp_enqueue_tooltipster', __( 'Tooltipster', 'ch-directs-plugin' ), [ $this, 'enqueue_tooltipster_callback' ], 'chp-scripts-vendor', 'chp-scripts-vendor', [ esc_html__( 'Use Tooltipster script and stylesheet', 'ch-directs-plugin' ) ] );
+		add_settings_field( 'chd_enqueue_tooltipster', __( 'Tooltipster', 'ch-directs-plugin' ), [ $this, 'enqueue_tooltipster_callback' ], 'chd-scripts-vendor', 'chd-scripts-vendor', [ esc_html__( 'Use Tooltipster script and stylesheet', 'ch-directs-plugin' ) ] );
 
 		register_setting(
-			'chp-scripts-vendor',
-			'chp_enqueue_tooltipster'
+			'chd-scripts-vendor',
+			'chd_enqueue_tooltipster'
 		);
 
 		// Site Settings section.
-		if ( chp_acf_options() ) {
+		if ( chd_acf_options() ) {
 
-			add_settings_section( 'chp-registered-fields-activate', __( 'Registered Fields Activation', 'ch-directs-plugin' ), [ $this, 'registered_fields_activate' ], 'chp-registered-fields-activate' );
+			add_settings_section( 'chd-registered-fields-activate', __( 'Registered Fields Activation', 'ch-directs-plugin' ), [ $this, 'registered_fields_activate' ], 'chd-registered-fields-activate' );
 
-			add_settings_field( 'chp_acf_activate_settings_page', __( 'Site Settings Page', 'ch-directs-plugin' ), [ $this, 'registered_fields_page_callback' ], 'chp-registered-fields-activate', 'chp-registered-fields-activate', [ __( 'Deactive the field group for the "Site Settings" options page.', 'ch-directs-plugin' ) ] );
+			add_settings_field( 'chd_acf_activate_settings_page', __( 'Site Settings Page', 'ch-directs-plugin' ), [ $this, 'registered_fields_page_callback' ], 'chd-registered-fields-activate', 'chd-registered-fields-activate', [ __( 'Deactive the field group for the "Site Settings" options page.', 'ch-directs-plugin' ) ] );
 
 			register_setting(
-				'chp-registered-fields-activate',
-				'chp_acf_activate_settings_page'
+				'chd-registered-fields-activate',
+				'chd_acf_activate_settings_page'
 			);
 
 		}
@@ -217,13 +217,13 @@ class Settings_Fields_Scripts {
 	 * @access public
 	 * @return string
 	 */
-	public function chp_inline_jquery_callback( $args ) {
+	public function chd_inline_jquery_callback( $args ) {
 
-		$option = get_option( 'chp_inline_jquery' );
+		$option = get_option( 'chd_inline_jquery' );
 
-		$html = '<p><input type="checkbox" id="chp_inline_jquery" name="chp_inline_jquery" value="1" ' . checked( 1, $option, false ) . '/>';
+		$html = '<p><input type="checkbox" id="chd_inline_jquery" name="chd_inline_jquery" value="1" ' . checked( 1, $option, false ) . '/>';
 
-		$html .= '<label for="chp_inline_jquery"> '  . $args[0] . '</label><br />';
+		$html .= '<label for="chd_inline_jquery"> '  . $args[0] . '</label><br />';
 
 		$html .= '<small><em>This may break the functionality of plugins that put scripts in the head</em>.</small></p>';
 
@@ -238,13 +238,13 @@ class Settings_Fields_Scripts {
 	 * @access public
 	 * @return string
 	 */
-	public function chp_jquery_migrate_callback( $args ) {
+	public function chd_jquery_migrate_callback( $args ) {
 
-		$option = get_option( 'chp_jquery_migrate' );
+		$option = get_option( 'chd_jquery_migrate' );
 
-		$html = '<p><input type="checkbox" id="chp_jquery_migrate" name="chp_jquery_migrate" value="1" ' . checked( 1, $option, false ) . '/>';
+		$html = '<p><input type="checkbox" id="chd_jquery_migrate" name="chd_jquery_migrate" value="1" ' . checked( 1, $option, false ) . '/>';
 
-		$html .= '<label for="chp_jquery_migrate"> '  . $args[0] . '</label><br />';
+		$html .= '<label for="chd_jquery_migrate"> '  . $args[0] . '</label><br />';
 
 		$html .= '<small><em>Some outdated plugins and themes may be dependent on an old version of jQuery</em></small></p>';
 
@@ -259,13 +259,13 @@ class Settings_Fields_Scripts {
 	 * @access public
 	 * @return string
 	 */
-	public function chp_inline_scripts_callback( $args ) {
+	public function chd_inline_scripts_callback( $args ) {
 
-		$option = get_option( 'chp_inline_scripts' );
+		$option = get_option( 'chd_inline_scripts' );
 
-		$html = '<p><input type="checkbox" id="chp_inline_scripts" name="chp_inline_scripts" value="1" ' . checked( 1, $option, false ) . '/>';
+		$html = '<p><input type="checkbox" id="chd_inline_scripts" name="chd_inline_scripts" value="1" ' . checked( 1, $option, false ) . '/>';
 
-		$html .= '<label for="chp_inline_scripts"> '  . $args[0] . '</label></p>';
+		$html .= '<label for="chd_inline_scripts"> '  . $args[0] . '</label></p>';
 
 		echo $html;
 
@@ -278,13 +278,13 @@ class Settings_Fields_Scripts {
 	 * @access public
 	 * @return string
 	 */
-	public function chp_inline_styles_callback( $args ) {
+	public function chd_inline_styles_callback( $args ) {
 
-		$option = get_option( 'chp_inline_styles' );
+		$option = get_option( 'chd_inline_styles' );
 
-		$html = '<p><input type="checkbox" id="chp_inline_styles" name="chp_inline_styles" value="1" ' . checked( 1, $option, false ) . '/>';
+		$html = '<p><input type="checkbox" id="chd_inline_styles" name="chd_inline_styles" value="1" ' . checked( 1, $option, false ) . '/>';
 
-		$html .= '<label for="chp_inline_styles"> '  . $args[0] . '</label></p>';
+		$html .= '<label for="chd_inline_styles"> '  . $args[0] . '</label></p>';
 
 		echo $html;
 
@@ -299,11 +299,11 @@ class Settings_Fields_Scripts {
 	 */
 	public function remove_emoji_script_callback( $args ) {
 
-		$option = get_option( 'chp_remove_emoji_script' );
+		$option = get_option( 'chd_remove_emoji_script' );
 
-		$html = '<p><input type="checkbox" id="chp_remove_emoji_script" name="chp_remove_emoji_script" value="1" ' . checked( 1, $option, false ) . '/>';
+		$html = '<p><input type="checkbox" id="chd_remove_emoji_script" name="chd_remove_emoji_script" value="1" ' . checked( 1, $option, false ) . '/>';
 
-		$html .= '<label for="chp_remove_emoji_script"> '  . $args[0] . '</label><br />';
+		$html .= '<label for="chd_remove_emoji_script"> '  . $args[0] . '</label><br />';
 
 		$html .= '<small><em>Emojis will still work in modern browsers</em></small></p>';
 
@@ -320,11 +320,11 @@ class Settings_Fields_Scripts {
 	 */
 	public function remove_script_version_callback( $args ) {
 
-		$option = get_option( 'chp_remove_script_version' );
+		$option = get_option( 'chd_remove_script_version' );
 
-		$html = '<p><input type="checkbox" id="chp_remove_script_version" name="chp_remove_script_version" value="1" ' . checked( 1, $option, false ) . '/>';
+		$html = '<p><input type="checkbox" id="chd_remove_script_version" name="chd_remove_script_version" value="1" ' . checked( 1, $option, false ) . '/>';
 
-		$html .= '<label for="chp_remove_script_version"> '  . $args[0] . '</label></p>';
+		$html .= '<label for="chd_remove_script_version"> '  . $args[0] . '</label></p>';
 
 		echo $html;
 
@@ -339,11 +339,11 @@ class Settings_Fields_Scripts {
 	 */
 	public function html_minify_callback( $args ) {
 
-		$option = get_option( 'chp_html_minify' );
+		$option = get_option( 'chd_html_minify' );
 
-		$html = '<p><input type="checkbox" id="chp_html_minify" name="chp_html_minify" value="1" ' . checked( 1, $option, false ) . '/>';
+		$html = '<p><input type="checkbox" id="chd_html_minify" name="chd_html_minify" value="1" ' . checked( 1, $option, false ) . '/>';
 
-		$html .= '<label for="chp_html_minify"> '  . $args[0] . '</label></p>';
+		$html .= '<label for="chd_html_minify"> '  . $args[0] . '</label></p>';
 
 		echo $html;
 
@@ -373,11 +373,11 @@ class Settings_Fields_Scripts {
 	 */
 	public function enqueue_slick_callback( $args ) {
 
-		$option = get_option( 'chp_enqueue_slick' );
+		$option = get_option( 'chd_enqueue_slick' );
 
-		$html = '<p><input type="checkbox" id="chp_enqueue_slick" name="chp_enqueue_slick" value="1" ' . checked( 1, $option, false ) . '/>';
+		$html = '<p><input type="checkbox" id="chd_enqueue_slick" name="chd_enqueue_slick" value="1" ' . checked( 1, $option, false ) . '/>';
 		$html .= sprintf(
-			'<label for="chp_enqueue_slick"> %1s</label> <a href="%2s" target="_blank" class="tooltip" title="%3s"><span class="dashicons dashicons-editor-help"></span></a>',
+			'<label for="chd_enqueue_slick"> %1s</label> <a href="%2s" target="_blank" class="tooltip" title="%3s"><span class="dashicons dashicons-editor-help"></span></a>',
 			$args[0],
 			esc_attr( esc_url( 'http://kenwheeler.github.io/slick/' ) ),
 			esc_attr( __( 'Learn more about Slick', 'ch-directs-plugin' ) )
@@ -397,11 +397,11 @@ class Settings_Fields_Scripts {
 	 */
 	public function enqueue_tabslet_callback( $args ) {
 
-		$option = get_option( 'chp_enqueue_tabslet' );
+		$option = get_option( 'chd_enqueue_tabslet' );
 
-		$html = '<p><input type="checkbox" id="chp_enqueue_tabslet" name="chp_enqueue_tabslet" value="1" ' . checked( 1, $option, false ) . '/>';
+		$html = '<p><input type="checkbox" id="chd_enqueue_tabslet" name="chd_enqueue_tabslet" value="1" ' . checked( 1, $option, false ) . '/>';
 		$html .= sprintf(
-			'<label for="chp_enqueue_tabslet"> %1s</label> <a href="%2s" target="_blank" class="tooltip" title="%3s"><span class="dashicons dashicons-editor-help"></span></a>',
+			'<label for="chd_enqueue_tabslet"> %1s</label> <a href="%2s" target="_blank" class="tooltip" title="%3s"><span class="dashicons dashicons-editor-help"></span></a>',
 			$args[0],
 			esc_attr( esc_url( 'http://vdw.github.io/Tabslet/' ) ),
 			esc_attr( __( 'Learn more about Tabslet', 'ch-directs-plugin' ) )
@@ -421,11 +421,11 @@ class Settings_Fields_Scripts {
 	 */
 	public function enqueue_stickykit_callback( $args ) {
 
-		$option = get_option( 'chp_enqueue_stickykit' );
+		$option = get_option( 'chd_enqueue_stickykit' );
 
-		$html = '<p><input type="checkbox" id="chp_enqueue_stickykit" name="chp_enqueue_stickykit" value="1" ' . checked( 1, $option, false ) . '/>';
+		$html = '<p><input type="checkbox" id="chd_enqueue_stickykit" name="chd_enqueue_stickykit" value="1" ' . checked( 1, $option, false ) . '/>';
 		$html .= sprintf(
-			'<label for="chp_enqueue_stickykit"> %1s</label> <a href="%2s" target="_blank" class="tooltip" title="%3s"><span class="dashicons dashicons-editor-help"></span></a>',
+			'<label for="chd_enqueue_stickykit"> %1s</label> <a href="%2s" target="_blank" class="tooltip" title="%3s"><span class="dashicons dashicons-editor-help"></span></a>',
 			$args[0],
 			esc_attr( esc_url( 'http://leafo.net/sticky-kit/' ) ),
 			esc_attr( __( 'Learn more about Sticky-kit', 'ch-directs-plugin' ) )
@@ -445,11 +445,11 @@ class Settings_Fields_Scripts {
 	 */
 	public function enqueue_tooltipster_callback( $args ) {
 
-		$option = get_option( 'chp_enqueue_tooltipster' );
+		$option = get_option( 'chd_enqueue_tooltipster' );
 
-		$html = '<p><input type="checkbox" id="chp_enqueue_tooltipster" name="chp_enqueue_tooltipster" value="1" ' . checked( 1, $option, false ) . '/>';
+		$html = '<p><input type="checkbox" id="chd_enqueue_tooltipster" name="chd_enqueue_tooltipster" value="1" ' . checked( 1, $option, false ) . '/>';
 		$html .= sprintf(
-			'<label for="chp_enqueue_tooltipster"> %1s</label> <a href="%2s" target="_blank" class="tooltip" title="%3s"><span class="dashicons dashicons-editor-help"></span></a>',
+			'<label for="chd_enqueue_tooltipster"> %1s</label> <a href="%2s" target="_blank" class="tooltip" title="%3s"><span class="dashicons dashicons-editor-help"></span></a>',
 			$args[0],
 			esc_attr( esc_url( 'http://iamceege.github.io/tooltipster/' ) ),
 			esc_attr( __( 'Learn more about Tooltipster', 'ch-directs-plugin' ) )
@@ -469,7 +469,7 @@ class Settings_Fields_Scripts {
 	 */
 	public function registered_fields_activate() {
 
-		if ( chp_acf_options() ) {
+		if ( chd_acf_options() ) {
 
 			echo sprintf( '<p>%1s</p>', esc_html( 'The Controlled Chaos plugin registers custom fields for Advanced Custom Fields Pro that can be imported for editing. These built-in field goups must be deactivated for the imported field groups to take effect.', 'ch-directs-plugin' ) );
 
@@ -486,11 +486,11 @@ class Settings_Fields_Scripts {
 	 */
 	public function registered_fields_page_callback( $args ) {
 
-		if ( chp_acf_options() ) {
+		if ( chd_acf_options() ) {
 
-			$html = '<p><input type="checkbox" id="chp_acf_activate_settings_page" name="chp_acf_activate_settings_page" value="1" ' . checked( 1, get_option( 'chp_acf_activate_settings_page' ), false ) . '/>';
+			$html = '<p><input type="checkbox" id="chd_acf_activate_settings_page" name="chd_acf_activate_settings_page" value="1" ' . checked( 1, get_option( 'chd_acf_activate_settings_page' ), false ) . '/>';
 
-			$html .= '<label for="chp_acf_activate_settings_page"> '  . $args[0] . '</label></p>';
+			$html .= '<label for="chd_acf_activate_settings_page"> '  . $args[0] . '</label></p>';
 
 			echo $html;
 
@@ -524,11 +524,11 @@ class Settings_Fields_Scripts {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_settings_fields_scripts() {
+function chd_settings_fields_scripts() {
 
 	return Settings_Fields_Scripts::instance();
 
 }
 
 // Run an instance of the class.
-chp_settings_fields_scripts();
+chd_settings_fields_scripts();

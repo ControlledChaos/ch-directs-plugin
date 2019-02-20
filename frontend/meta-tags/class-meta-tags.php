@@ -99,10 +99,10 @@ class Meta_Tags {
 	 */
 	public function meta_tags() {
 
-		if ( chp_acf_options() ) {
-			$disable_tags = get_field( 'chp_meta_disable_tags', 'option' );
+		if ( chd_acf_options() ) {
+			$disable_tags = get_field( 'chd_meta_disable_tags', 'option' );
 		} else {
-			$disable_tags = get_option( 'chp_meta_disable' );
+			$disable_tags = get_option( 'chd_meta_disable' );
 		}
 
 		if ( ! $disable_tags || false == $disable_tags ) {
@@ -126,11 +126,11 @@ class Meta_Tags {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_meta_tags() {
+function chd_meta_tags() {
 
 	return Meta_Tags::instance();
 
 }
 
 // Run an instance of the class.
-chp_meta_tags();
+chd_meta_tags();

@@ -78,7 +78,7 @@ class Head_Scripts {
      */
 	public function remove_ver_css_js( $src ) {
 
-		if ( get_option( 'chp_remove_script_verion' ) && strpos( $src, 'ver=' ) ) {
+		if ( get_option( 'chd_remove_script_verion' ) && strpos( $src, 'ver=' ) ) {
 			$src = remove_query_arg( 'ver', $src );
 		}
 
@@ -99,7 +99,7 @@ class Head_Scripts {
 	public function disable_emojis() {
 
 		// Check if the disable option is checked.
-		if ( get_option( 'chp_remove_emoji_script' ) ) {
+		if ( get_option( 'chd_remove_emoji_script' ) ) {
 
 			remove_action( 'admin_print_styles', 'print_emoji_styles' );
 			remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
@@ -122,11 +122,11 @@ class Head_Scripts {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_head_scripts() {
+function chd_head_scripts() {
 
 	return Head_Scripts::instance();
 
 }
 
 // Run an instance of the class.
-chp_head_scripts();
+chd_head_scripts();

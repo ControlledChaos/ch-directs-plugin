@@ -78,7 +78,7 @@ class Controlled_Chaos_Activate {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_activate() {
+function chd_activate() {
 
 	return Controlled_Chaos_Activate::instance();
 

@@ -91,7 +91,7 @@ class Media {
 		include_once CHP_PATH . 'includes/media/class-svg-support.php';
 
 		// Replace WP gallery shortcode if Fancybox option is used.
-		$fancybox = get_option( 'chp_enqueue_fancybox_script' );
+		$fancybox = get_option( 'chd_enqueue_fancybox_script' );
 
 		if ( $fancybox ) {
 			require_once CHP_PATH . 'includes/media/class-gallery-shortcode.php';
@@ -140,7 +140,7 @@ class Media {
 			$string = '/<a href="(.*?).(jpg|jpeg|png|gif|bmp|ico)"><img(.*?)class="(.*?)wp-image-(.*?)" \/><\/a>/i';
 			preg_match_all( $string, $content, $matches, PREG_SET_ORDER );
 
-			if ( get_option( 'chp_enqueue_fancybox_script' ) ) {
+			if ( get_option( 'chd_enqueue_fancybox_script' ) ) {
 
 				// Check which attachment is referenced.
 				foreach ( $matches as $val ) {
@@ -224,7 +224,7 @@ class Media {
 		global $post;
 
 		// Apply a filter for conditional image sizes.
-		$size = apply_filters( 'chp_rss_featured_image_size', 'medium' );
+		$size = apply_filters( 'chd_rss_featured_image_size', 'medium' );
 
 		/**
 		 * Use this layout only if the post has a featured image.
@@ -249,11 +249,11 @@ class Media {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_media() {
+function chd_media() {
 
 	return Media::instance();
 
 }
 
 // Run an instance of the class.
-chp_media();
+chd_media();

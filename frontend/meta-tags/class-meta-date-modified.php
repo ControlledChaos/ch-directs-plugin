@@ -58,7 +58,7 @@ class Meta_Date_Modified {
 	public function __construct() {
 
 		// Add modified date to the meta tag.
-		add_action( 'chp_meta_date_mod_tag', [ $this, 'date' ] );
+		add_action( 'chd_meta_date_mod_tag', [ $this, 'date' ] );
 
 	}
 
@@ -96,11 +96,11 @@ class Meta_Date_Modified {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_meta_date_mod() {
+function chd_meta_date_mod() {
 
 	return Meta_Date_Modified::instance();
 
 }
 
 // Run an instance of the class.
-chp_meta_date_mod();
+chd_meta_date_mod();

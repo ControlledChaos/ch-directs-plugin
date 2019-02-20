@@ -58,7 +58,7 @@ class Meta_Image {
 	public function __construct() {
 
 		// Add the image to meta tag.
-		add_action( 'chp_meta_image_tag', [ $this, 'image' ] );
+		add_action( 'chd_meta_image_tag', [ $this, 'image' ] );
 
 	}
 
@@ -84,11 +84,11 @@ class Meta_Image {
 		global $post;
 
 		// If ACF is active.
-		if ( chp_acf_options() ) {
+		if ( chd_acf_options() ) {
 
 			// Get the ACF image fields.
-			$blog_image    = get_field( 'chp_meta_blog_image', 'option' );
-			$default_image = get_field( 'chp_meta_default_image', 'option' );
+			$blog_image    = get_field( 'chd_meta_blog_image', 'option' );
+			$default_image = get_field( 'chd_meta_default_image', 'option' );
 
 			/**
 			 * Conditionally get images.
@@ -168,11 +168,11 @@ class Meta_Image {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_meta_image() {
+function chd_meta_image() {
 
 	return Meta_Image::instance();
 
 }
 
 // Run an instance of the class.
-chp_meta_image();
+chd_meta_image();

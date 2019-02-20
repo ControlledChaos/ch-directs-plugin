@@ -78,27 +78,27 @@ class Inline_Frontend_Scripts {
 		$fitvids     = file_get_contents( esc_html( CHP_PATH . 'frontend/assets/js/jquery.fitvids.min.js' ) );
 
 		// Fancybox 3.
-		if ( get_option( 'chp_enqueue_fancybox_script' ) ) {
+		if ( get_option( 'chd_enqueue_fancybox_script' ) ) {
 			echo '<!-- Fancybox 3 Scripts --><script>' . $fancybox . '</script>';
 		}
 
 		// Slick.
-		if ( get_option( 'chp_enqueue_slick' ) ) {
+		if ( get_option( 'chd_enqueue_slick' ) ) {
 			echo '<!-- Slick Scripts --><script>' . $slick . '</script>';
 		}
 
 		// Tabslet.
-		if ( get_option( 'chp_enqueue_tabslet' ) ) {
+		if ( get_option( 'chd_enqueue_tabslet' ) ) {
 			echo '<!-- Tabslet Scripts --><script>' . $tabslet . '</script>';
 		}
 
 		// Tooltipster.
-		if ( get_option( 'chp_enqueue_tooltipster' ) ) {
+		if ( get_option( 'chd_enqueue_tooltipster' ) ) {
 			echo '<!-- Tooltipster Scripts --><script>' . $tooltipster . '</script>';
 		}
 
 		// Sticky-kit.
-		if ( get_option( 'chp_enqueue_stickykit' ) ) {
+		if ( get_option( 'chd_enqueue_stickykit' ) ) {
 			echo '<!-- Sticky-kit Scripts --><script>' . $stickykit . '</script>';
 		}
 
@@ -118,11 +118,11 @@ class Inline_Frontend_Scripts {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_inline_frontend_scripts() {
+function chd_inline_frontend_scripts() {
 
 	return Inline_Frontend_Scripts::instance();
 
 }
 
 // Run an instance of the class.
-chp_inline_frontend_scripts();
+chd_inline_frontend_scripts();

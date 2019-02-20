@@ -109,7 +109,7 @@ class User_Avatars {
 
 		register_setting(
 			'discussion',
-			'chp_user_avatars_caps'
+			'chd_user_avatars_caps'
 		);
 
 	}
@@ -123,11 +123,11 @@ class User_Avatars {
 	 */
 	public function avatar_settings_field( $args ) {
 
-		$option = get_option( 'chp_user_avatars_caps' );
+		$option = get_option( 'chd_user_avatars_caps' );
 
-		$html = '<p><input type="checkbox" id="chp_user_avatars_caps" name="chp_user_avatars_caps" value="1" ' . checked( 1, $option, false ) . '/>';
+		$html = '<p><input type="checkbox" id="chd_user_avatars_caps" name="chd_user_avatars_caps" value="1" ' . checked( 1, $option, false ) . '/>';
 
-		$html .= '<label for="chp_user_avatars_caps"> ' . $args[0] . '</label></p>';
+		$html .= '<label for="chd_user_avatars_caps"> ' . $args[0] . '</label></p>';
 
 		echo $html;
 
@@ -158,7 +158,7 @@ class User_Avatars {
 		if ( empty( $user_id ) )
 			return $avatar;
 
-		$local_avatars = get_user_meta( $user_id, 'chp_user_avatar', true );
+		$local_avatars = get_user_meta( $user_id, 'chd_user_avatar', true );
 
 		if ( empty( $local_avatars ) || empty( $local_avatars['full'] ) )
 			return $avatar;
@@ -184,7 +184,7 @@ class User_Avatars {
 			$local_avatars[$size] = is_wp_error( $image_sized ) ? $local_avatars[$size] = $local_avatars['full'] : str_replace( $upload_path['basedir'], $upload_path['baseurl'], $image_sized['path'] );
 
 			// Save updated avatar sizes
-			update_user_meta( $user_id, 'chp_user_avatar', $local_avatars );
+			update_user_meta( $user_id, 'chd_user_avatar', $local_avatars );
 
 		} elseif ( substr( $local_avatars[$size], 0, 4 ) != 'http' ) {
 			$local_avatars[$size] = home_url( $local_avatars[$size] );
@@ -193,7 +193,7 @@ class User_Avatars {
 		$author_class = is_author( $user_id ) ? ' current-author' : '' ;
 		$avatar       = "<img alt='" . esc_attr( $alt ) . "' src='" . $local_avatars[$size] . "' class='avatar avatar-{$size}{$author_class} photo' height='{$size}' width='{$size}' />";
 
-		return apply_filters( 'chp_user_avatar', $avatar );
+		return apply_filters( 'chd_user_avatar', $avatar );
 
 	}
 
@@ -222,15 +222,15 @@ class User_Avatars {
 				</td>
 				<td>
 				<?php
-				$options = get_option( 'chp_user_avatars_caps' );
-				if ( empty( $options['chp_user_avatars_caps'] ) || current_user_can( 'upload_files' ) ) {
+				$options = get_option( 'chd_user_avatars_caps' );
+				if ( empty( $options['chd_user_avatars_caps'] ) || current_user_can( 'upload_files' ) ) {
 					// Nonce security ftw.
-					wp_nonce_field( 'chp_user_avatar_nonce', '_chp_user_avatar_nonce', false );
+					wp_nonce_field( 'chd_user_avatar_nonce', '_chd_user_avatar_nonce', false );
 
 					// File upload input.
 					echo '<input type="file" name="basic-user-avatar" id="basic-local-avatar" /><br />';
 
-					if ( empty( $profileuser->chp_user_avatar ) ) {
+					if ( empty( $profileuser->chd_user_avatar ) ) {
 						echo '<span class="description">' . __( 'No local avatar is set. Use the upload field to add a local avatar.', 'ch-directs-plugin' ) . '</span>';
 					} else {
 						echo '<input type="checkbox" name="basic-user-avatar-erase" value="1" /> ' . __( 'Delete local avatar', 'ch-directs-plugin' ) . '<br />';
@@ -238,7 +238,7 @@ class User_Avatars {
 					}
 
 				} else {
-					if ( empty( $profileuser->chp_user_avatar ) ) {
+					if ( empty( $profileuser->chd_user_avatar ) ) {
 						echo '<span class="description">' . __( 'No local avatar is set. Set up your avatar at Gravatar.com.', 'ch-directs-plugin' ) . '</span>';
 					} else {
 						echo '<span class="description">' . __( 'You do not have media management permissions. To change your local avatar, contact the site administrator.', 'ch-directs-plugin' ) . '</span>';
@@ -264,7 +264,7 @@ class User_Avatars {
 	public function edit_user_profile_update( $user_id ) {
 
 		// Check for nonce otherwise bail.
-		if ( ! isset( $_POST['_chp_user_avatar_nonce'] ) || ! wp_verify_nonce( $_POST['_chp_user_avatar_nonce'], 'chp_user_avatar_nonce' ) )
+		if ( ! isset( $_POST['_chd_user_avatar_nonce'] ) || ! wp_verify_nonce( $_POST['_chd_user_avatar_nonce'], 'chd_user_avatar_nonce' ) )
 			return;
 
 		if ( ! empty( $_FILES['basic-user-avatar']['name'] ) ) {
@@ -304,7 +304,7 @@ class User_Avatars {
 			}
 
 			// Save user information (overwriting previous).
-			update_user_meta( $user_id, 'chp_user_avatar', [ 'full' => $avatar['url'] ] );
+			update_user_meta( $user_id, 'chd_user_avatar', [ 'full' => $avatar['url'] ] );
 
 		} elseif ( ! empty( $_POST['basic-user-avatar-erase'] ) ) {
 			// Nuke the current avatar
@@ -339,15 +339,15 @@ class User_Avatars {
 			<?php
 			echo get_avatar( $profileuser->ID );
 
-			$options = get_option( 'chp_user_avatars_caps' );
-			if ( empty( $options['chp_user_avatars_caps'] ) || current_user_can( 'upload_files' ) ) {
+			$options = get_option( 'chd_user_avatars_caps' );
+			if ( empty( $options['chd_user_avatars_caps'] ) || current_user_can( 'upload_files' ) ) {
 				// Nonce security ftw.
-				wp_nonce_field( 'chp_user_avatar_nonce', '_chp_user_avatar_nonce', false );
+				wp_nonce_field( 'chd_user_avatar_nonce', '_chd_user_avatar_nonce', false );
 
 				// File upload input.
 				echo '<p><input type="file" name="basic-user-avatar" id="basic-local-avatar" /></p>';
 
-				if ( empty( $profileuser->chp_user_avatar ) ) {
+				if ( empty( $profileuser->chd_user_avatar ) ) {
 					echo '<p class="description">' . __( 'No local avatar is set. Use the upload field to add a local avatar.', 'ch-directs-plugin' ) . '</p>';
 				} else {
 					echo '<input type="checkbox" name="basic-user-avatar-erase" value="1" /> ' . __( 'Delete local avatar', 'ch-directs-plugin' ) . '<br />';
@@ -355,7 +355,7 @@ class User_Avatars {
 				}
 
 			} else {
-				if ( empty( $profileuser->chp_user_avatar ) ) {
+				if ( empty( $profileuser->chd_user_avatar ) ) {
 					echo '<p class="description">' . __( 'No local avatar is set. Set up your avatar at Gravatar.com.', 'ch-directs-plugin' ) . '</p>';
 				} else {
 					echo '<p class="description">' . __( 'You do not have media management permissions. To change your local avatar, contact the site administrator.', 'ch-directs-plugin' ) . '</p>';
@@ -390,15 +390,15 @@ class User_Avatars {
  			echo '<fieldset class="bbp-form avatar">';
 
 	 			echo get_avatar( $profileuser->ID );
-				$options = get_option( 'chp_user_avatars_caps' );
-				if ( empty( $options['chp_user_avatars_caps'] ) || current_user_can( 'upload_files' ) ) {
+				$options = get_option( 'chd_user_avatars_caps' );
+				if ( empty( $options['chd_user_avatars_caps'] ) || current_user_can( 'upload_files' ) ) {
 					// Nonce security ftw.
-					wp_nonce_field( 'chp_user_avatar_nonce', '_chp_user_avatar_nonce', false );
+					wp_nonce_field( 'chd_user_avatar_nonce', '_chd_user_avatar_nonce', false );
 
 					// File upload input.
 					echo '<br /><input type="file" name="basic-user-avatar" id="basic-local-avatar" /><br />';
 
-					if ( empty( $profileuser->chp_user_avatar ) ) {
+					if ( empty( $profileuser->chd_user_avatar ) ) {
 						echo '<span class="description" style="margin-left:0;">' . __( 'No local avatar is set. Use the upload field to add a local avatar.', 'ch-directs-plugin' ) . '</span>';
 					} else {
 						echo '<input type="checkbox" name="basic-user-avatar-erase" value="1" style="width:auto" /> ' . __( 'Delete local avatar', 'ch-directs-plugin' ) . '<br />';
@@ -406,7 +406,7 @@ class User_Avatars {
 					}
 
 				} else {
-					if ( empty( $profileuser->chp_user_avatar ) ) {
+					if ( empty( $profileuser->chd_user_avatar ) ) {
 						echo '<span class="description" style="margin-left:0;">' . __( 'No local avatar is set. Set up your avatar at Gravatar.com.', 'ch-directs-plugin' ) . '</span>';
 					} else {
 						echo '<span class="description" style="margin-left:0;">' . __( 'You do not have media management permissions. To change your local avatar, contact the site administrator.', 'ch-directs-plugin' ) . '</span>';
@@ -437,7 +437,7 @@ class User_Avatars {
 		$new_avatar_defaults = $avatar_defaults;
 
 		// Maybe block Gravatars
-		if ( get_option( 'chp_block_gravatar' ) ) {
+		if ( get_option( 'chd_block_gravatar' ) ) {
 			$new_avatar_defaults = [
 				'mystery' => __( 'Mystery Person', 'ch-directs-plugin' ),
 				'blank'   => __( 'Blank', 'ch-directs-plugin' )
@@ -458,7 +458,7 @@ class User_Avatars {
 	 */
 	public function avatar_delete( $user_id ) {
 
-		$old_avatars = get_user_meta( $user_id, 'chp_user_avatar', true );
+		$old_avatars = get_user_meta( $user_id, 'chd_user_avatar', true );
 		$upload_path = wp_upload_dir();
 
 		if ( is_array( $old_avatars ) ) {
@@ -468,7 +468,7 @@ class User_Avatars {
 			}
 		}
 
-		delete_user_meta( $user_id, 'chp_user_avatar' );
+		delete_user_meta( $user_id, 'chd_user_avatar' );
 
 	}
 
@@ -506,11 +506,11 @@ class User_Avatars {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_avatars() {
+function chd_avatars() {
 
 	return User_Avatars::instance();
 
 }
 
 // Run an instance of the class.
-chp_avatars();
+chd_avatars();

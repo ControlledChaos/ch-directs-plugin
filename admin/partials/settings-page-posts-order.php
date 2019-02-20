@@ -17,24 +17,24 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Get the custom sort order options.
-$chp_order_options = get_option( 'chp_order_options' );
+$chd_order_options = get_option( 'chd_order_options' );
 
 // Set variable for array of registered public post types.
-if ( isset( $chp_order_options['objects'] ) ) {
-    $chp_order_post_types = $chp_order_options['objects'];
+if ( isset( $chd_order_options['objects'] ) ) {
+    $chd_order_post_types = $chd_order_options['objects'];
 
 // Return empty array if no registered public tpost types.
 } else {
-    $chp_order_post_types = [];
+    $chd_order_post_types = [];
 }
 
 // Set variable for array of registered public taxonomies.
-if ( isset( $chp_order_options['tags'] ) ) {
-    $chp_order_taxonomies = $chp_order_options['tags'];
+if ( isset( $chd_order_options['tags'] ) ) {
+    $chd_order_taxonomies = $chd_order_options['tags'];
 
 // Return empty array if no registered public taxonomies.
 } else {
-    $chp_order_taxonomies = [];
+    $chd_order_taxonomies = [];
 } ?>
 <div class="wrap">
     <h1><?php _e( 'Posts & Taxonomies Sort Orders', 'ch-directs-plugin' ); ?></h1>
@@ -53,14 +53,14 @@ if ( isset( $chp_order_options['tags'] ) ) {
         </div>
     <?php endif; ?>
     <form method="post">
-        <?php if ( function_exists( 'wp_nonce_field' ) ) { wp_nonce_field( 'chp_posts_order_nonce' ); } ?>
+        <?php if ( function_exists( 'wp_nonce_field' ) ) { wp_nonce_field( 'chd_posts_order_nonce' ); } ?>
         <div id="posts_order_select">
             <table class="form-table">
                 <tbody>
                     <tr valign="top">
                         <th scope="row"><?php _e( 'Check to Sort Post Types', 'ch-directs-plugin' ) ?></th>
                         <td>
-                            <label><input type="checkbox" id="chp_order_check_all_post_types"> <?php _e( 'Check All', 'ch-directs-plugin' ) ?></label><br>
+                            <label><input type="checkbox" id="chd_order_check_all_post_types"> <?php _e( 'Check All', 'ch-directs-plugin' ) ?></label><br>
                             <?php
                             // Get all registered public post types.
                             $post_types = get_post_types(
@@ -79,8 +79,8 @@ if ( isset( $chp_order_options['tags'] ) ) {
                                     continue;
                                 } ?>
                                 <label><input type="checkbox" name="objects[]" value="<?php echo $post_type->name; ?>" <?php
-                                    if ( isset( $chp_order_post_types ) && is_array( $chp_order_post_types ) ) {
-                                        if ( in_array( $post_type->name, $chp_order_post_types ) ) {
+                                    if ( isset( $chd_order_post_types ) && is_array( $chd_order_post_types ) ) {
+                                        if ( in_array( $post_type->name, $chd_order_post_types ) ) {
                                             echo 'checked="checked"';
                                         }
                                     }
@@ -97,7 +97,7 @@ if ( isset( $chp_order_options['tags'] ) ) {
                     <tr valign="top">
                         <th scope="row"><?php _e( 'Check to Sort Taxonomies', 'ch-directs-plugin' ) ?></th>
                         <td>
-                            <label><input type="checkbox" id="chp_order_check_all_taxonomies"> <?php _e( 'Check All', 'ch-directs-plugin' ) ?></label><br>
+                            <label><input type="checkbox" id="chd_order_check_all_taxonomies"> <?php _e( 'Check All', 'ch-directs-plugin' ) ?></label><br>
                             <?php
                             // Get all registered public taxonomies.
                             $taxonomies = get_taxonomies(
@@ -115,8 +115,8 @@ if ( isset( $chp_order_options['tags'] ) ) {
                                     continue;
                                 } ?>
                                 <label><input type="checkbox" name="tags[]" value="<?php echo $taxonomy->name; ?>" <?php
-                                    if ( isset( $chp_order_taxonomies ) && is_array( $chp_order_taxonomies ) ) {
-                                        if ( in_array( $taxonomy->name, $chp_order_taxonomies ) ) {
+                                    if ( isset( $chd_order_taxonomies ) && is_array( $chd_order_taxonomies ) ) {
+                                        if ( in_array( $taxonomy->name, $chd_order_taxonomies ) ) {
                                             echo 'checked="checked"';
                                         }
                                     } ?>>&nbsp;<?php echo $taxonomy->label ?></label><br>
@@ -127,7 +127,7 @@ if ( isset( $chp_order_options['tags'] ) ) {
             </table>
         </div>
         <p class="submit">
-            <input type="submit" class="button-primary" name="chp_posts_order_submit" value="<?php _e( 'Save Changes', 'ch-directs-plugin' ); ?>">
+            <input type="submit" class="button-primary" name="chd_posts_order_submit" value="<?php _e( 'Save Changes', 'ch-directs-plugin' ); ?>">
         </p>
     </form>
 </div>
@@ -135,7 +135,7 @@ if ( isset( $chp_order_options['tags'] ) ) {
 ( function ($) {
 
     // Handle the Check All input for post types.
-    $( '#chp_order_check_all_post_types' ).on( 'click', function () {
+    $( '#chd_order_check_all_post_types' ).on( 'click', function () {
         var items = $( '#posts_order_select input' );
         if ( $(this).is( ':checked' ) ) {
             $(items).prop( 'checked', true );
@@ -145,7 +145,7 @@ if ( isset( $chp_order_options['tags'] ) ) {
     });
 
     // Handle the Check All input for taxonomies.
-    $( '#chp_order_check_all_taxonomies' ).on( 'click', function () {
+    $( '#chd_order_check_all_taxonomies' ).on( 'click', function () {
         var items = $( '#terms_order_select input' );
         if ( $(this).is( ':checked' ) ) {
             $(items).prop( 'checked', true );

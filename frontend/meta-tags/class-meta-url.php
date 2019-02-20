@@ -63,7 +63,7 @@ class Meta_URL {
 		add_action( 'template_redirect', [ $this, 'page' ] );
 
 		// Add the URL to the meta tags.
-		add_action( 'chp_meta_url_tag', [ $this, 'content' ] );
+		add_action( 'chd_meta_url_tag', [ $this, 'content' ] );
 
 	}
 
@@ -198,11 +198,11 @@ class Meta_URL {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_meta_url() {
+function chd_meta_url() {
 
 	return Meta_URL::instance();
 
 }
 
 // Run an instance of the class.
-chp_meta_url();
+chd_meta_url();

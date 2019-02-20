@@ -99,85 +99,85 @@ class Settings_Fields_Site_Admin_Pages {
 
 		// Admin pages settings section.
 		add_settings_section(
-			'chp-site-admin-pages',
+			'chd-site-admin-pages',
 			__( 'Admin Pages Settings', 'ch-directs-plugin' ),
 			[],
-			'chp-site-admin-pages'
+			'chd-site-admin-pages'
 		);
 
 		// Restore the TinyMCE editor.
 		add_settings_field(
-			'chp_classic_editor',
+			'chd_classic_editor',
 			__( 'Classic Editor', 'ch-directs-plugin' ),
 			[ Partials\Field_Callbacks\Admin_Pages_Callbacks::instance(), 'classic_editor' ],
-			'chp-site-admin-pages',
-			'chp-site-admin-pages',
+			'chd-site-admin-pages',
+			'chd-site-admin-pages',
 			[ esc_html__( 'Disable the block editor (a.k.a. Gutenberg) and restore the TinyMCE editor.', 'ch-directs-plugin' ) ]
 		);
 
 		register_setting(
-			'chp-site-admin-pages',
-			'chp_classic_editor'
+			'chd-site-admin-pages',
+			'chd_classic_editor'
 		);
 
 		// Use the admin header.
 		add_settings_field(
-			'chp_use_admin_header',
+			'chd_use_admin_header',
 			__( 'Admin Header', 'ch-directs-plugin' ),
 			[ Partials\Field_Callbacks\Admin_Pages_Callbacks::instance(), 'admin_header' ],
-			'chp-site-admin-pages',
-			'chp-site-admin-pages',
+			'chd-site-admin-pages',
+			'chd-site-admin-pages',
 			[ esc_html__( 'Add the site title, site tagline, and a nav menu to the top of admin pages.', 'ch-directs-plugin' ) ]
 		);
 
 		register_setting(
-			'chp-site-admin-pages',
-			'chp_use_admin_header'
+			'chd-site-admin-pages',
+			'chd_use_admin_header'
 		);
 
 		// Use custom sort order.
 		add_settings_field(
-			'chp_use_custom_sort_order',
+			'chd_use_custom_sort_order',
 			__( 'Drag & Drop Sort Order', 'ch-directs-plugin' ),
 			[ Partials\Field_Callbacks\Admin_Pages_Callbacks::instance(), 'custom_sort_order' ],
-			'chp-site-admin-pages',
-			'chp-site-admin-pages',
+			'chd-site-admin-pages',
+			'chd-site-admin-pages',
 			[ esc_html__( 'Add drag & drop sort order functionality to post types and taxonomies.', 'ch-directs-plugin' ) ]
 		);
 
 		register_setting(
-			'chp-site-admin-pages',
-			'chp_use_custom_sort_order'
+			'chd-site-admin-pages',
+			'chd_use_custom_sort_order'
 		);
 
 		// Admin footer credit.
 		add_settings_field(
-			'chp_footer_credit',
+			'chd_footer_credit',
 			__( 'Admin Footer Credit', 'ch-directs-plugin' ),
 			[ Partials\Field_Callbacks\Admin_Pages_Callbacks::instance(), 'footer_credit' ],
-			'chp-site-admin-pages',
-			'chp-site-admin-pages',
+			'chd-site-admin-pages',
+			'chd-site-admin-pages',
 			[ esc_html__( 'The "developed by" credit.', 'ch-directs-plugin' ) ]
 		);
 
 		register_setting(
-			'chp-site-admin-pages',
-			'chp_footer_credit'
+			'chd-site-admin-pages',
+			'chd_footer_credit'
 		);
 
 		// Admin footer link.
 		add_settings_field(
-			'chp_footer_link',
+			'chd_footer_link',
 			__( 'Admin Footer Link', 'ch-directs-plugin' ),
 			[ Partials\Field_Callbacks\Admin_Pages_Callbacks::instance(), 'footer_link' ],
-			'chp-site-admin-pages',
-			'chp-site-admin-pages',
+			'chd-site-admin-pages',
+			'chd-site-admin-pages',
 			[ esc_html__( 'Link to the website devoloper.', 'ch-directs-plugin' ) ]
 		);
 
 		register_setting(
-			'chp-site-admin-pages',
-			'chp_footer_link'
+			'chd-site-admin-pages',
+			'chd_footer_link'
 		);
 
 	}
@@ -191,11 +191,11 @@ class Settings_Fields_Site_Admin_Pages {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_settings_fields_site_admin_pages() {
+function chd_settings_fields_site_admin_pages() {
 
 	return Settings_Fields_Site_Admin_Pages::instance();
 
 }
 
 // Run an instance of the class.
-chp_settings_fields_site_admin_pages();
+chd_settings_fields_site_admin_pages();

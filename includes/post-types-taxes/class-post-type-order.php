@@ -30,12 +30,12 @@ if ( ! defined( 'WPINC' ) ) {
  */
 
 // If Advanced Custom Fields is active.
-if ( chp_acf_options() ) {
-    $sort_order = get_field( 'chp_use_custom_sort_order', 'option' );
+if ( chd_acf_options() ) {
+    $sort_order = get_field( 'chd_use_custom_sort_order', 'option' );
 
 // If Advanced Custom Fields is not active.
 } else {
-    $sort_order = get_option( 'chp_use_custom_sort_order' );
+    $sort_order = get_option( 'chd_use_custom_sort_order' );
 }
 
 // Bail if the option to use sort order is not selected.
@@ -68,7 +68,7 @@ class Post_Types_Taxes_Order {
 			// Set variable for new instance.
             $instance = new self;
 
-            if ( ! get_option( 'chp_order_install ' ) ) {
+            if ( ! get_option( 'chd_order_install ' ) ) {
                 $instance->order_install();
             }
 
@@ -129,7 +129,7 @@ class Post_Types_Taxes_Order {
             $result = $wpdb->query( $query );
         }
 
-        update_option( 'chp_order_install', 1 );
+        update_option( 'chd_order_install', 1 );
 
     }
 
@@ -433,17 +433,17 @@ class Post_Types_Taxes_Order {
 
         global $wpdb;
 
-        if ( ! isset( $_POST['chp_posts_order_submit'] ) ) {
+        if ( ! isset( $_POST['chd_posts_order_submit'] ) ) {
             return false;
         }
 
-        check_admin_referer( 'chp_posts_order_nonce' );
+        check_admin_referer( 'chd_posts_order_nonce' );
 
         $input_options            = [];
         $input_options['objects'] = isset( $_POST['objects'] ) ? $_POST['objects'] : '';
         $input_options['tags']    = isset( $_POST['tags'] ) ? $_POST['tags'] : '';
 
-        update_option( 'chp_order_options', $input_options );
+        update_option( 'chd_order_options', $input_options );
 
         $objects = $this->get_order_options_objects();
         $tags    = $this->get_order_options_tags();
@@ -804,14 +804,14 @@ class Post_Types_Taxes_Order {
      */
     public function get_order_options_objects() {
 
-        if ( $chp_order_options = get_option( 'chp_order_options' ) ) {
-            $chp_order_options = get_option( 'chp_order_options' );
+        if ( $chd_order_options = get_option( 'chd_order_options' ) ) {
+            $chd_order_options = get_option( 'chd_order_options' );
         } else {
-            $chp_order_options = [];
+            $chd_order_options = [];
         }
 
-        if ( isset( $chp_order_options['objects'] ) && is_array( $chp_order_options['objects'] ) ) {
-            $objects = $chp_order_options['objects'];
+        if ( isset( $chd_order_options['objects'] ) && is_array( $chd_order_options['objects'] ) ) {
+            $objects = $chd_order_options['objects'];
         } else {
             $objects = [];
         }
@@ -829,14 +829,14 @@ class Post_Types_Taxes_Order {
      */
     public function get_order_options_tags() {
 
-        if ( $chp_order_options = get_option( 'chp_order_options' ) ) {
-            $chp_order_options = get_option( 'chp_order_options' );
+        if ( $chd_order_options = get_option( 'chd_order_options' ) ) {
+            $chd_order_options = get_option( 'chd_order_options' );
         } else {
-            $chp_order_options = [];
+            $chd_order_options = [];
         }
 
-        if ( isset( $chp_order_options['tags'] ) && is_array( $chp_order_options['tags'] ) ) {
-            $tags = $chp_order_options['tags'];
+        if ( isset( $chd_order_options['tags'] ) && is_array( $chd_order_options['tags'] ) ) {
+            $tags = $chd_order_options['tags'];
         } else {
             $tags = [];
         }
@@ -854,14 +854,14 @@ class Post_Types_Taxes_Order {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_post_types_taxes_order() {
+function chd_post_types_taxes_order() {
 
 	return Post_Types_Taxes_Order::instance();
 
 }
 
 // Run an instance of the class.
-chp_post_types_taxes_order();
+chd_post_types_taxes_order();
 
 /**
  * SCP Order Uninstall hook
@@ -901,6 +901,6 @@ function uninstall_db() {
         $result = $wpdb->query( $query );
     }
 
-    delete_option( 'chp_order_install' );
+    delete_option( 'chd_order_install' );
 
 }

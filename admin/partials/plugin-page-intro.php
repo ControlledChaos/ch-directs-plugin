@@ -51,7 +51,7 @@ if ( ! defined( 'WPINC' ) ) {
 <!-- Section heading -->
 <h3><?php _e( 'Compatibility', 'ch-directs-plugin' ); ?></h3>
 
-<ul class="chp_bullet-list">
+<ul class="chd_bullet-list">
 	<li><?php _e( 'This plugin was written in a WordPress 4.9+ environment with no concern for backwards compatitbility.', 'ch-directs-plugin' ); ?></li>
 	<li><?php _e( 'This plugin was written on a local server running PHP 7.0', 'ch-directs-plugin' ); ?></li>
 	<li><?php _e( 'The short array syntax ( "[]" rather than "array()" ) requires PHP 5.4+', 'ch-directs-plugin' ); ?></li>

@@ -115,22 +115,22 @@ class Admin {
 		require_once CHP_PATH . 'admin/class-settings.php';
 
 		// Add icons to the titles of ACF tab and accordion fields, if active.
-		if ( chp_acf_pro() && ! get_option( 'chp_acf_activate_settings_page' ) ) {
+		if ( chd_acf_pro() && ! get_option( 'chd_acf_activate_settings_page' ) ) {
 			include_once CHP_PATH . 'admin/class-acf-tab-icons.php';
 		}
 
 		// Include custom fields for Advanced Custom Fields Pro, if active.
-		if ( chp_acf_pro() ) {
+		if ( chd_acf_pro() ) {
 			include_once CHP_PATH . 'admin/class-settings-fields-site-acf.php';
 		}
 
 		// Restore the TinyMCE editor.
-		if ( chp_acf_pro() ) {
-			$editor = get_field( 'chp_classic_editor', 'option' );
+		if ( chd_acf_pro() ) {
+			$editor = get_field( 'chd_classic_editor', 'option' );
 		} else {
-			$editor = get_option( 'chp_classic_editor' );
+			$editor = get_option( 'chd_classic_editor' );
 		}
-		if ( ( chp_classicpress() || chp_new_cms() ) && $editor ) {
+		if ( ( chd_classicpress() || chd_new_cms() ) && $editor ) {
 			include_once CHP_PATH . 'admin/classic-editor/classic-editor.php';
 		}
 
@@ -147,7 +147,7 @@ class Admin {
 		require_once CHP_PATH . 'admin/class-admin-pages.php';
 
 		// Import custom fields for editing, if ACF Pro is active.
-		if ( chp_acf_options() ) {
+		if ( chd_acf_options() ) {
 			include_once CHP_PATH . 'admin/class-fields-import.php';
 		}
 
@@ -276,14 +276,14 @@ class Admin {
 		 *
 		 * @since  1.0.0
 		 */
-		if ( chp_acf_options() ) {
+		if ( chd_acf_options() ) {
 
 			/**
 			 * Get the fields registered by this plugin. An additional parameter
 			 * of 'option' must be included to target the options page.
 			 */
-			$credit = get_field( 'chp_admin_footer_credit', 'option' );
-			$link   = get_field( 'chp_admin_footer_link', 'option' );
+			$credit = get_field( 'chd_admin_footer_credit', 'option' );
+			$link   = get_field( 'chd_admin_footer_link', 'option' );
 
 			// If a name and a URL are provided.
 			if ( $credit && $link ) {
@@ -319,8 +319,8 @@ class Admin {
 		 */
 		} else {
 
-			$credit = sanitize_text_field( get_option( 'chp_footer_credit' ) );
-			$link   = esc_url_raw( get_option( 'chp_footer_link' ) );
+			$credit = sanitize_text_field( get_option( 'chd_footer_credit' ) );
+			$link   = esc_url_raw( get_option( 'chd_footer_link' ) );
 
 			// If a name and a URL are provided.
 			if ( $credit && $link ) {
@@ -351,7 +351,7 @@ class Admin {
 		}
 
 		// Apply a filter for unforseen possibilities.
-		$admin_footer = apply_filters( 'chp_admin_footer', $footer );
+		$admin_footer = apply_filters( 'chd_admin_footer', $footer );
 
 		// Echo the string.
 		echo $admin_footer;
@@ -399,7 +399,7 @@ class Admin {
 		 *
 		 * @since 1.0.0
 		 */
-		if ( chp_acf() ) {
+		if ( chd_acf() ) {
 			wp_enqueue_style( CHP_ADMIN_SLUG . '-acf', CHP_URL . 'admin/assets/css/acf.css', [], CHP_VERSION, 'all' );
 		}
 
@@ -410,7 +410,7 @@ class Admin {
 		 *
 		 * @since 1.0.0
 		 */
-		$welcome = get_option( 'chp_custom_welcome' );
+		$welcome = get_option( 'chd_custom_welcome' );
 		if ( $welcome ) {
 			wp_enqueue_style( CHP_ADMIN_SLUG . '-welcome', CHP_URL . 'admin/assets/css/welcome.css', [], CHP_VERSION, 'all' );
 		}
@@ -500,11 +500,11 @@ class Admin {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_admin() {
+function chd_admin() {
 
 	return Admin::instance();
 
 }
 
 // Run an instance of the class.
-chp_admin();
+chd_admin();

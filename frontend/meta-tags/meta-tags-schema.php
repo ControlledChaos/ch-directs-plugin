@@ -15,10 +15,10 @@ if ( ! defined( 'WPINC' ) ) {
 } ?>
 
 <!-- Schema meta -->
-<meta itemprop="url" content="<?php do_action( 'chp_meta_url_tag' ); ?>" />
-<meta itemprop="name" content="<?php do_action( 'chp_meta_title_tag' ); ?>" />
-<meta itemprop="description" content="<?php do_action( 'chp_meta_description_tag' ); ?>">
-<meta itemprop="author" content="<?php do_action( 'chp_meta_author_tag' ); ?>" />
-<meta itemprop="datePublished" content="<?php do_action( 'chp_meta_date_pub_tag' ); ?>" />
-<meta itemprop="dateModified" content="<?php do_action( 'chp_meta_date_mod_tag' ); ?>" />
-<meta itemprop="image" content="<?php do_action( 'chp_meta_image_tag' ); ?>" />
+<meta itemprop="url" content="<?php do_action( 'chd_meta_url_tag' ); ?>" />
+<meta itemprop="name" content="<?php do_action( 'chd_meta_title_tag' ); ?>" />
+<meta itemprop="description" content="<?php do_action( 'chd_meta_description_tag' ); ?>">
+<meta itemprop="author" content="<?php do_action( 'chd_meta_author_tag' ); ?>" />
+<meta itemprop="datePublished" content="<?php do_action( 'chd_meta_date_pub_tag' ); ?>" />
+<meta itemprop="dateModified" content="<?php do_action( 'chd_meta_date_mod_tag' ); ?>" />
+<meta itemprop="image" content="<?php do_action( 'chd_meta_image_tag' ); ?>" />

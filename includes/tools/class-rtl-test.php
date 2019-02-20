@@ -144,11 +144,11 @@ class Controlled_Chaos_RTL_Test {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_rtl_test() {
+function chd_rtl_test() {
 
 	return Controlled_Chaos_RTL_Test::instance();
 
 }
 
 // Run an instance of the class.
-chp_rtl_test();
+chd_rtl_test();

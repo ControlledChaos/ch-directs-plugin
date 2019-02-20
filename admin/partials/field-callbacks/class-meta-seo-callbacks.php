@@ -67,11 +67,11 @@ class Meta_SEO_Callbacks {
 	 */
 	public function disable_meta( $args ) {
 
-		$option = get_option( 'chp_meta_disable' );
+		$option = get_option( 'chd_meta_disable' );
 
-		$html = '<p><input type="checkbox" id="chp_meta_disable" name="chp_meta_disable" value="1" ' . checked( 1, $option, false ) . '/>';
+		$html = '<p><input type="checkbox" id="chd_meta_disable" name="chd_meta_disable" value="1" ' . checked( 1, $option, false ) . '/>';
 
-		$html .= '<label for="chp_meta_disable"> '  . $args[0] . '</label></p>';
+		$html .= '<label for="chd_meta_disable"> '  . $args[0] . '</label></p>';
 
 		echo $html;
 
@@ -101,11 +101,11 @@ class Meta_SEO_Callbacks {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_meta_seo_callbacks() {
+function chd_meta_seo_callbacks() {
 
 	return Meta_SEO_Callbacks::instance();
 
 }
 
 // Run an instance of the class.
-chp_meta_seo_callbacks();
+chd_meta_seo_callbacks();

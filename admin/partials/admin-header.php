@@ -44,19 +44,19 @@ if ( ! empty( $description ) ) {
 $menu = 'admin-header';
 
 // Apply filters to the variables.
-$title       = apply_filters( 'chp_admin_header_title', $title );
-$description = apply_filters( 'chp_admin_header_description', $description );
-$menu        = apply_filters( 'chp_admin_header_menu', $menu );
+$title       = apply_filters( 'chd_admin_header_title', $title );
+$description = apply_filters( 'chd_admin_header_description', $description );
+$menu        = apply_filters( 'chd_admin_header_menu', $menu );
 ?>
-<?php do_action( 'chp_before_admin_header' ); ?>
-<header class="chp-admin-header">
-    <?php do_action( 'chp_before_admin_site_branding' ); ?>
+<?php do_action( 'chd_before_admin_header' ); ?>
+<header class="chd-admin-header">
+    <?php do_action( 'chd_before_admin_site_branding' ); ?>
     <div class="admin-site-branding">
         <p class="admin-site-title" itemprop="name"><a href="<?php echo admin_url(); ?>"><?php echo $title; ?></a></p>
         <p class="admin-site-description"><?php echo $description; ?></p>
     </div>
-    <?php do_action( 'chp_after_admin_site_branding' ); ?>
-    <?php do_action( 'chp_before_admin_navigation' ); ?>
+    <?php do_action( 'chd_after_admin_site_branding' ); ?>
+    <?php do_action( 'chd_before_admin_navigation' ); ?>
     <nav class="admin-navigation">
         <?php wp_nav_menu(
             array(
@@ -70,6 +70,6 @@ $menu        = apply_filters( 'chp_admin_header_menu', $menu );
             )
         ); ?>
     </nav>
-    <?php do_action( 'chp_after_admin_navigation' ); ?>
+    <?php do_action( 'chd_after_admin_navigation' ); ?>
 </header>
-<?php do_action( 'chp_after_admin_header' ); ?>
+<?php do_action( 'chd_after_admin_header' ); ?>

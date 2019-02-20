@@ -21,20 +21,20 @@ if ( ! defined( 'WPINC' ) ) {
 } ?>
 
 <!-- Dublin Core meta -->
-<meta name="DC.Title" content="<?php esc_attr( do_action( 'chp_meta_title_tag' ) ); ?>" />
+<meta name="DC.Title" content="<?php esc_attr( do_action( 'chd_meta_title_tag' ) ); ?>" />
 <meta name="DC.Format" content="text/html" />
-<meta name="DC.Identifier" content="<?php esc_attr( esc_url( do_action( 'chp_meta_url_tag' ) ) ); ?>"/>
+<meta name="DC.Identifier" content="<?php esc_attr( esc_url( do_action( 'chd_meta_url_tag' ) ) ); ?>"/>
 <meta name="DC.Source" content="<?php echo esc_attr( esc_url( site_url() ) ); ?>" />
 <meta name="DC.Relation" content="<?php echo esc_attr( esc_url( site_url() ) ); ?>" scheme="IsPartOf" />
 <?php if ( is_404() ) : ?>
 <meta name="DC.Description" content="404 <?php esc_attr( _e( 'Not Found' ) ); ?>" />
 <?php else : ?>
-<meta name="DC.Description" content="<?php esc_attr( do_action( 'chp_meta_description_tag' ) ); ?>" />
+<meta name="DC.Description" content="<?php esc_attr( do_action( 'chd_meta_description_tag' ) ); ?>" />
 <?php endif; ?>
 <meta name="DC.Creator" content="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" />
 <meta name="DC.Subject" content="<?php echo esc_attr( get_bloginfo( 'description' ) ); ?>" />
 <?php if ( is_singular() ) : ?>
-<meta name="DC.Contributor" content="<?php esc_attr( do_action( 'chp_meta_author_tag' ) ); ?>" />
+<meta name="DC.Contributor" content="<?php esc_attr( do_action( 'chd_meta_author_tag' ) ); ?>" />
 <?php endif; ?>
 <?php if ( is_single() ) : ?>
 <meta name="DC.Date" content="<?php echo esc_attr( get_the_date() ); ?>" />

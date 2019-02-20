@@ -64,9 +64,9 @@ class Admin_Menu {
         add_action( 'admin_menu', [ $this, 'hide' ] );
 
         // Hide ACF field groups UI.
-        if ( chp_acf_options() ) {
+        if ( chd_acf_options() ) {
 
-            $options = get_field( 'chp_admin_hide_links', 'option' );
+            $options = get_field( 'chd_admin_hide_links', 'option' );
             if ( $options && in_array( 'fields', $options ) ) {
                 add_filter( 'acf/settings/show_admin', '__return_false' );
             }
@@ -78,10 +78,10 @@ class Admin_Menu {
          */
 
         // Get links option.
-        if ( chp_acf_options() ) {
-            $links = get_field( 'chp_links_manager', 'option' );
+        if ( chd_acf_options() ) {
+            $links = get_field( 'chd_links_manager', 'option' );
         } else {
-            $links = get_option( 'chp_hide_links' );
+            $links = get_option( 'chd_hide_links' );
         }
 
         // Return links filter.
@@ -133,10 +133,10 @@ class Admin_Menu {
         /**
          * If Advanced Custom Fields is active.
          */
-        if ( chp_acf_options() ) {
+        if ( chd_acf_options() ) {
 
             // Get the multiple checkbox field.
-            $options = get_field( 'chp_admin_hide_links', 'option' );
+            $options = get_field( 'chd_admin_hide_links', 'option' );
 
             // Hide Appearance link.
             if ( $options && in_array( 'themes', $options ) ) {
@@ -165,10 +165,10 @@ class Admin_Menu {
              */
 
             // Get options.
-            $appearance = get_option( 'chp_hide_appearance' );
-            $plugins    = get_option( 'chp_hide_plugins' );
-            $users      = get_option( 'chp_hide_users' );
-            $tools      = get_option( 'chp_hide_tools' );
+            $appearance = get_option( 'chd_hide_appearance' );
+            $plugins    = get_option( 'chd_hide_plugins' );
+            $users      = get_option( 'chd_hide_users' );
+            $tools      = get_option( 'chd_hide_tools' );
 
             // Hide Appearance link.
             if ( $appearance ) {
@@ -212,11 +212,11 @@ class Admin_Menu {
         global $menu, $submenu;
 
         // If ACF is active.
-        if ( chp_acf_options() ) {
+        if ( chd_acf_options() ) {
 
             // Get the ACF field registered by this plugin.
-            $menus_link   = get_field( 'chp_menus_position', 'option' );
-            $widgets_link = get_field( 'chp_widgets_position', 'option' );
+            $menus_link   = get_field( 'chd_menus_position', 'option' );
+            $widgets_link = get_field( 'chd_widgets_position', 'option' );
 
             // Remove Menus and Widgets as submenu items of Appearances.
             if ( isset( $submenu['themes.php'] ) ) {
@@ -276,8 +276,8 @@ class Admin_Menu {
         } else {
 
             // Get the options from the standard fields.
-            $menus_link   = get_option( 'chp_menus_position' );
-            $widgets_link = get_option( 'chp_widgets_position' );
+            $menus_link   = get_option( 'chd_menus_position' );
+            $widgets_link = get_option( 'chd_widgets_position' );
 
             // Remove Menus and Widgets as submenu items of Appearances.
             if ( isset( $submenu['themes.php'] ) ) {
@@ -355,11 +355,11 @@ class Admin_Menu {
         global $current_screen;
 
         // If ACF is active.
-        if ( chp_acf_options() ) {
+        if ( chd_acf_options() ) {
 
             // Get the ACF field registered by this plugin.
-            $menus_link   = get_field( 'chp_menus_position', 'option' );
-            $widgets_link = get_field( 'chp_widgets_position', 'option' );
+            $menus_link   = get_field( 'chd_menus_position', 'option' );
+            $widgets_link = get_field( 'chd_widgets_position', 'option' );
 
             // Set Menus parent as self.
             if ( $current_screen->base == 'nav-menus' && 'default' != $menus_link ) {
@@ -378,8 +378,8 @@ class Admin_Menu {
         } else {
 
             // Get the options from the standard fields.
-            $menus_link   = get_option( 'chp_menus_position' );
-            $widgets_link = get_option( 'chp_widgets_position' );
+            $menus_link   = get_option( 'chd_menus_position' );
+            $widgets_link = get_option( 'chd_widgets_position' );
 
             // Set Menus parent as self.
             if ( $current_screen->base == 'nav-menus' && $menus_link ) {
@@ -438,11 +438,11 @@ class Admin_Menu {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_admin_menu() {
+function chd_admin_menu() {
 
 	return Admin_Menu::instance();
 
 }
 
 // Run an instance of the class.
-chp_admin_menu();
+chd_admin_menu();

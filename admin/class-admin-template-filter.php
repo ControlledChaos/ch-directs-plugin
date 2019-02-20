@@ -234,11 +234,11 @@ class Filter_By_Template {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_filter_by_template() {
+function chd_filter_by_template() {
 
 	return Filter_By_Template::instance();
 
 }
 
 // Run an instance of the class.
-chp_filter_by_template();
+chd_filter_by_template();

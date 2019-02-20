@@ -93,7 +93,7 @@ class Settings_Page_Site {
     public function settings_page() {
 
 		// If the Advanced Custom Fields Pro plugin is active.
-		if ( chp_acf_options() ) {
+		if ( chd_acf_options() ) {
 
 			// Use the site name in the title tag but apply a filter for customization.
 			$title      = apply_filters( 'site_settings_page_name', get_bloginfo( 'name' ) );
@@ -105,13 +105,13 @@ class Settings_Page_Site {
 			 */
 
 			// The position of the page in the admin menu (top-level or under Dashboard).
-			$position   = get_field( 'chp_settings_link_position', 'option' );
+			$position   = get_field( 'chd_settings_link_position', 'option' );
 
 			// The label of the page in the admin menu.
-			$link_label = get_field( 'chp_site_settings_link_label', 'option' );
+			$link_label = get_field( 'chd_site_settings_link_label', 'option' );
 
 			// The icon used for the pagin in the admin menu.
-			$link_icon  = get_field( 'chp_site_settings_link_icon', 'option' );
+			$link_icon  = get_field( 'chd_site_settings_link_icon', 'option' );
 
 			// Use the custom admin menu label if the field is not empty.
 			if ( $link_label ) {
@@ -183,13 +183,13 @@ class Settings_Page_Site {
 			 */
 
 			// The position of the page in the admin menu (top-level or under Dashboard).
-			$position   = get_option( 'chp_site_settings_position' );
+			$position   = get_option( 'chd_site_settings_position' );
 
 			// The label of the page in the admin menu.
-			$link_label = sanitize_text_field( get_option( 'chp_site_settings_link_label' ) );
+			$link_label = sanitize_text_field( get_option( 'chd_site_settings_link_label' ) );
 
 			// The icon used for the pagin in the admin menu.
-			$link_icon  = sanitize_text_field( get_option( 'chp_site_settings_link_icon' ) );
+			$link_icon  = sanitize_text_field( get_option( 'chd_site_settings_link_icon' ) );
 
 			// Use the custom admin menu icon if the field is not empty.
 			if ( $link_label ) {
@@ -362,7 +362,7 @@ class Settings_Page_Site {
 	 */
 	public function acf_docs_link() {
 
-		if ( chp_acf_options() ) {
+		if ( chd_acf_options() ) {
 
 			global $submenu;
 			$url = 'https://www.advancedcustomfields.com/resources/';
@@ -381,11 +381,11 @@ class Settings_Page_Site {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_settings_page_site() {
+function chd_settings_page_site() {
 
 	return Settings_Page_Site::instance();
 
 }
 
 // Run an instance of the class.
-chp_settings_page_site();
+chd_settings_page_site();

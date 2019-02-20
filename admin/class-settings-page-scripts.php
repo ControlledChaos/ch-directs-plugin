@@ -214,11 +214,11 @@ class Settings_Page_Scripts {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_settings_page_scripts() {
+function chd_settings_page_scripts() {
 
 	return Settings_Page_Scripts::instance();
 
 }
 
 // Run an instance of the class.
-chp_settings_page_scripts();
+chd_settings_page_scripts();

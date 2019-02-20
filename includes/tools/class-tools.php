@@ -81,40 +81,40 @@ class Tools {
 	private function dependencies() {
 
 		// Minify HTML source code.
-		$debug = get_option( 'chp_debug_mode' );
+		$debug = get_option( 'chd_debug_mode' );
 
 		require_once CHP_PATH . 'includes/tools/class-debug.php';
 
 		// Include the RTL (right to left) test if option selected.
-		$rtl = get_option( 'chp_rtl_test' );
+		$rtl = get_option( 'chd_rtl_test' );
 
 		if ( $rtl ) {
 			require_once CHP_PATH . 'includes/tools/class-rtl-test.php';
 		}
 
 		// Minify HTML source code.
-		$minify = get_option( 'chp_html_minify' );
+		$minify = get_option( 'chd_html_minify' );
 
 		if ( $minify ) {
 			require_once CHP_PATH . 'includes/tools/class-minify-process.php';
 		}
 
 		// Live theme test.
-		$theme_test = get_option( 'chp_theme_test' );
+		$theme_test = get_option( 'chd_theme_test' );
 
 		if ( $theme_test ) {
 			include_once CHP_PATH . 'includes/tools/class-theme-test.php';
 		}
 
 		// Database reset.
-		$database_reset = get_option( 'chp_database_reset' );
+		$database_reset = get_option( 'chd_database_reset' );
 
 		if ( $database_reset ) {
 			require_once CHP_PATH . 'includes/tools/database-reset/database-reset.php';
 		}
 
 		// Customizer reset.
-		$customizer_reset = get_option( 'chp_customizer_reset' );
+		$customizer_reset = get_option( 'chd_customizer_reset' );
 
 		if ( $customizer_reset ) {
 			require_once CHP_PATH . 'includes/tools/customizer-reset/customizer-reset.php';
@@ -157,11 +157,11 @@ class Tools {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_tools() {
+function chd_tools() {
 
 	return Tools::instance();
 
 }
 
 // Run an instance of the class.
-chp_tools();
+chd_tools();

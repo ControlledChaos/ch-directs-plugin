@@ -60,7 +60,7 @@ class Meta_Description {
 	public function __construct() {
 
 		// Add description to the meta tag.
-		add_action( 'chp_meta_description_tag', [ $this, 'description' ] );
+		add_action( 'chd_meta_description_tag', [ $this, 'description' ] );
 
 	}
 
@@ -94,14 +94,14 @@ class Meta_Description {
 		 * 'Site Settings' page the we'll use that, otherwise we'll look for a
 		 * description on the standard 'Site Settings' page.
 		 */
-		if ( chp_acf_options() ) {
+		if ( chd_acf_options() ) {
 
 			/**
 			 * Check for content in the ACF blog description field.
 			 *
 			 * An additional parameter of 'option' must be included to target the options page.
 			 */
-			$acf_blog_desc = get_field( 'chp_meta_blog_description', 'option' );
+			$acf_blog_desc = get_field( 'chd_meta_blog_description', 'option' );
 
 			// If the ACF field is empty use the tagline.
 			if ( $acf_blog_desc ) {
@@ -113,7 +113,7 @@ class Meta_Description {
 		} else {
 
 			// Check for content in the blog description standard field.
-			$wp_blog_desc = get_option( 'chp_meta_blog_description' );
+			$wp_blog_desc = get_option( 'chd_meta_blog_description' );
 
 			// If the settings field is empty use the tagline.
 			if ( $wp_blog_desc ) {
@@ -137,7 +137,7 @@ class Meta_Description {
 		);
 
 		// Apply a filter to hard-coded text.
-		$search_meta_desc = apply_filters( 'chp_meta_description_search', $search_desc );
+		$search_meta_desc = apply_filters( 'chd_meta_description_search', $search_desc );
 
 		// Look for a manual excerpt.
 		$manual_excerpt   = wp_strip_all_tags( get_the_excerpt() );
@@ -163,7 +163,7 @@ class Meta_Description {
 		}
 
 		// Apply a filter for other use cases.
-		$meta_description = apply_filters( 'chp_meta_description', $description );
+		$meta_description = apply_filters( 'chd_meta_description', $description );
 
 		// Echo the conditional description in the meta tag.
 		echo $meta_description;
@@ -179,11 +179,11 @@ class Meta_Description {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_meta_description() {
+function chd_meta_description() {
 
 	return Meta_Description::instance();
 
 }
 
 // Run an instance of the class.
-chp_meta_description();
+chd_meta_description();

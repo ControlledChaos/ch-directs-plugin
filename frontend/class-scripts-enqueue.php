@@ -77,22 +77,22 @@ class Enqueue_Frontend_Scripts {
 		// wp_enqueue_script( CHP_ADMIN_SLUG, CHP_URL . 'assets/js/frontend.js', [ 'jquery' ], CHP_VERSION, true );
 
 		// Fancybox 3.
-		if ( get_option( 'chp_enqueue_fancybox_script' ) ) {
+		if ( get_option( 'chd_enqueue_fancybox_script' ) ) {
 			wp_enqueue_script( CHP_ADMIN_SLUG . '-fancybox', CHP_URL . 'assets/js/jquery.fancybox.min.js', [ 'jquery' ], CHP_VERSION, true );
 		}
 
 		// Slick.
-		if ( get_option( 'chp_enqueue_slick' ) ) {
+		if ( get_option( 'chd_enqueue_slick' ) ) {
 			wp_enqueue_script( CHP_ADMIN_SLUG . '-slick', CHP_URL . 'assets/js/slick.min.js', [ 'jquery' ], CHP_VERSION, true );
 		}
 
 		// Tabslet.
-		if ( get_option( 'chp_enqueue_tabslet' ) ) {
+		if ( get_option( 'chd_enqueue_tabslet' ) ) {
 			wp_enqueue_script( CHP_ADMIN_SLUG . '-tabslet', CHP_URL . 'assets/js/jquery.tabslet.min.js', [ 'jquery' ], CHP_VERSION, true );
 		}
 
 		// Tooltipster.
-		if ( get_option( 'chp_enqueue_tooltipster' ) ) {
+		if ( get_option( 'chd_enqueue_tooltipster' ) ) {
 			wp_enqueue_script( CHP_ADMIN_SLUG . '-tooltipster', CHP_URL . 'assets/js/tooltipster.bundle.min.js', [ 'jquery' ], CHP_VERSION, true );
 		}
 
@@ -110,11 +110,11 @@ class Enqueue_Frontend_Scripts {
  * @access public
  * @return object Returns an instance of the class.
  */
-function chp_enqueue_frontend_scripts() {
+function chd_enqueue_frontend_scripts() {
 
 	return Enqueue_Frontend_Scripts::instance();
 
 }
 
 // Run an instance of the class.
-chp_enqueue_frontend_scripts();
+chd_enqueue_frontend_scripts();
