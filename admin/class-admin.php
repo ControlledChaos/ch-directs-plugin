@@ -112,16 +112,16 @@ class Admin {
 	private function dependencies() {
 
 		// The core settings class for the plugin.
-		require_once CHP_PATH . 'admin/class-settings.php';
+		require_once CHD_PATH . 'admin/class-settings.php';
 
 		// Add icons to the titles of ACF tab and accordion fields, if active.
 		if ( chd_acf_pro() && ! get_option( 'chd_acf_activate_settings_page' ) ) {
-			include_once CHP_PATH . 'admin/class-acf-tab-icons.php';
+			include_once CHD_PATH . 'admin/class-acf-tab-icons.php';
 		}
 
 		// Include custom fields for Advanced Custom Fields Pro, if active.
 		if ( chd_acf_pro() ) {
-			include_once CHP_PATH . 'admin/class-settings-fields-site-acf.php';
+			include_once CHD_PATH . 'admin/class-settings-fields-site-acf.php';
 		}
 
 		// Restore the TinyMCE editor.
@@ -131,28 +131,28 @@ class Admin {
 			$editor = get_option( 'chd_classic_editor' );
 		}
 		if ( ( chd_classicpress() || chd_new_cms() ) && $editor ) {
-			include_once CHP_PATH . 'admin/classic-editor/classic-editor.php';
+			include_once CHD_PATH . 'admin/classic-editor/classic-editor.php';
 		}
 
 		// Functions for dasboard widgets, excluding the welcome panel.
-		require_once CHP_PATH . 'admin/dashboard/class-dashboard.php';
+		require_once CHD_PATH . 'admin/dashboard/class-dashboard.php';
 
 		// Functions for admin menu item positions and visibility.
-		require_once CHP_PATH . 'admin/class-admin-menu.php';
+		require_once CHD_PATH . 'admin/class-admin-menu.php';
 
 		// Add menus to the admin toolbar.
-		require_once CHP_PATH . 'admin/class-admin-toolbar-menus.php';
+		require_once CHD_PATH . 'admin/class-admin-toolbar-menus.php';
 
 		// Functions for various admin pages and edit screens.
-		require_once CHP_PATH . 'admin/class-admin-pages.php';
+		require_once CHD_PATH . 'admin/class-admin-pages.php';
 
 		// Import custom fields for editing, if ACF Pro is active.
 		if ( chd_acf_options() ) {
-			include_once CHP_PATH . 'admin/class-fields-import.php';
+			include_once CHD_PATH . 'admin/class-fields-import.php';
 		}
 
 		// Filter by page template.
-		require_once CHP_PATH . 'admin/class-admin-template-filter.php';
+		require_once CHD_PATH . 'admin/class-admin-template-filter.php';
 
 	}
 
@@ -377,7 +377,7 @@ class Admin {
 		 *
 		 * @since 1.0.0
 		 */
-		wp_enqueue_style( CHP_ADMIN_SLUG . '-admin', CHP_URL . 'admin/assets/css/admin.min.css', [], CHP_VERSION, 'all' );
+		wp_enqueue_style( CHD_ADMIN_SLUG . '-admin', CHD_URL . 'admin/assets/css/admin.min.css', [], CHD_VERSION, 'all' );
 
 		/**
 		 * Enqueue the jQuery tooltips styles.
@@ -390,7 +390,7 @@ class Admin {
 		 *
 		 * @since 1.0.0
 		 */
-		wp_enqueue_style( CHP_ADMIN_SLUG . '-tooltips', CHP_URL . 'admin/assets/css/tooltips.min.css', [], CHP_VERSION, 'all' );
+		wp_enqueue_style( CHD_ADMIN_SLUG . '-tooltips', CHD_URL . 'admin/assets/css/tooltips.min.css', [], CHD_VERSION, 'all' );
 
 		/**
 		 * Enqueue Advanced Custom Fields styles.
@@ -400,7 +400,7 @@ class Admin {
 		 * @since 1.0.0
 		 */
 		if ( chd_acf() ) {
-			wp_enqueue_style( CHP_ADMIN_SLUG . '-acf', CHP_URL . 'admin/assets/css/acf.css', [], CHP_VERSION, 'all' );
+			wp_enqueue_style( CHD_ADMIN_SLUG . '-acf', CHD_URL . 'admin/assets/css/acf.css', [], CHD_VERSION, 'all' );
 		}
 
 		/**
@@ -412,7 +412,7 @@ class Admin {
 		 */
 		$welcome = get_option( 'chd_custom_welcome' );
 		if ( $welcome ) {
-			wp_enqueue_style( CHP_ADMIN_SLUG . '-welcome', CHP_URL . 'admin/assets/css/welcome.css', [], CHP_VERSION, 'all' );
+			wp_enqueue_style( CHD_ADMIN_SLUG . '-welcome', CHD_URL . 'admin/assets/css/welcome.css', [], CHD_VERSION, 'all' );
 		}
 
 	}
@@ -432,7 +432,7 @@ class Admin {
 
 		ob_start();
 
-		require CHP_PATH . 'admin/partials/searchform.php';
+		require CHD_PATH . 'admin/partials/searchform.php';
 
 		$form = ob_get_clean();
 
@@ -484,10 +484,10 @@ class Admin {
 		wp_enqueue_script( 'jquery-ui-tooltip' );
 
 		// Enqueue Conditionalize for conditional form fields.
-		wp_enqueue_script( CHP_ADMIN_SLUG . '-conditionalize', CHP_URL . 'admin/assets/js/admin.js', [ 'jquery' ], CHP_VERSION, true );
+		wp_enqueue_script( CHD_ADMIN_SLUG . '-conditionalize', CHD_URL . 'admin/assets/js/admin.js', [ 'jquery' ], CHD_VERSION, true );
 
 		// Enqueue scripts for backend functionality of this plugin.
-		wp_enqueue_script( CHP_ADMIN_SLUG . '-admin', CHP_URL . 'admin/assets/js/conditionize.flexible.jquery.min.js', [ 'jquery' ], CHP_VERSION, true );
+		wp_enqueue_script( CHD_ADMIN_SLUG . '-admin', CHD_URL . 'admin/assets/js/conditionize.flexible.jquery.min.js', [ 'jquery' ], CHD_VERSION, true );
 
 	}
 

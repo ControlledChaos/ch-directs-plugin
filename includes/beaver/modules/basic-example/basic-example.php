@@ -23,7 +23,7 @@ if ( ! defined( 'WPINC' ) ) {
  * @since  1.0.0
  * @access public
  */
-class CHP_Basic_Example_Module extends FLBuilderModule {
+class CHD_Basic_Example_Module extends FLBuilderModule {
 
     /**
 	 * Constructor method
@@ -38,8 +38,8 @@ class CHP_Basic_Example_Module extends FLBuilderModule {
             'name'          => __( 'Basic Example', 'ch-directs-plugin' ),
             'description'   => __( 'An basic example for coding new modules.', 'ch-directs-plugin' ),
             'category'      => __( 'Example Modules', 'ch-directs-plugin' ),
-            'dir'           => CHP_PATH . 'includes/beaver/modules/basic-example/',
-            'url'           => CHP_URL . 'includes/beaver/modules/basic-example/',
+            'dir'           => CHD_PATH . 'includes/beaver/modules/basic-example/',
+            'url'           => CHD_URL . 'includes/beaver/modules/basic-example/',
             'editor_export' => true, // Defaults to true and can be omitted.
             'enabled'       => true, // Defaults to true and can be omitted.
         ] );
@@ -54,7 +54,7 @@ class CHP_Basic_Example_Module extends FLBuilderModule {
  * @access public
  * @return array Returns the array of module fields.
  */
-FLBuilder::register_module( 'CHP_Basic_Example_Module', [
+FLBuilder::register_module( 'CHD_Basic_Example_Module', [
     'general' => [ // Tab
         'title'    => __( 'General', 'ch-directs-plugin' ), // Tab title
         'sections' => [ // Tab Sections

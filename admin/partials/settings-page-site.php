@@ -40,7 +40,7 @@ $tabs = [
     // Dashboard tab.
     sprintf(
         '<a href="?page=%1s-settings&tab=dashboard" class="nav-tab %2s"><span class="dashicons dashicons-dashboard"></span> %3s</a>',
-        CHP_ADMIN_SLUG,
+        CHD_ADMIN_SLUG,
         $active_tab == 'dashboard' ? 'nav-tab-active' : '',
         esc_html__( 'Dashboard', 'ch-directs-plugin' )
     ),
@@ -48,7 +48,7 @@ $tabs = [
     // Admin menu tab.
     sprintf(
         '<a href="?page=%1s-settings&tab=admin-menu" class="nav-tab %2s"><span class="dashicons dashicons-menu"></span> %3s</a>',
-        CHP_ADMIN_SLUG,
+        CHD_ADMIN_SLUG,
         $active_tab == 'admin-menu' ? 'nav-tab-active' : '',
         esc_html__( 'Admin Menu', 'ch-directs-plugin' )
     ),
@@ -56,7 +56,7 @@ $tabs = [
     // Admin pages tab.
     sprintf(
         '<a href="?page=%1s-settings&tab=admin-pages" class="nav-tab %2s"><span class="dashicons dashicons-admin-page"></span> %3s</a>',
-        CHP_ADMIN_SLUG,
+        CHD_ADMIN_SLUG,
         $active_tab == 'admin-pages' ? 'nav-tab-active' : '',
         esc_html__( 'Admin Pages', 'ch-directs-plugin' )
     ),
@@ -64,7 +64,7 @@ $tabs = [
     // Users tab.
     sprintf(
         '<a href="?page=%1s-settings&tab=users" class="nav-tab %2s"><span class="dashicons dashicons-admin-users"></span> %3s</a>',
-        CHP_ADMIN_SLUG,
+        CHD_ADMIN_SLUG,
         $active_tab == 'users' ? 'nav-tab-active' : '',
         esc_html__( 'Site Users', 'ch-directs-plugin' )
     ),
@@ -72,7 +72,7 @@ $tabs = [
     // Meta/SEO tab.
     sprintf(
         '<a href="?page=%1s-settings&tab=meta-seo" class="nav-tab %2s"><span class="dashicons dashicons-tag"></span> %3s</a>',
-        CHP_ADMIN_SLUG,
+        CHD_ADMIN_SLUG,
         $active_tab == 'meta-seo' ? 'nav-tab-active' : '',
         esc_html__( 'Meta/SEO', 'ch-directs-plugin' )
     )

@@ -124,7 +124,7 @@ class Meta_Image {
 
 			// Otherwise use the image path defined in the core plugin file.
 			} else {
-				$src   = CHP_DEFAULT_META_IMAGE;
+				$src   = CHD_DEFAULT_META_IMAGE;
 			}
 
 			// Echo the image path in the meta tag.
@@ -149,7 +149,7 @@ class Meta_Image {
 
 			// Otherwise use the image path defined in the core plugin file.
 			} else {
-				$src = CHP_DEFAULT_META_IMAGE;
+				$src = CHD_DEFAULT_META_IMAGE;
 			}
 
 			// Echo the image path in the meta tag.

@@ -166,7 +166,7 @@ class Post_Types_Taxes_Order {
      */
     public function admin_page() {
 
-        require CHP_PATH . 'admin/partials/settings-page-posts-order.php';
+        require CHD_PATH . 'admin/partials/settings-page-posts-order.php';
 
     }
 
@@ -234,7 +234,7 @@ class Post_Types_Taxes_Order {
 
             wp_enqueue_script( 'jquery' );
             wp_enqueue_script( 'jquery-ui-sortable' );
-            wp_enqueue_script( 'post-tax-order', CHP_URL . 'admin/assets/js/post-tax-order.js', [ 'jquery' ], null, true );
+            wp_enqueue_script( 'post-tax-order', CHD_URL . 'admin/assets/js/post-tax-order.js', [ 'jquery' ], null, true );
 
         }
 

@@ -74,9 +74,9 @@ final class Customizer_Reset {
 	 */
 	public function customize_controls_print_scripts() {
 
-		wp_enqueue_script( 'chd-customizer-reset', CHP_URL . 'includes/tools/customizer-reset/assets/js/customizer-reset.js', [ 'jquery' ], '20150120' );
+		wp_enqueue_script( 'chd-customizer-reset', CHD_URL . 'includes/tools/customizer-reset/assets/js/customizer-reset.js', [ 'jquery' ], '20150120' );
 
-		wp_localize_script( 'chd-customizer-reset', '_CHPCustomizerReset', [
+		wp_localize_script( 'chd-customizer-reset', '_CHDCustomizerReset', [
 			'reset'   => __( 'Reset', 'ch-directs-plugin' ),
 			'confirm' => __( 'Warning! This will remove all changes made to this theme via the Customizer. This action is irreversible.', 'ch-directs-plugin' ),
 			'nonce'   => [

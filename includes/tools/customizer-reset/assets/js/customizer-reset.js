@@ -1,11 +1,11 @@
-/* global jQuery, _CHPCustomizerReset, ajaxurl, wp */
+/* global jQuery, _CHDCustomizerReset, ajaxurl, wp */
 
 jQuery(function ($) {
     var $container = $('#customize-header-actions');
 
 
     var $button = $('<input type="submit" name="chd-reset" id="chd-reset" class="button-secondary button">')
-        .attr('value', _CHPCustomizerReset.reset)
+        .attr('value', _CHDCustomizerReset.reset)
         .css({
             'float': 'right',
             'margin-right': '10px',
@@ -18,10 +18,10 @@ jQuery(function ($) {
         var data = {
             wp_customize: 'on',
             action: 'customizer_reset',
-            nonce: _CHPCustomizerReset.nonce.reset
+            nonce: _CHDCustomizerReset.nonce.reset
         };
 
-        var r = confirm(_CHPCustomizerReset.confirm);
+        var r = confirm(_CHDCustomizerReset.confirm);
 
         if (!r) return;
 

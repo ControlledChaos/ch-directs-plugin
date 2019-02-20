@@ -84,7 +84,7 @@ class Settings_Fields_Site_Dashboard {
 	private function dependencies() {
 
 		// Callbacks for the Dashboard tab.
-		require CHP_PATH . 'admin/partials/field-callbacks/class-dashboard-callbacks.php';
+		require CHD_PATH . 'admin/partials/field-callbacks/class-dashboard-callbacks.php';
 
 	}
 

@@ -40,7 +40,7 @@ $tabs = [
     // General options tab.
     sprintf(
         '<a href="?page=%1s-scripts&tab=general" class="nav-tab %2s"><span class="dashicons dashicons-admin-tools"></span> %3s</a>',
-        CHP_ADMIN_SLUG,
+        CHD_ADMIN_SLUG,
         $active_tab == 'general' ? 'nav-tab-active' : '',
         esc_html__( 'General', 'ch-directs-plugin' )
     )

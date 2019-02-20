@@ -84,7 +84,7 @@ class Settings_Page_Dev_Tools {
 			__( 'Website Development', 'ch-directs-plugin' ),
 			__( 'Site Development', 'ch-directs-plugin' ),
 			'manage_options',
-			CHP_ADMIN_SLUG . '-dev-tools',
+			CHD_ADMIN_SLUG . '-dev-tools',
 			[ $this, 'page_output' ]
 		);
 
@@ -102,7 +102,7 @@ class Settings_Page_Dev_Tools {
 	 */
 	public function page_output() {
 
-		require CHP_PATH . 'admin/partials/settings-page-development.php';
+		require CHD_PATH . 'admin/partials/settings-page-development.php';
 
 	}
 
@@ -145,7 +145,7 @@ class Settings_Page_Dev_Tools {
      */
 	public function help_dev_info_output() {
 
-		include_once CHP_PATH . 'admin/partials/help/help-dev-info.php';
+		include_once CHD_PATH . 'admin/partials/help/help-dev-info.php';
 
     }
 

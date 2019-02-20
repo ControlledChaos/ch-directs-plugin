@@ -82,7 +82,7 @@ class Settings_Fields_Site_Admin_Pages {
 	private function dependencies() {
 
 		// Callbacks for the Admin Pages tab.
-		require CHP_PATH . 'admin/partials/field-callbacks/class-admin-pages-callbacks.php';
+		require CHD_PATH . 'admin/partials/field-callbacks/class-admin-pages-callbacks.php';
 
 	}
 

@@ -104,8 +104,8 @@ if ( ! class_exists( 'CH_Directs_Plugin' ) ) :
 			 * @since  1.0.0
 			 * @return string Returns the latest plugin version.
 			 */
-			if ( ! defined( 'CHP_VERSION' ) ) {
-				define( 'CHP_VERSION', '1.0.0' );
+			if ( ! defined( 'CHD_VERSION' ) ) {
+				define( 'CHD_VERSION', '1.0.0' );
 			}
 
 			/**
@@ -116,8 +116,8 @@ if ( ! class_exists( 'CH_Directs_Plugin' ) ) :
 			 *
 			 * @todo   Replace all strings with constant.
 			 */
-			if ( ! defined( 'CHP_DOMAIN' ) ) {
-				define( 'CHP_DOMAIN', 'ch-directs-plugin' );
+			if ( ! defined( 'CHD_DOMAIN' ) ) {
+				define( 'CHD_DOMAIN', 'ch-directs-plugin' );
 			}
 
 			/**
@@ -127,8 +127,8 @@ if ( ! class_exists( 'CH_Directs_Plugin' ) ) :
 			 * @return string Returns the filesystem directory path (with trailing slash)
 			 *                for the plugin __FILE__ passed in.
 			 */
-			if ( ! defined( 'CHP_PATH' ) ) {
-				define( 'CHP_PATH', plugin_dir_path( __FILE__ ) );
+			if ( ! defined( 'CHD_PATH' ) ) {
+				define( 'CHD_PATH', plugin_dir_path( __FILE__ ) );
 			}
 
 			/**
@@ -138,8 +138,8 @@ if ( ! class_exists( 'CH_Directs_Plugin' ) ) :
 			 * @return string Returns the URL directory path (with trailing slash)
 			 *                for the plugin __FILE__ passed in.
 			 */
-			if ( ! defined( 'CHP_URL' ) ) {
-				define( 'CHP_URL', plugin_dir_url( __FILE__ ) );
+			if ( ! defined( 'CHD_URL' ) ) {
+				define( 'CHD_URL', plugin_dir_url( __FILE__ ) );
 			}
 
 			/**
@@ -154,8 +154,8 @@ if ( ! class_exists( 'CH_Directs_Plugin' ) ) :
 			 * @since  1.0.0
 			 * @return string Returns the URL slug of the admin pages.
 			 */
-			if ( ! defined( 'CHP_ADMIN_SLUG' ) ) {
-				define( 'CHP_ADMIN_SLUG', 'ch-directs-plugin' );
+			if ( ! defined( 'CHD_ADMIN_SLUG' ) ) {
+				define( 'CHD_ADMIN_SLUG', 'ch-directs-plugin' );
 			}
 
 			/**
@@ -166,9 +166,9 @@ if ( ! class_exists( 'CH_Directs_Plugin' ) ) :
 			 * @since  1.0.0
 			 * @return string Returns the URL of the image.
 			 */
-			if ( ! defined( 'CHP_DEFAULT_META_IMAGE' ) ) {
+			if ( ! defined( 'CHD_DEFAULT_META_IMAGE' ) ) {
 				define(
-					'CHP_DEFAULT_META_IMAGE',
+					'CHD_DEFAULT_META_IMAGE',
 					plugins_url( 'frontend/assets/images/default-meta-image.jpg', __FILE__ )
 				);
 			}
@@ -213,13 +213,13 @@ if ( ! class_exists( 'CH_Directs_Plugin' ) ) :
 		private function dependencies() {
 
 			// The hub of all other dependency files.
-			require_once CHP_PATH . 'includes/class-init.php';
+			require_once CHD_PATH . 'includes/class-init.php';
 
 			// Include the activation class.
-			require_once CHP_PATH . 'includes/class-activate.php';
+			require_once CHD_PATH . 'includes/class-activate.php';
 
 			// Include the deactivation class.
-			require_once CHP_PATH . 'includes/class-deactivate.php';
+			require_once CHD_PATH . 'includes/class-deactivate.php';
 
 		}
 
@@ -342,16 +342,16 @@ function chd_about_link( $links ) {
 		}
 
 		if ( true == $position ) {
-			$url = admin_url( 'index.php?page=' . CHP_ADMIN_SLUG . '-settings' );
+			$url = admin_url( 'index.php?page=' . CHD_ADMIN_SLUG . '-settings' );
 		} else {
-			$url = admin_url( 'admin.php?page=' . CHP_ADMIN_SLUG . '-settings' );
+			$url = admin_url( 'admin.php?page=' . CHD_ADMIN_SLUG . '-settings' );
 		}
 
 		// Create new settings link array as a variable.
 		$about_page = [
 			sprintf(
-				'<a href="%1s" class="' . CHP_ADMIN_SLUG . '-page-link">%2s</a>',
-				admin_url( 'plugins.php?page=' . CHP_ADMIN_SLUG . '-page' ),
+				'<a href="%1s" class="' . CHD_ADMIN_SLUG . '-page-link">%2s</a>',
+				admin_url( 'plugins.php?page=' . CHD_ADMIN_SLUG . '-page' ),
 				esc_attr( 'Documentation', 'ch-directs-plugin' )
 			),
 		];
@@ -414,22 +414,22 @@ function chd_settings_links( $links, $file ) {
 		}
 
 		if ( $position || true == $position ) {
-			$url = admin_url( 'admin.php?page=' . CHP_ADMIN_SLUG . '-settings' );
+			$url = admin_url( 'admin.php?page=' . CHD_ADMIN_SLUG . '-settings' );
 		} else {
-			$url = admin_url( 'index.php?page=' . CHP_ADMIN_SLUG . '-settings' );
+			$url = admin_url( 'index.php?page=' . CHD_ADMIN_SLUG . '-settings' );
 		}
 
 		if ( $file == plugin_basename( __FILE__ ) ) {
 
 			// Add links to settings pages.
 			$links[] = sprintf(
-				'<a href="%1s" class="' . CHP_ADMIN_SLUG . '-settings-link">%2s</a>',
+				'<a href="%1s" class="' . CHD_ADMIN_SLUG . '-settings-link">%2s</a>',
 				$url,
 				esc_attr( 'Site Settings', 'ch-directs-plugin' )
 			);
 			$links[] = sprintf(
-				'<a href="%1s" class="' . CHP_ADMIN_SLUG . '-scripts-link">%2s</a>',
-				admin_url( 'options-general.php?page=' . CHP_ADMIN_SLUG . '-scripts' ),
+				'<a href="%1s" class="' . CHD_ADMIN_SLUG . '-scripts-link">%2s</a>',
+				admin_url( 'options-general.php?page=' . CHD_ADMIN_SLUG . '-scripts' ),
 				esc_attr( 'Script Options', 'ch-directs-plugin' )
 			);
 

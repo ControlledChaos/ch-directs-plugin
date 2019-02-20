@@ -87,10 +87,10 @@ class Dashboard {
 	private function dependencies() {
 
         // Get the dashboard widget class.
-        require CHP_PATH . 'admin/dashboard/class-dashboard-widget.php';
+        require CHD_PATH . 'admin/dashboard/class-dashboard-widget.php';
 
         // Get the welcome panel class.
-        require CHP_PATH . 'admin/dashboard/class-welcome.php';
+        require CHD_PATH . 'admin/dashboard/class-welcome.php';
 
     }
 
@@ -337,7 +337,7 @@ class Dashboard {
      */
 	public function help_welcome_panel() {
 
-        include_once CHP_PATH . 'admin/dashboard/partials/help/help-welcome-panel.php';
+        include_once CHD_PATH . 'admin/dashboard/partials/help/help-welcome-panel.php';
 
     }
 
@@ -348,7 +348,7 @@ class Dashboard {
      */
 	public function help_dashboard_widgets() {
 
-        include_once CHP_PATH . 'admin/dashboard/partials/help/help-dashboard-widgets.php';
+        include_once CHD_PATH . 'admin/dashboard/partials/help/help-dashboard-widgets.php';
 
     }
 
@@ -373,7 +373,7 @@ class Dashboard {
         $html .= sprintf(
             '<p>%1s <a href="%2s">%3s</a></p>',
             __( 'Customize your' ),
-            esc_url( 'http://localhost/controlledchaos/wp-admin/index.php?page=' . CHP_ADMIN_SLUG . '-settings' ),
+            esc_url( 'http://localhost/controlledchaos/wp-admin/index.php?page=' . CHD_ADMIN_SLUG . '-settings' ),
             __( 'Dashboard Settings' )
         );
 
@@ -395,7 +395,7 @@ class Dashboard {
 
         // Enqueue only on the Dashboard screen.
         if ( $screen->id == 'dashboard' ) {
-            wp_enqueue_style( CHP_ADMIN_SLUG . '-dashboard', CHP_URL .  'admin/dashboard/assets/css/dashboard.min.css', [], null, 'screen' );
+            wp_enqueue_style( CHD_ADMIN_SLUG . '-dashboard', CHD_URL .  'admin/dashboard/assets/css/dashboard.min.css', [], null, 'screen' );
         }
 
 	}

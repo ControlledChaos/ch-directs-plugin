@@ -88,7 +88,7 @@ class Meta_SEO_Callbacks {
 	public function  schema_org_type( $args ) {
 
 		// Get the field file.
-		include_once CHP_PATH . 'admin/partials/field-callbacks/schema-org-type.php';
+		include_once CHD_PATH . 'admin/partials/field-callbacks/schema-org-type.php';
 
 	}
 

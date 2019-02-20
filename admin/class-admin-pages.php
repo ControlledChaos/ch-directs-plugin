@@ -221,7 +221,7 @@ class Admin_Pages {
                 $label,
                 $label,
                 'manage_options',
-                CHP_ADMIN_SLUG . '-page',
+                CHD_ADMIN_SLUG . '-page',
                 [ $this, 'about_plugin_output' ],
                 $icon,
                 3
@@ -232,7 +232,7 @@ class Admin_Pages {
                 $label,
                 $label,
                 'manage_options',
-                CHP_ADMIN_SLUG . '-page',
+                CHD_ADMIN_SLUG . '-page',
                 [ $this, 'about_plugin_output' ]
             );
         }
@@ -251,7 +251,7 @@ class Admin_Pages {
      */
     public function about_plugin_output() {
 
-        require CHP_PATH . 'admin/partials/plugin-page-about.php';
+        require CHD_PATH . 'admin/partials/plugin-page-about.php';
 
     }
 
@@ -298,7 +298,7 @@ class Admin_Pages {
      */
 	public function help_plugin_info() {
 
-		include_once CHP_PATH . 'admin/partials/help/help-plugin-info.php';
+		include_once CHD_PATH . 'admin/partials/help/help-plugin-info.php';
 
     }
 
@@ -309,7 +309,7 @@ class Admin_Pages {
      */
 	public function help_convert_plugin() {
 
-		include_once CHP_PATH . 'admin/partials/help/help-plugin-convert.php';
+		include_once CHD_PATH . 'admin/partials/help/help-plugin-convert.php';
 
     }
 
@@ -374,7 +374,7 @@ class Admin_Pages {
 		if ( ! empty( $admin_header ) ) {
 			get_template_part( 'template-parts/admin/admin-header' );
 		} else {
-			include_once CHP_PATH . 'admin/partials/admin-header.php';
+			include_once CHD_PATH . 'admin/partials/admin-header.php';
 		}
 
     }

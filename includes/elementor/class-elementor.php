@@ -27,7 +27,7 @@ if ( ! defined( 'WPINC' ) ) {
  * @since  1.0.0
  * @access public
  */
-class CHP_Elementor extends \Elementor\Widget_Base {
+class CHD_Elementor extends \Elementor\Widget_Base {
 
 	/**
 	 * Get widget name.
@@ -138,4 +138,4 @@ class CHP_Elementor extends \Elementor\Widget_Base {
 }
 
 // Run the class.
-$chd_elementor = new CHP_Elementor;
+$chd_elementor = new CHD_Elementor;

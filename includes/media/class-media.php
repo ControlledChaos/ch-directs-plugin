@@ -88,13 +88,13 @@ class Media {
 	private function dependencies() {
 
 		// Add SVG media upload support.
-		include_once CHP_PATH . 'includes/media/class-svg-support.php';
+		include_once CHD_PATH . 'includes/media/class-svg-support.php';
 
 		// Replace WP gallery shortcode if Fancybox option is used.
 		$fancybox = get_option( 'chd_enqueue_fancybox_script' );
 
 		if ( $fancybox ) {
-			require_once CHP_PATH . 'includes/media/class-gallery-shortcode.php';
+			require_once CHD_PATH . 'includes/media/class-gallery-shortcode.php';
 		}
 
 	}

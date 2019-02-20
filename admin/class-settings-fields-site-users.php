@@ -77,7 +77,7 @@ class Settings_Fields_Users {
 	private function dependencies() {
 
 		// Callbacks for the Dashboard tab.
-		require CHP_PATH . 'admin/partials/field-callbacks/class-users-callbacks.php';
+		require CHD_PATH . 'admin/partials/field-callbacks/class-users-callbacks.php';
 
 	}
 

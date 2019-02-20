@@ -678,7 +678,7 @@ final class Settings_Fields_ACF {
 						[
 							'param'    => 'options_page',
 							'operator' => '==',
-							'value'    => CHP_ADMIN_SLUG . '-settings',
+							'value'    => CHD_ADMIN_SLUG . '-settings',
 						],
 					],
 				],

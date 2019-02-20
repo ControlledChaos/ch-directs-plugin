@@ -83,7 +83,7 @@ class Register_Blocks {
 			'chd-sample-block-script', // Handle.
 			plugins_url( 'assets/js/sample-block.min.js', __FILE__ ), // Block.js: We register the block here.
 			[ 'wp-blocks', 'wp-i18n', 'wp-element' ], // Dependencies, defined above.
-			filemtime( CHP_PATH . 'includes/editor-blocks/assets/js/sample-block.min.js' ) // filemtime — Gets file modification time.
+			filemtime( CHD_PATH . 'includes/editor-blocks/assets/js/sample-block.min.js' ) // filemtime — Gets file modification time.
 		);
 
 		// Sample block styles.
@@ -91,7 +91,7 @@ class Register_Blocks {
 			'chd-sample-block', // Handle.
 			plugins_url( 'assets/css/sample-block.min.css', __FILE__ ), // Block editor CSS.
 			[ 'wp-edit-blocks' ], // Dependency to include the CSS after it.
-			filemtime( CHP_PATH . 'includes/editor-blocks/assets/css/sample-block.min.css' ) // filemtime — Gets file modification time.
+			filemtime( CHD_PATH . 'includes/editor-blocks/assets/css/sample-block.min.css' ) // filemtime — Gets file modification time.
 		);
 
 	}
@@ -109,7 +109,7 @@ class Register_Blocks {
 			'chd-sample-block',
 			plugins_url( 'includes/editor-blocks/assets/css/sample-block.css', __FILE__ ),
 			[ 'wp-blocks' ],
-			filemtime( CHP_PATH . 'includes/editor-blocks/assets/css/sample-block.css' )
+			filemtime( CHD_PATH . 'includes/editor-blocks/assets/css/sample-block.css' )
 		);
 
 	}

@@ -27,7 +27,7 @@ if ( ! defined( 'WPINC' ) ) {
 echo sprintf(
 	'<p>%1s <a href="%2s">%3s</a> %4s</p>',
 	__( 'View options on the', 'ch-directs-plugin' ),
-	esc_url( 'http://localhost/controlledchaos/wp-admin/index.php?page=' . CHP_ADMIN_SLUG . '-settings' ),
+	esc_url( 'http://localhost/controlledchaos/wp-admin/index.php?page=' . CHD_ADMIN_SLUG . '-settings' ),
 	__( 'Dashboard Settings', 'ch-directs-plugin' ),
 	__( 'page.', 'ch-directs-plugin' )
 ); ?>

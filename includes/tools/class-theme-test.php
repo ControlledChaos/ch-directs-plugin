@@ -33,7 +33,7 @@ function themedrive_add_pages() {
         __( 'Live Theme Test', 'ch-directs-plugin' ),
         __( 'Theme Test', 'ch-directs-plugin' ),
         'edit_theme_options',
-        CHP_ADMIN_SLUG . '-theme-test',
+        CHD_ADMIN_SLUG . '-theme-test',
         'themedrive_options_page' );
 }
 add_action( 'admin_menu', 'themedrive_add_pages' );

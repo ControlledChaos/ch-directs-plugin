@@ -82,16 +82,16 @@ final class Init {
 	private function dependencies() {
 
 		// Translation functionality.
-		require_once CHP_PATH . 'includes/class-i18n.php';
+		require_once CHD_PATH . 'includes/class-i18n.php';
 
 		// Admin/backend functionality, scripts and styles.
-		require_once CHP_PATH . 'admin/class-admin.php';
+		require_once CHD_PATH . 'admin/class-admin.php';
 
 		// Frontend functionality, scripts and styles.
-		require_once CHP_PATH . 'frontend/class-frontend.php';
+		require_once CHD_PATH . 'frontend/class-frontend.php';
 
 		// Various media and media library functionality.
-		require_once CHP_PATH . 'includes/media/class-media.php';
+		require_once CHD_PATH . 'includes/media/class-media.php';
 
 		/**
 		 * Register custom editor blocks.
@@ -104,17 +104,17 @@ final class Init {
 			$editor = get_option( 'chd_classic_editor' );
 		}
 		if ( ( chd_classicpress() || chd_new_cms() ) && ! $editor || is_plugin_active( 'gutenberg/gutenberg.php' ) ) {
-			require_once CHP_PATH . 'includes/editor-blocks/class-register-block-types.php';
+			require_once CHD_PATH . 'includes/editor-blocks/class-register-block-types.php';
 		}
 
 		// Post types and taxonomies.
-		require_once CHP_PATH . 'includes/post-types-taxes/class-post-type-tax.php';
+		require_once CHD_PATH . 'includes/post-types-taxes/class-post-type-tax.php';
 
 		// User funtionality.
-		require_once CHP_PATH . 'includes/users/class-users.php';
+		require_once CHD_PATH . 'includes/users/class-users.php';
 
 		// Dev and maintenance tools.
-		require_once CHP_PATH . 'includes/tools/class-tools.php';
+		require_once CHD_PATH . 'includes/tools/class-tools.php';
 
 	}
 
@@ -129,12 +129,12 @@ final class Init {
 
 		// Add Beaver Builder support.
 		if ( class_exists( 'FLBuilder' ) ) {
-			include_once CHP_PATH . 'includes/beaver/class-beaver-builder.php';
+			include_once CHD_PATH . 'includes/beaver/class-beaver-builder.php';
 		}
 
 		// Add Elementor support.
 		if ( class_exists( '\Elementor\Plugin' ) ) {
-			include_once CHP_PATH . 'includes/elementor/class-elementor.php';
+			include_once CHD_PATH . 'includes/elementor/class-elementor.php';
 		}
 
 	}

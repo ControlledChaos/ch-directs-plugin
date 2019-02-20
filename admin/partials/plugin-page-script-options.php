@@ -22,7 +22,7 @@ if ( ! defined( 'WPINC' ) ) {
 <?php echo sprintf(
 	'<p>%1s <a href="%2s">%3s</a> %4s</p>',
 	__( 'This plugin is equipped with', 'ch-directs-plugin' ),
-	esc_url( admin_url( 'options-general.php?page=' . CHP_ADMIN_SLUG . '-scripts' ) ),
+	esc_url( admin_url( 'options-general.php?page=' . CHD_ADMIN_SLUG . '-scripts' ) ),
 	__( 'an admin page', 'ch-directs-plugin' ),
 	__( 'for enqueueing third-party scripts included in the plugin, as well as for script loading options.', 'ch-directs-plugin' )
  ); ?>

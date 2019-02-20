@@ -20,7 +20,7 @@ if ( ! defined( 'WPINC' ) ) {
  * @since  1.0.0
  * @access public
  */
-class CHP_Example_Module extends FLBuilderModule {
+class CHD_Example_Module extends FLBuilderModule {
 
     /**
 	 * Constructor method
@@ -35,8 +35,8 @@ class CHP_Example_Module extends FLBuilderModule {
             'name'          => __( 'Example', 'ch-directs-plugin' ),
             'description'   => __( 'An example for coding new modules.', 'ch-directs-plugin' ),
             'category'      => __( 'Example Modules', 'ch-directs-plugin' ),
-            'dir'           => CHP_PATH . 'includes/beaver/modules/example/',
-            'url'           => CHP_URL . 'includes/beaver/modules/example/',
+            'dir'           => CHD_PATH . 'includes/beaver/modules/example/',
+            'url'           => CHD_URL . 'includes/beaver/modules/example/',
             'editor_export' => true, // Defaults to true and can be omitted.
             'enabled'       => true, // Defaults to true and can be omitted.
         ] );
@@ -109,7 +109,7 @@ class CHP_Example_Module extends FLBuilderModule {
  * @access public
  * @return array Returns the array of module fields.
  */
-FLBuilder::register_module( 'CHP_Example_Module', [
+FLBuilder::register_module( 'CHD_Example_Module', [
     'general' => [ // Tab
         'title'    => __( 'General', 'ch-directs-plugin' ), // Tab title
         'sections' => [ // Tab Sections
@@ -282,7 +282,7 @@ FLBuilder::register_module( 'CHP_Example_Module', [
     ],
     'include' => [ // Tab
         'title' => __( 'Include', 'ch-directs-plugin' ), // Tab title
-        'file'  => CHP_PATH . 'includes/beaver/example/includes/settings-example.php'
+        'file'  => CHD_PATH . 'includes/beaver/example/includes/settings-example.php'
     ]
 ] );
 

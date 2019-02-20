@@ -82,7 +82,7 @@ class Settings_Fields_Site_Admin_Menu {
 	private function dependencies() {
 
 		// Callbacks for the Admin Menu tab.
-		require CHP_PATH . 'admin/partials/field-callbacks/class-admin-menu-callbacks.php';
+		require CHD_PATH . 'admin/partials/field-callbacks/class-admin-menu-callbacks.php';
 
 	}
 

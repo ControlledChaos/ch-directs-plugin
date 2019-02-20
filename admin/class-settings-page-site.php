@@ -141,7 +141,7 @@ class Settings_Page_Site {
 				$settings = apply_filters( 'controlled_chaos_site_settings_page_top', [
 					'page_title' => $title . __( ' Settings', 'ch-directs-plugin' ),
 					'menu_title' => $label,
-					'menu_slug'  => CHP_ADMIN_SLUG . '-settings',
+					'menu_slug'  => CHD_ADMIN_SLUG . '-settings',
 					'icon_url'   => $icon,
 					'position'   => 3,
 					'capability' => 'manage_options',
@@ -163,7 +163,7 @@ class Settings_Page_Site {
 				$settings = apply_filters( 'controlled_chaos_site_settings_page_default', [
 					'page_title' => $title . __( ' Settings', 'ch-directs-plugin' ),
 					'menu_title' => $label,
-					'menu_slug'  => CHP_ADMIN_SLUG . '-settings',
+					'menu_slug'  => CHD_ADMIN_SLUG . '-settings',
 					'parent'     => 'index.php',
 					'capability' => 'manage_options'
 				] );
@@ -218,7 +218,7 @@ class Settings_Page_Site {
 					$label,
 					$label,
 					'manage_options',
-					CHP_ADMIN_SLUG . '-settings',
+					CHD_ADMIN_SLUG . '-settings',
 					[ $this, 'page_output' ],
 					$icon,
 					3
@@ -240,7 +240,7 @@ class Settings_Page_Site {
 					$label,
 					$label,
 					'manage_options',
-					CHP_ADMIN_SLUG . '-settings',
+					CHD_ADMIN_SLUG . '-settings',
 					[ $this, 'page_output' ]
 				);
 
@@ -258,17 +258,17 @@ class Settings_Page_Site {
 				if (
 					$position
 					&& in_array( $pagenow, [ 'index.php' ] )
-					&& ( $_GET['page'] == CHP_ADMIN_SLUG . '-settings' )
+					&& ( $_GET['page'] == CHD_ADMIN_SLUG . '-settings' )
 				) {
-					wp_redirect( admin_url( 'admin.php?page=' . CHP_ADMIN_SLUG . '-settings&tab=admin-menu' ), 302 );
+					wp_redirect( admin_url( 'admin.php?page=' . CHD_ADMIN_SLUG . '-settings&tab=admin-menu' ), 302 );
 
 				// If on the top level page and top level option is not selected.
 				} elseif (
 					! $position
 					&& in_array( $pagenow, [ 'admin.php' ] )
-					&& ( $_GET['page'] == CHP_ADMIN_SLUG . '-settings' )
+					&& ( $_GET['page'] == CHD_ADMIN_SLUG . '-settings' )
 				) {
-					wp_redirect( admin_url( 'index.php?page=' . CHP_ADMIN_SLUG . '-settings&tab=admin-menu' ), 302 );
+					wp_redirect( admin_url( 'index.php?page=' . CHD_ADMIN_SLUG . '-settings&tab=admin-menu' ), 302 );
 				}
 			}
 
@@ -315,7 +315,7 @@ class Settings_Page_Site {
      */
 	public function help_acf_settings_notice() {
 
-		include_once CHP_PATH . 'admin/partials/help/help-acf-notice.php';
+		include_once CHD_PATH . 'admin/partials/help/help-acf-notice.php';
 
 	}
 
@@ -346,7 +346,7 @@ class Settings_Page_Site {
     public function page_output() {
 
 		// Get the partial that contains the settings page HTML.
-		require CHP_PATH . 'admin/partials/settings-page-site.php';
+		require CHD_PATH . 'admin/partials/settings-page-site.php';
 
 	}
 

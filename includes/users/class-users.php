@@ -71,7 +71,7 @@ class Users {
 	private function dependencies() {
 
 		// User avatars.
-		require_once CHP_PATH . 'includes/users/class-user-avatars.php';
+		require_once CHD_PATH . 'includes/users/class-user-avatars.php';
 
 	}
 

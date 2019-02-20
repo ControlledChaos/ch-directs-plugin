@@ -80,19 +80,19 @@ class Settings_Fields_Site {
 	private function dependencies() {
 
 		// Settings for the Dashboard tab.
-		require CHP_PATH . 'admin/class-settings-fields-site-dashboard.php';
+		require CHD_PATH . 'admin/class-settings-fields-site-dashboard.php';
 
 		// Settings for the Admin Menu tab.
-		require CHP_PATH . 'admin/class-settings-fields-site-admin-menu.php';
+		require CHD_PATH . 'admin/class-settings-fields-site-admin-menu.php';
 
 		// Settings for the Admin Menu tab.
-		require CHP_PATH . 'admin/class-settings-fields-site-admin-pages.php';
+		require CHD_PATH . 'admin/class-settings-fields-site-admin-pages.php';
 
 		// Settings for the Admin Menu tab.
-		require CHP_PATH . 'admin/class-settings-fields-site-users.php';
+		require CHD_PATH . 'admin/class-settings-fields-site-users.php';
 
 		// Callbacks for the Meta/SEO tab.
-		require CHP_PATH . 'admin/class-settings-fields-site-meta-seo.php';
+		require CHD_PATH . 'admin/class-settings-fields-site-meta-seo.php';
 
 	}
 

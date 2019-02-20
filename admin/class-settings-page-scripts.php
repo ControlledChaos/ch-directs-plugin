@@ -78,7 +78,7 @@ class Settings_Page_Scripts {
 			__( 'Script Options', 'ch-directs-plugin' ),
 			__( 'Script Options', 'ch-directs-plugin' ),
 			'manage_options',
-			CHP_ADMIN_SLUG . '-scripts',
+			CHD_ADMIN_SLUG . '-scripts',
 			[ $this, 'page_output' ]
 		);
 
@@ -96,7 +96,7 @@ class Settings_Page_Scripts {
 	 */
     public function page_output() {
 
-		require CHP_PATH . 'admin/partials/settings-page-scripts.php';
+		require CHD_PATH . 'admin/partials/settings-page-scripts.php';
 
 	}
 
@@ -155,7 +155,7 @@ class Settings_Page_Scripts {
      */
 	public function help_inline_scripts() {
 
-		include_once CHP_PATH . 'admin/partials/help/help-inline-scripts.php';
+		include_once CHD_PATH . 'admin/partials/help/help-inline-scripts.php';
 
 	}
 
@@ -168,7 +168,7 @@ class Settings_Page_Scripts {
      */
 	public function help_inline_jquery() {
 
-		include_once CHP_PATH . 'admin/partials/help/help-inline-jquery.php';
+		include_once CHD_PATH . 'admin/partials/help/help-inline-jquery.php';
 
 	}
 
@@ -181,7 +181,7 @@ class Settings_Page_Scripts {
      */
 	public function help_remove_emoji() {
 
-		include_once CHP_PATH . 'admin/partials/help/help-remove-emoji.php';
+		include_once CHD_PATH . 'admin/partials/help/help-remove-emoji.php';
 
 	}
 

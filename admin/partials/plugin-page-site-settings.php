@@ -22,7 +22,7 @@ if ( ! defined( 'WPINC' ) ) {
 <?php echo sprintf(
 	'<p>%1s <a href="%2s">%3s</a> %4s</p>',
 	__( 'The plugin is equipped with', 'ch-directs-plugin' ),
-	esc_url( admin_url( '?page=' . CHP_ADMIN_SLUG . '-settings' ) ),
+	esc_url( admin_url( '?page=' . CHD_ADMIN_SLUG . '-settings' ) ),
 	__( 'an admin page', 'ch-directs-plugin' ),
 	__( 'for customizing the user interface of WordPress, as well as other useful features.', 'ch-directs-plugin' )
  ); ?>
