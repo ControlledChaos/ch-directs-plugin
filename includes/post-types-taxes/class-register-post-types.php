@@ -127,7 +127,7 @@ final class Post_Types_Register {
          * Maximum 20 characters, cannot contain capital letters or spaces.
          */
         register_post_type(
-            'project',
+            'projects',
             $options
         );
 
