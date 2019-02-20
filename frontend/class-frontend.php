@@ -15,7 +15,7 @@
  * @link       Fancybox    http://fancyapps.com/fancybox/3/
  */
 
-namespace CH_Plugin\Frontend;
+namespace CH_Directs_Plugin\Frontend;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {

@@ -16,7 +16,7 @@
  * @link       Dashicons https://developer.wordpress.org/resource/dashicons/
  */
 
-namespace CH_Plugin\Admin\Partials;
+namespace CH_Directs_Plugin\Admin\Partials;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {

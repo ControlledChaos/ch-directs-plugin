@@ -7,7 +7,7 @@
  * @since      1.0.0
  */
 
-namespace CH_Plugin\Admin;
+namespace CH_Directs_Plugin\Admin;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {

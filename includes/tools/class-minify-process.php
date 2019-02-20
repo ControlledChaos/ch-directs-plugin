@@ -11,7 +11,7 @@
  * @todo       Work out the errors thrown when the file is namespaced
  */
 
-// namespace CH_Plugin\Includes\Minify;
+// namespace CH_Directs_Plugin\Includes\Minify;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {

@@ -9,7 +9,7 @@
  * @author     Greg Sweet <greg@ccdzine.com>
  */
 
-namespace CH_Plugin\Admin\Partials;
+namespace CH_Directs_Plugin\Admin\Partials;
 
 // Restrict direct access
 if ( ! defined( 'ABSPATH' ) ) exit;

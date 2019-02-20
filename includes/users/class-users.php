@@ -10,7 +10,7 @@
  * @author     Greg Sweet <greg@ccdzine.com>
  */
 
-namespace CH_Plugin\Includes\Users;
+namespace CH_Directs_Plugin\Includes\Users;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {

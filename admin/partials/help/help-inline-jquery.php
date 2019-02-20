@@ -8,7 +8,7 @@
  * @since controlled-chaos 1.0.0
  */
 
-namespace CH_Plugin\Settings\Help\Inline_jQuery;
+namespace CH_Directs_Plugin\Settings\Help\Inline_jQuery;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {

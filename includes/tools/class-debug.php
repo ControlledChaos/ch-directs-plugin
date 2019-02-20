@@ -12,7 +12,7 @@
  * @link       https://github.com/ControlledChaos/so-turn-on-debug
  */
 
-// namespace CH_Plugin\Includes\Tools;
+// namespace CH_Directs_Plugin\Includes\Tools;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {

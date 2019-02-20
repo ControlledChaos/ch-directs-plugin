@@ -16,7 +16,7 @@
  *             hiding the Development Tools admin page.
  */
 
-// namespace CH_Plugin\Includes\Tools;
+// namespace CH_Directs_Plugin\Includes\Tools;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {

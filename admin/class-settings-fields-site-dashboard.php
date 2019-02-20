@@ -9,9 +9,9 @@
  * @author     Greg Sweet <greg@ccdzine.com>
  */
 
-namespace CH_Plugin\Admin\Partials;
+namespace CH_Directs_Plugin\Admin\Partials;
 
-use CH_Plugin\Admin\Partials\Field_Callbacks\Dashboard_Callbacks as Callbacks;
+use CH_Directs_Plugin\Admin\Partials\Field_Callbacks\Dashboard_Callbacks as Callbacks;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {

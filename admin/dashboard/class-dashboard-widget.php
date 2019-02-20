@@ -7,7 +7,7 @@
  * @since IntegratePress 1.0.0
  */
 
-namespace CH_Plugin\Admin\Dashboard;
+namespace CH_Directs_Plugin\Admin\Dashboard;
 
 // Restrict direct access
 if ( ! defined( 'ABSPATH' ) ) exit;

@@ -9,7 +9,7 @@
  * @author     Greg Sweet <greg@ccdzine.com>
  */
 
-namespace CH_Plugin\Admin\Partials\Help;
+namespace CH_Directs_Plugin\Admin\Partials\Help;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {

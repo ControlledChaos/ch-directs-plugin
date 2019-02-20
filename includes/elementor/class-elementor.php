@@ -14,7 +14,7 @@
  * @author     Greg Sweet <greg@ccdzine.com>
  */
 
-namespace CH_Plugin\Includes;
+namespace CH_Directs_Plugin\Includes;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {

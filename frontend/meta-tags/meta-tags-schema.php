@@ -7,7 +7,7 @@
  * @since      controlled-chaos 1.0.0
  */
 
-namespace CH_Plugin\Frontend\Meta_Tags;
+namespace CH_Directs_Plugin\Frontend\Meta_Tags;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {

@@ -18,7 +18,7 @@
  * @todo       Test in a sacrificial install.
  */
 
-// namespace CH_Plugin\Includes\Tools\Database_Reset;
+// namespace CH_Directs_Plugin\Includes\Tools\Database_Reset;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {

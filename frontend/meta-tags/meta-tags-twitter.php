@@ -11,7 +11,7 @@
  * @link       https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/markup.html
  */
 
-namespace CH_Plugin\Frontend\Meta_Tags;
+namespace CH_Directs_Plugin\Frontend\Meta_Tags;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {

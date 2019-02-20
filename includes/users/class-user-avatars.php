@@ -14,7 +14,7 @@
  * @link       http://wordpress.org/extend/basic-user-avatars
  */
 
-namespace CH_Plugin\Includes\Users;
+namespace CH_Directs_Plugin\Includes\Users;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
