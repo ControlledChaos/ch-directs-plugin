@@ -74,7 +74,7 @@ class Enqueue_Frontend_Styles {
 	public function styles() {
 
 		// Non-vendor plugin styles.
-		wp_enqueue_style( CHD_ADMIN_SLUG, CHD_URL . 'assets/css/frontend.css', [], CHD_VERSION, 'all' );
+		// wp_enqueue_style( CHD_ADMIN_SLUG, CHD_URL . 'frontend/assets/css/frontend.css', [], CHD_VERSION, 'all' );
 
 		// Fancybox 3.
 		if ( get_option( 'chd_enqueue_fancybox_styles' ) ) {
@@ -86,23 +86,23 @@ class Enqueue_Frontend_Styles {
 			if ( current_theme_supports( 'ccd-fancybox' ) ) {
 				return;
 			} else {
-				wp_enqueue_style( CHD_ADMIN_SLUG . '-fancybox', CHD_URL . 'assets/css/jquery.fancybox.min.css', [], CHD_VERSION, 'all' );
+				wp_enqueue_style( CHD_ADMIN_SLUG . '-fancybox', CHD_URL . 'frontend/assets/css/jquery.fancybox.min.css', [], CHD_VERSION, 'all' );
 			}
 		}
 
 		// Slick.
 		if ( get_option( 'chd_enqueue_slick' ) ) {
-			wp_enqueue_style( CHD_ADMIN_SLUG . '-slick', CHD_URL . 'assets/css/slick.min.css', [], CHD_VERSION, 'all' );
+			wp_enqueue_style( CHD_ADMIN_SLUG . '-slick', CHD_URL . 'frontend/assets/css/slick.min.css', [], CHD_VERSION, 'all' );
 		}
 
 		// Slick theme.
 		if ( get_option( 'chd_enqueue_slick' ) ) {
-			wp_enqueue_style( CHD_ADMIN_SLUG . '-slick-theme', CHD_URL . 'assets/css/slick-theme.css', [], CHD_VERSION, 'all' );
+			wp_enqueue_style( CHD_ADMIN_SLUG . '-slick-theme', CHD_URL . 'frontend/assets/css/slick-theme.css', [], CHD_VERSION, 'all' );
 		}
 
 		// Tooltipster.
 		if ( get_option( 'chd_enqueue_tooltipster' ) ) {
-			wp_enqueue_style( CHD_ADMIN_SLUG . '-tooltipster', CHD_URL . 'assets/css/tooltipster.bundle.min.css', [], CHD_VERSION, 'all' );
+			wp_enqueue_style( CHD_ADMIN_SLUG . '-tooltipster', CHD_URL . 'frontend/assets/css/tooltipster.bundle.min.css', [], CHD_VERSION, 'all' );
 		}
 
 	}
